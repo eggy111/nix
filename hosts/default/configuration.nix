@@ -37,8 +37,7 @@
    #wlr.enable = true
    # config.common.default = "*";
    extraPortals = [
- #below is temp removed to hopefully fix an error
-#   pkgs.xdg-desktop-portal-gtk
+   pkgs.xdg-desktop-portal-gtk
    ];
  };
  programs.hyprland = {
