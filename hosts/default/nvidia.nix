@@ -1,45 +1,41 @@
-{ config, lib, pkgs, ...}:
+{ config, lib, pkgs, ... }:
+
 {
-
- # Enable OpenGL Idk what that is
- hardware.opengl = {
-   enable = true;
- };
-
- # Load Nvidia driver for xorg and wayland
-  services.xserver.videoDrivers = ["nvidia"];
-
-  hardware.nvidia = {
-
-    # Modesetting is required.
-    modesetting.enable = true;
-
-    # Nvidia power management. Experimental, and can cause sleep/suspend to fail.
-    # Enable this if you have graphical corruption issues or application crashes after waking
-    # up from sleep. This fixes it by saving the entire VRAM memory to /tmp/ instead 
-    # of just the bare essentials.
-    powerManagement.enable = false;
-
-    # Fine-grained power management. Turns off GPU when not in use.
-    # Experimental and only works on modern Nvidia GPUs (Turing or newer).
-    powerManagement.finegrained = false;
-
-    # Use the NVidia open source kernel module (not to be confused with the
-    # independent third-party "nouveau" open source driver).
-    # Support is limited to the Turing and later architectures. Full list of 
-    # supported GPUs is at: 
-    # https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus 
-    # Only available from driver 515.43.04+
-    # Currently alpha-quality/buggy, so false is currently the recommended setting.
-    open = false;
-
-    # Enable the Nvidia settings menu,
-	# accessible via `nvidia-settings`.
-    nvidiaSettings = true;
-
-    # Optionally, you may need to select the appropriate driver version for your specific GPU.
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+  options.dotfyls.graphics.nvidia = {
+    enable = lib.mkEnableOption "NVIDIA graphics";
+    blacklistCompeting = lib.mkEnableOption "blacklisting competing graphics drivers" // { default = true; };
   };
 
-}
+  config = lib.mkIf config.dotfyls.graphics.nvidia.enable {
+    services.xserver.videoDrivers = [ "nvidia" ];
 
+    boot = {
+      # Use NVIDIA framebuffer.
+      # See: https://wiki.gentoo.org/wiki/NVIDIA/nvidia-drivers#Kernel_module_parameters
+      kernelParams = [ "nvidia-drm.fbdev=1" ];
+    } // lib.optionalAttrs config.dotfyls.graphics.nvidia.blacklistCompeting {
+      blacklistedKernelModules = [ "amdgpu" "i915" ];
+    };
+
+    hardware = {
+      nvidia = {
+        modesetting.enable = true;
+        powerManagement.enable = false;
+        nvidiaSettings = true;
+        package = config.boot.kernelPackages.nvidiaPackages.beta;
+      };
+      graphics.extraPackages = with pkgs; [ vaapiVdpau ];
+    };
+
+    environment.sessionVariables = {
+      LIBVA_DRIVER_NAME = "nvidia";
+      GBM_BACKEND = "nvidia-drm";
+      __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+    };
+
+    nix.settings = {
+      substituters = [ "https://cuda-maintainers.cachix.org" ];
+      trusted-public-keys = [ "cuda-maintainers.cachix.org-1:0dq3bujKpuEPMCX6U4WylrUDZ9JyUG0VpVZa7CNfq5E=" ];
+    };
+  };
+}
