@@ -48,7 +48,7 @@
 
  hardware.graphics = {
    enable = true;
-   enable32Bit = truel;
+   enable32Bit = true;
  };
 
   # Enable Wayland
