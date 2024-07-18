@@ -164,7 +164,6 @@
     wget
     git
     discord
-    pkgs.minecraft
     pkgs.kitty
     pkgs.plexamp
     neofetch
