@@ -172,6 +172,13 @@
     rofi-wayland
     inotify-tools
     qt6Packages.qwlroots
+    pkgs.grim
+    pkgs.slurp
+    pkgs.yazi
+    pkgs.lf
+    pkgs.networkmanagerapplet
+    pkgs.xfce.thunar
+    pkgs.wl-clipboard
     
     
     #cmatrix #this a good test to see if switching works, just remember to recomment 
