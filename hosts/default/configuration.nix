@@ -10,6 +10,7 @@
       ./hardware-configuration.nix
       ./main-user.nix
       ./nvidia.nix
+     # ../../modules/ohmyzsh.nix
       #inputs.home-manager.nixosModules.home-manager
     ];
 
@@ -179,7 +180,10 @@
     pkgs.networkmanagerapplet
     pkgs.xfce.thunar
     pkgs.wl-clipboard
-    
+    pkgs.sshfs
+    pkgs.projectm
+    pkgs.unzip
+  
     
     #cmatrix #this a good test to see if switching works, just remember to recomment 
   ];
