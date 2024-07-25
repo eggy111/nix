@@ -8,9 +8,11 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./main-user.nix
-      ./nvidia.nix
-     # ../../modules/ohmyzsh.nix
+      ../../modules/main-user.nix
+      ../../modules/nvidia.nix
+      ../../modules/fonts.nix
+      ../../modules/ohmyzsh.nix
+      ../../modules/locale.nix
       #inputs.home-manager.nixosModules.home-manager
     ];
 
@@ -51,47 +53,23 @@
    enable32Bit = true;
  };
 
-  # Enable Wayland
- # programs.hyprland = {
- #   enable = true;
- #  #apparently the below is no longer needed
- #  # nvidiaPatches = true;
- #   xwayland.enable = true;
- # };
-
- # environment.sessionVariables = {
-    # if cursor goes invisible enable below command
-    #WLR_NO_HARDWARE_CURSORS = "1";
-    # hint electron apps to use wayland
-#    NIXOS_OZONE_WL = "1";
-#  };
-
-#  hardware = {
-      # Opengl (idk what that is tbh)
-#      opengl.enable = true;
-
-    #WLR_NO_HARDWARE_CUROSR = 
-      # probably need this ig
-#      nvidia.modesetting.enable = true;
-#  };
-
   # Set your time zone.
-  time.timeZone = "America/Detroit";
+ # time.timeZone = "America/Detroit";
 
   # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
+#  i18n.defaultLocale = "en_US.UTF-8";
 
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "en_US.UTF-8";
-    LC_IDENTIFICATION = "en_US.UTF-8";
-    LC_MEASUREMENT = "en_US.UTF-8";
-    LC_MONETARY = "en_US.UTF-8";
-    LC_NAME = "en_US.UTF-8";
-    LC_NUMERIC = "en_US.UTF-8";
-    LC_PAPER = "en_US.UTF-8";
-    LC_TELEPHONE = "en_US.UTF-8";
-    LC_TIME = "en_US.UTF-8";
-  };
+#  i18n.extraLocaleSettings = {
+#    LC_ADDRESS = "en_US.UTF-8";
+#    LC_IDENTIFICATION = "en_US.UTF-8";
+#    LC_MEASUREMENT = "en_US.UTF-8";
+#    LC_MONETARY = "en_US.UTF-8";
+#    LC_NAME = "en_US.UTF-8";
+#    LC_NUMERIC = "en_US.UTF-8";
+#    LC_PAPER = "en_US.UTF-8";
+#    LC_TELEPHONE = "en_US.UTF-8";
+#    LC_TIME = "en_US.UTF-8";
+#  };
 
   # Enable the X11 windowing system.
  # services.xserver.enable = true;
@@ -110,11 +88,16 @@
   services.printing.enable = true;
 
   # Enable Bluetooth
-  hardware.bluetooth.enable = true;
+  hardware.bluetooth = { 
+    enable = true;
+    powerOnBoot = true;
+  };
+
+  services.blueman.enable = true;
 
   # Enable zsh
   programs.zsh.enable = true;
-
+  
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -183,8 +166,12 @@
     pkgs.sshfs
     pkgs.projectm
     pkgs.unzip
-  
-    
+    pkgs.nerdfonts
+    pkgs.fzf
+    pkgs.overskride
+    pkgs.pavucontrol
+
+ 
     #cmatrix #this a good test to see if switching works, just remember to recomment 
   ];
   # Some programs need SUID wrappers, can be configured further or are
@@ -199,6 +186,30 @@
 
   # Enable the OpenSSH daemon.
    services.openssh.enable = true;
+  
+  # Discord Overlay
+   nixpkgs.overlays = [
+  (_: prev: {
+    discord = prev.discord.overrideAttrs (o: {
+      nativeBuildInputs = o.nativeBuildInputs ++ [ prev.makeShellWrapper ];
+      postInstall = (o.postInstall or "") + ''
+        wrapProgramShell $out/opt/Discord/Discord \
+          --add-flags " \
+            --disable-gpu-sandbox \
+            --enable-accelerated-mjpeg-decode \
+            --enable-accelerated-video \
+            --enable-features=VaapiVideoDecoder \
+            --enable-gpu-rasterization \
+            --enable-native-gpu-memory-buffers \
+            --enable-zero-copy \
+            --ignore-gpu-blocklist \
+            --use-gl=desktop \
+        "
+      '';
+    });
+  })
+];
+
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
