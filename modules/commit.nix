@@ -7,12 +7,13 @@
   options,
   ...
 }: let
-  hostname = "nix"; # to allow per-machine config, also i need to change my hostname but im a little nervous....
+  hostname = "nixos"; # to allow per-machine config, also i need to change my hostname but im a little nervous....
 in {
   networking.hostName = hostname;
 
   imports = [
-    ../../hosts/default/hardware-configuration.nix # this might be bad for me given my configs, including hardware-configuration exist in ~/documents/nix/hosts/default/ but the hardware-configuration is a perfect copy so we shall see but I should put in my readme this could be an issue"
-    (../../hosts/default/nixos-rebuild.sh + "/${hostname}.nix")
+    ../../hosts/default/hardware-configuration.nix 
+   # ../../hosts/default/nixos-rebuild.sh/${hostname}.nix
+   
   ];
 }

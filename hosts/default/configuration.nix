@@ -14,7 +14,7 @@
       ../../modules/ohmyzsh.nix
       ../../modules/locale.nix
       ../../modules/steam.nix
-      ../../modules/commit.nix
+     # ../../modules/commit.nix #currently broken
       #inputs.home-manager.nixosModules.home-manager
     ];
 
