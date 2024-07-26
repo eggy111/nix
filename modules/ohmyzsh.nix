@@ -7,5 +7,10 @@
     plugins = [ "git" "autojump" "colored-man-pages" "colorize" "command-not-found" "common-aliases" "copy-buffer" "emoji" "fzf" "kitty" ];
     theme = "powerlevel10k/powerlevel10k";
      };
+
+
+ environment.systemPackages = [
+   pkgs.zsh-powerlevel10k
+ ];
  }
   

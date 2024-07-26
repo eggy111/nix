@@ -13,6 +13,8 @@
       ../../modules/fonts.nix
       ../../modules/ohmyzsh.nix
       ../../modules/locale.nix
+      ../../modules/steam.nix
+      ../../modules/commit.nix
       #inputs.home-manager.nixosModules.home-manager
     ];
 
@@ -53,24 +55,6 @@
    enable32Bit = true;
  };
 
-  # Set your time zone.
- # time.timeZone = "America/Detroit";
-
-  # Select internationalisation properties.
-#  i18n.defaultLocale = "en_US.UTF-8";
-
-#  i18n.extraLocaleSettings = {
-#    LC_ADDRESS = "en_US.UTF-8";
-#    LC_IDENTIFICATION = "en_US.UTF-8";
-#    LC_MEASUREMENT = "en_US.UTF-8";
-#    LC_MONETARY = "en_US.UTF-8";
-#    LC_NAME = "en_US.UTF-8";
-#    LC_NUMERIC = "en_US.UTF-8";
-#    LC_PAPER = "en_US.UTF-8";
-#    LC_TELEPHONE = "en_US.UTF-8";
-#    LC_TIME = "en_US.UTF-8";
-#  };
-
   # Enable the X11 windowing system.
  # services.xserver.enable = true;
 
@@ -80,8 +64,8 @@
 
   # Configure keymap in X11
   services.xserver = {
-    layout = "us";
-    xkbVariant = "";
+    xkb.layout = "us";
+    xkb.variant = "";
   };
 
   # Enable CUPS to print documents.
@@ -164,13 +148,15 @@
     pkgs.xfce.thunar
     pkgs.wl-clipboard
     pkgs.sshfs
-    pkgs.projectm
     pkgs.unzip
     pkgs.nerdfonts
     pkgs.fzf
     pkgs.overskride
     pkgs.pavucontrol
-
+    protonup
+    pkgs.ncdu
+    pkgs.zsh-powerlevel10k
+    pkgs.alejandra
  
     #cmatrix #this a good test to see if switching works, just remember to recomment 
   ];
