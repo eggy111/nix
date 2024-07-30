@@ -11,7 +11,6 @@
       ../../modules/main-user.nix
       ../../modules/nvidia.nix
       ../../modules/fonts.nix
-      ../../modules/ohmyzsh.nix
       ../../modules/locale.nix
       ../../modules/steam.nix
       #inputs.home-manager.nixosModules.home-manager
@@ -154,9 +153,13 @@
     pkgs.pavucontrol
     protonup
     pkgs.ncdu
-    pkgs.zsh-powerlevel10k
     pkgs.alejandra
- 
+    pkgs.termscp
+    pkgs.ncdu
+    pkgs.dunst
+    pkgs.hyprcursor
+    pkgs.hyprshot
+
     #cmatrix #this a good test to see if switching works, just remember to recomment 
   ];
   # Some programs need SUID wrappers, can be configured further or are
