@@ -159,6 +159,7 @@
     pkgs.dunst
     pkgs.hyprcursor
     pkgs.hyprshot
+    pkgs.hypridle
 
     #cmatrix #this a good test to see if switching works, just remember to recomment 
   ];
