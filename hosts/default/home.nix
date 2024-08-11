@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -75,6 +75,22 @@
   home.sessionVariables = {
      EDITOR = "vim";
   };
+  
+  programs.kitty.settings.shell = lib.getExe pkgs.fish;
+
+ # programs.zsh = {
+ #  enable = true;
+ #  shellAliases = {
+ #   nrs = "sudo nixos-rebuild switch --flake /home/eggy/Documents/nix";
+ #  };
+ #  zplug = {
+ #    enable = true;
+ #    plugins = [
+ #      { name = "zsh-users/zsh-autosuggestions"; }
+ #      { name = "romkatv/powerlevel10k"; tags = [ as:theme depth:1 ]; }
+ #    ];
+ #  };
+ # };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

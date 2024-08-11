@@ -78,8 +78,9 @@
   services.blueman.enable = true;
 
   # Enable zsh
-  programs.zsh.enable = true;
-  
+#  programs.zsh.enable = true;
+   programs.fish.enable = true;
+ 
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -163,6 +164,7 @@
     pkgs.hyprshade
     pkgs.unar
     pkgs.unzip
+    pkgs.fish
 
     #cmatrix #this a good test to see if switching works, just remember to recomment 
   ];
