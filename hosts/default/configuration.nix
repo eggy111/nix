@@ -13,7 +13,7 @@
       ../../modules/fonts.nix
       ../../modules/locale.nix
       ../../modules/steam.nix
-      #inputs.home-manager.nixosModules.home-manager
+      inputs.home-manager.nixosModules.home-manager
     ];
 
   main-user.enable = true;
@@ -160,6 +160,9 @@
     pkgs.hyprcursor
     pkgs.hyprshot
     pkgs.hypridle
+    pkgs.hyprshade
+    pkgs.unar
+    pkgs.unzip
 
     #cmatrix #this a good test to see if switching works, just remember to recomment 
   ];

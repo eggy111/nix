@@ -30,6 +30,7 @@
    outputs = {
      self,
      nixpkgs,
+     home-manager,
      ...
    } @ inputs: let
      system = "x86_64-linux";
@@ -40,12 +41,12 @@
        };
      };
     in {
-     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
+     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
        ./hosts/default/configuration.nix
        inputs.home-manager.nixosModules.home-manager
-      ];
-     };
+       ];
+      };
     };    
   } 
