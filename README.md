@@ -10,6 +10,7 @@ I have flakes, but I don't understand them they make my head hurt and I try to t
 I would love any and all help because again **I have no idea what I am doing ever** I am mostly following vimjoyers guides on youtube, and what the lovely people in his discord tell me I should do.  
 
 ## My current To Do
+- **setup modularity will need help but is important**
 - set up screenshots
 - set up hypridle
 - set up hypr* (shade, shot, cursor, ... )
