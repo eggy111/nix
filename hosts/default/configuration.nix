@@ -165,6 +165,8 @@
     pkgs.unar
     pkgs.unzip
     pkgs.fish
+    pkgs.wireguard-tools
+    pkgs.localsend
 
     #cmatrix #this a good test to see if switching works, just remember to recomment 
   ];
@@ -180,7 +182,7 @@
 
   # Enable the OpenSSH daemon.
    services.openssh.enable = true;
-  
+ 
   # Discord Overlay
    nixpkgs.overlays = [
   (_: prev: {

@@ -19,7 +19,7 @@ I would love any and all help because again **I have no idea what I am doing eve
 - configure yazi
 - configure notifications
 - configure vim (more likely neovim)
-- set up wireguard client
+- ~~set up wireguard client~~
 - configure wl-clipboard (just figure it out how it works and what it can do first)
 - configure rofi
 - configure swww
