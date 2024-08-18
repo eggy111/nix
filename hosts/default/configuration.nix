@@ -13,6 +13,7 @@
       ../../modules/fonts.nix
       ../../modules/locale.nix
       ../../modules/steam.nix
+      ../../modules/nvim.nix
       inputs.home-manager.nixosModules.home-manager
     ];
 
