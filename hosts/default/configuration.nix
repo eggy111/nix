@@ -13,7 +13,7 @@
       ../../modules/fonts.nix
       ../../modules/locale.nix
       ../../modules/steam.nix
-      ../../modules/nvim.nix
+      ../../modules/neovim.nix
       inputs.home-manager.nixosModules.home-manager
     ];
 
@@ -169,6 +169,7 @@
     pkgs.wireguard-tools
     pkgs.localsend
     pkgs.starship
+    pkgs.neovim
 
     #cmatrix #this a good test to see if switching works, just remember to recomment 
   ];
