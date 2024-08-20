@@ -167,6 +167,7 @@
     pkgs.fish
     pkgs.wireguard-tools
     pkgs.localsend
+    pkgs.starship
 
     #cmatrix #this a good test to see if switching works, just remember to recomment 
   ];
