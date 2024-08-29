@@ -170,6 +170,9 @@
     pkgs.localsend
     pkgs.starship
     pkgs.neovim
+    pkgs.bat
+    pkgs.swappy
+
 
     #cmatrix #this a good test to see if switching works, just remember to recomment 
   ];
