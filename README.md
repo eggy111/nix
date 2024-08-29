@@ -11,7 +11,7 @@ I would love any and all help because again **I have no idea what I am doing eve
 
 ## My current To Do
 - **setup modularity will need help but is important**
-- set up screenshots
+- ~~set up screenshots~~
 - set up hypridle
 - set up hypr* (shade, shot, cursor, ... )
 - configure waybar
@@ -20,6 +20,7 @@ I would love any and all help because again **I have no idea what I am doing eve
 - configure notifications
 - configure vim (more likely neovim)
 - ~~set up wireguard client~~
-- configure wl-clipboard (just figure it out how it works and what it can do first)
+- ~~configure wl-clipboard (just figure it out how it works and what it can do first)~~
+- setup screen recording
 - configure rofi
 - configure swww

@@ -163,6 +163,7 @@
     pkgs.hyprshot
     pkgs.hypridle
     pkgs.hyprshade
+    pkgs.hyprlock
     pkgs.unar
     pkgs.unzip
     pkgs.fish
