@@ -127,53 +127,68 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget
     git
     discord
-    pkgs.kitty
-    pkgs.plexamp
-    neofetch
-    pkgs.waybar 
-    libnotify
-    pkgs.swww
-    rofi-wayland
-    inotify-tools
+    plexamp
+    swww
     qt6Packages.qwlroots
-    pkgs.grim
-    pkgs.slurp
-    pkgs.yazi
-    pkgs.lf
-    pkgs.networkmanagerapplet
-    pkgs.xfce.thunar
-    pkgs.wl-clipboard
-    pkgs.sshfs
-    pkgs.unzip
-    pkgs.nerdfonts
-    pkgs.fzf
-    pkgs.overskride
-    pkgs.pavucontrol
+    networkmanagerapplet
+    wl-clipboard
+    nerdfonts
+    overskride
+    pavucontrol
     protonup
-    pkgs.ncdu
-    pkgs.alejandra
-    pkgs.termscp
-    pkgs.ncdu
-    pkgs.dunst
-    pkgs.hyprcursor
-    pkgs.hyprshot
-    pkgs.hypridle
-    pkgs.hyprshade
-    pkgs.hyprlock
-    pkgs.unar
-    pkgs.unzip
-    pkgs.fish
-    pkgs.wireguard-tools
-    pkgs.localsend
-    pkgs.starship
-    pkgs.neovim
-    pkgs.bat
-    pkgs.swappy
+    kdePackages.kdeconnect-kde
 
+    #shell related packages
+    fish
+    starship
+    kitty
+
+    #wayland applications
+    rofi-wayland
+    waybar
+ 
+    #hypr applications
+    hyprcursor
+    hyprshot #idk if I even want this since i got grim and slurp running
+    hyprshade
+    hypridle
+    hyprlock
+
+    #file manager and related
+    yazi
+    lf
+    xfce.thunar
+    ncdu
+
+    #screen capture
+    grim
+    slup
+
+    #teminal applications
+    sshfs
+    fzf
+    unar
+    unzip
+    bat
+    bat
+    neofetch
+    wget
+    vim
+    neovim
+    pipes
+
+    #file transfer things
+    wireguard-tools
+    localsend
+    swappy
+    termscp
+    
+    #notifications
+    libnotify
+    inotify-tools
+    dunst
 
     #cmatrix #this a good test to see if switching works, just remember to recomment 
   ];
