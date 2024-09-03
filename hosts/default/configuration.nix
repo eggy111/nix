@@ -164,7 +164,7 @@
 
     #screen capture
     grim
-    slup
+    slurp
 
     #teminal applications
     sshfs
