@@ -39,7 +39,7 @@
    ncdu
 
    #screen capture
-   grimp
+   grim
    slurp
 
    #terminal applications

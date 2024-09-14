@@ -12,4 +12,5 @@
    pulse.enable = true;
    # If you want to use JACK applications, uncomments this
    #jack.enable = true;
- }
+ };
+}
