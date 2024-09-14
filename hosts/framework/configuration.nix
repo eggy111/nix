@@ -11,6 +11,7 @@
       ../../modules/bluetooth.nix
       ../../modules/discord.nix
       ../../modules/fonts.nix
+      ../../modules/framework.nix
       ../../modules/locale.nix
       ../../modules/main-user.nix
       ../../modules/neovim.nix
