@@ -24,6 +24,6 @@ I would love any and all help because again **I have no idea what I am doing eve
 - ~~configure wl-clipboard (just figure it out how it works and what it can do first)~~
 - setup screen recording
 - configure rofi
-- ~configure swww~
+- ~~configure swww~~
 - make this (or a new repo, but preferably this) into a dotfiles repo
 - set up zfs
