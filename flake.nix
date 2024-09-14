@@ -49,7 +49,7 @@
                 inputs.home-manager.nixosModules.home-manager
             ];
         };
-   }; 
+    
     framework = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
             modules = [
@@ -58,4 +58,5 @@
             ];
         };
     };
+  };
 }
