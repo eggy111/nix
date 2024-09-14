@@ -41,12 +41,21 @@
        };
      };
     in {
-     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
-      modules = [
-       ./hosts/default/configuration.nix
-       inputs.home-manager.nixosModules.home-manager
-       ];
-      };
-    };    
-  } 
+ nixosConfigurations = {
+    nixos = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
+            modules = [
+                ./hosts/default/configuration.nix
+                inputs.home-manager.nixosModules.home-manager
+            ];
+        };
+   }; 
+    framework = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
+            modules = [
+                ./hosts/framework/configuration.nix
+                inputs.home-manager.nixosModules.home-manager
+            ];
+        };
+    };
+}
