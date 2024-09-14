@@ -8,12 +8,16 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ../../modules/main-user.nix
-#      ../../modules/nvidia.nix
+      ../../modules/bluetooth.nix
+      ../../modules/discord.nix
       ../../modules/fonts.nix
       ../../modules/locale.nix
-      ../../modules/steam.nix
+      ../../modules/main-user.nix
       ../../modules/neovim.nix
+#      ../../modules/nvidia.nix
+      ../../modules/packages.nix
+      ../../modules/pipewire.nix
+      ../../modules/steam.nix
       inputs.home-manager.nixosModules.home-manager
     ];
 
@@ -70,29 +74,10 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  # Enable Bluetooth
-  hardware.bluetooth = { 
-    enable = true;
-    powerOnBoot = true;
-  };
-
-  services.blueman.enable = true;
-
   # Enable zsh
 #  programs.zsh.enable = true;
    programs.fish.enable = true;
  
-  # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
     #media-session.enable = true;
@@ -124,74 +109,6 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    git
-    discord
-    plexamp
-    swww
-    qt6Packages.qwlroots
-    networkmanagerapplet
-    wl-clipboard
-    nerdfonts
-    overskride
-    pavucontrol
-    protonup
-    kdePackages.kdeconnect-kde
-
-    #shell related packages
-    fish
-    starship
-    kitty
-
-    #wayland applications
-    rofi-wayland
-    waybar
- 
-    #hypr applications
-    hyprcursor
-    hyprshot #idk if I even want this since i got grim and slurp running
-    hyprshade
-    hypridle
-    hyprlock
-
-    #file manager and related
-    yazi
-    lf
-    xfce.thunar
-    ncdu
-
-    #screen capture
-    grim
-    slurp
-
-    #teminal applications
-    sshfs
-    fzf
-    unar
-    unzip
-    bat
-    bat
-    neofetch
-    wget
-    vim
-    neovim
-    pipes
-
-    #file transfer things
-    wireguard-tools
-    localsend
-    swappy
-    termscp
-    
-    #notifications
-    libnotify
-    inotify-tools
-    dunst
-
-    #cmatrix #this a good test to see if switching works, just remember to recomment 
-  ];
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -204,30 +121,6 @@
 
   # Enable the OpenSSH daemon.
    services.openssh.enable = true;
- 
-  # Discord Overlay
-   nixpkgs.overlays = [
-  (_: prev: {
-    discord = prev.discord.overrideAttrs (o: {
-      nativeBuildInputs = o.nativeBuildInputs ++ [ prev.makeShellWrapper ];
-      postInstall = (o.postInstall or "") + ''
-        wrapProgramShell $out/opt/Discord/Discord \
-          --add-flags " \
-            --disable-gpu-sandbox \
-            --enable-accelerated-mjpeg-decode \
-            --enable-accelerated-video \
-            --enable-features=VaapiVideoDecoder \
-            --enable-gpu-rasterization \
-            --enable-native-gpu-memory-buffers \
-            --enable-zero-copy \
-            --ignore-gpu-blocklist \
-            --use-gl=desktop \
-        "
-      '';
-    });
-  })
-];
-
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
