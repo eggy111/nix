@@ -49,13 +49,13 @@
     # ".screenrc".source = dotfiles/screenrc;
 
     #hyprland config files
-    ".config/hypr/hyprland.conf".source = ./hypr/hyprland.conf;
-    ".config/hypr/hypridle.conf".source = ./hypr/hypridle.conf;
-    ".config/hypr/colors.conf".source = ./hypr/colors.conf;
-    ".config/hypr/hyprlock.conf".source = ./hypr/hyprlock.conf;
-    ".config/hypr/new_wallpaper.sh".source = ./hypr/new_wallpaper.sh;
-    ".config/hypr/start.sh".source = ./hypr/start.sh;
-    ".config/hypr/wallpaper.sh".source = ./hypr/wallpaper.sh;
+#    ".config/hypr/hyprland.conf".source = ./hypr/hyprland.conf;
+#    ".config/hypr/hypridle.conf".source = ./hypr/hypridle.conf;
+#    ".config/hypr/colors.conf".source = ./hypr/colors.conf;
+#    ".config/hypr/hyprlock.conf".source = ./hypr/hyprlock.conf;
+#    ".config/hypr/new_wallpaper.sh".source = ./hypr/new_wallpaper.sh;
+#    ".config/hypr/start.sh".source = ./hypr/start.sh;
+#    ".config/hypr/wallpaper.sh".source = ./hypr/wallpaper.sh;
 
     #wallpapers im sure there is a better way to do this.... but im lazy rn
     ".config/wallpapers/1.png".source = ./wallpapers/1.png;
@@ -76,9 +76,9 @@
     ".config/wallpapers/16.png".source = ./wallpapers/16.png;
     ".config/wallpapers/jerma_nichijou.gif".source = ./wallpapers/jerma_nichijou.gif;
 
-    #waybar config
-    ".config/waybar/config".source = ./waybar/config;
-    ".config/waybar/style.css".source = ./waybar/style.css;
+ #   #waybar config
+ #   ".config/waybar/config".source = ./waybar/config;
+ #   ".config/waybar/style.css".source = ./waybar/style.css;
     
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
