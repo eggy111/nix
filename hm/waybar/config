@@ -22,15 +22,15 @@
         "idle_inhibitor",
         "pulseaudio",
         "network",
-       // "power-profiles-daemon",
+        "power-profiles-daemon",
         "cpu",
         "memory",
         "temperature",
-       // "backlight",
+        "backlight",
        // "keyboard-state",
        // "hyprland/language",
-       // "battery",
-       // "battery#bat2",
+        "battery",
+        "battery#bat2",
         "clock",
         "tray",
         "custom/power"
@@ -162,40 +162,40 @@
         "format": "{temperatureC}°C {icon}",
         "format-icons": ["", "", ""]
     },
-//    "backlight": {
+    "backlight": {
         // "device": "acpi_video1",
-//        "format": "{percent}% {icon}",
-//        "format-icons": ["", "", "", "", "", "", "", "", ""]
-//    },
-//    "battery": {
-//        "states": {
+        "format": "{percent}% {icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    "battery": {
+        "states": {
             // "good": 95,
-//            "warning": 30,
-//            "critical": 15
-//        },
-//        "format": "{capacity}% {icon}",
-//        "format-full": "{capacity}% {icon}",
-//        "format-charging": "{capacity}% ",
-//        "format-plugged": "{capacity}% ",
-//        "format-alt": "{time} {icon}",
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-full": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
-//        "format-icons": ["", "", "", "", ""]
-//    },
-//    "battery#bat2": {
-//        "bat": "BAT2"
-//    },
-//    "power-profiles-daemon": {
-//      "format": "{icon}",
-//      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-//      "tooltip": true,
-//      "format-icons": {
-//        "default": "",
-//        "performance": "",
-//        "balanced": "",
-//        "power-saver": ""
-//      }
-//    },
+        "format-icons": ["", "", "", "", ""]
+    },
+    "battery#bat2": {
+        "bat": "BAT2"
+    },
+    "power-profiles-daemon": {
+      "format": "{icon}",
+      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+      "tooltip": true,
+      "format-icons": {
+        "default": "",
+        "performance": "",
+        "balanced": "",
+        "power-saver": ""
+      }
+    },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "{essid} ({signalStrength}%) ",
