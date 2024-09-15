@@ -100,7 +100,7 @@
     # also pass inputs to home-manger modules.
     extraSpecialArgs = { inherit inputs; };
     users = {
-      "eggy" = import ./home.nix;
+      "eggy" = import ../../hm/home.nix;
     };
   };
   # Install firefox.
