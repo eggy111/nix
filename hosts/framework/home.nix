@@ -76,14 +76,17 @@
      EDITOR = "vim";
   };
   
-  programs.kitty.settings.shell = lib.getExe pkgs.fish;
+  programs.kitty = { 
+    settings = {
+      shell = lib.getExe pkgs.fish;
+    };
+  };
   
-  programs = { 
-    fish = { 
-      enable = true;
+  programs.fish = { 
+    enable = true;
     shellAliases = lib.mkForce { };
     shellAbbrs = config.home.shellAliases;
-    };
+    
   };
 
   home ={

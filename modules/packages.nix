@@ -7,6 +7,7 @@
    discord
    plexamp
    swww
+   eww
    qt6Packages.qwlroots
    wl-clipboard
    nerdfonts
@@ -15,6 +16,8 @@
    pavucontrol
    protonup
    kdePackages.kdeconnect-kde
+   vlc
+   ffmpeg
 
    #shell related packages
    fish
@@ -41,6 +44,7 @@
    #screen capture
    grim
    slurp
+   wf-recorder
 
    #terminal applications
    sshfs
