@@ -78,7 +78,6 @@
 
     #waybar config
     ".config/waybar/config".source = ./waybar/config;
-    ".config/waybar/power_menu.xml" = ./waybar/power_menu.xml;
     ".config/waybar/style.css".source = ./waybar/style.css;
     
     # # You can also set the file content immediately.
