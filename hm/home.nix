@@ -52,7 +52,7 @@
     ".config/hypr/hyprland.conf".source = ./hypr/hyprland.conf;
     ".config/hypr/hypridle.conf".source = ./hypr/hypridle.conf;
     ".config/hypr/colors.conf".source = ./hypr/colors.conf;
-    ".config/hypr/hyprlock.conf".source = ./hypr/hyrplock.conf;
+    ".config/hypr/hyprlock.conf".source = ./hypr/hyprlock.conf;
     ".config/hypr/new_wallpaper.sh".source = ./hypr/new_wallpaper.sh;
     ".config/hypr/start.sh".source = ./hypr/start.sh;
     ".config/hypr/wallpaper.sh".source = ./hypr/wallpaper.sh;
