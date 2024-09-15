@@ -139,6 +139,7 @@
     pavucontrol
     protonup
     kdePackages.kdeconnect-kde
+    freetube
 
     #shell related packages
     fish
@@ -155,12 +156,14 @@
     hyprshade
     hypridle
     hyprlock
+    inputs.hyprswitch.packages.x86_64-linux.default
 
     #file manager and related
     yazi
     lf
     xfce.thunar
     ncdu
+    xdragon
 
     #screen capture
     grim
