@@ -28,3 +28,4 @@ I would love any and all help because again **I have no idea what I am doing eve
 - make this (or a new repo, but preferably this) into a dotfiles repo
 - set up zfs
 - port all configs to home-manager
+- my desktop configuration is not up to speed yet so get it up to speed)
