@@ -1,32 +1,24 @@
 # packages.nix
 # install system packages here
-{ config, pkgs, ... }:
+{ config, pkgs, inputs,... }:
 {
  environment.systemPackages = with pkgs; [
-   git
-   discord
-   plexamp
-   swww
-   eww
-   qt6Packages.qwlroots
-   wl-clipboard
+   qt6Packages.qwlroots #what is this package bruh
+   
+   #misc
    nerdfonts
-   networkmanagerapplet
-   overskride
-   pavucontrol
-   protonup
-   kdePackages.kdeconnect-kde
-   vlc
-   ffmpeg
 
    #shell related packages
    fish
    starship
    kitty
+   eww # i know this isnt specific to wayland
 
    #wayland applications
    rofi-wayland
    waybar
+   swww
+   wl-clipboard
 
    #hypr
    hyprcursor
@@ -41,13 +33,16 @@
    xfce.thunar
    ncdu
 
-   #screen capture
+   #screen capture and video stuff
    grim
    slurp
    wf-recorder
+   inputs.focal.packages.${pkgs.system}.default
+   vlc
+   ffmpeg
 
    #terminal applications
-   sshfs
+   git
    fzf
    unar
    unzip
@@ -63,10 +58,23 @@
    localsend
    swappy
    termscp
+   sshfs
 
    #notifications
    libnotify
    inotify-tools
    dunst
+
+   #interfaces/menus
+   overskride
+   pavucontrol
+   networkmanagerapplet
+   
+   #gaming/music/misc-related
+   discord
+   plexamp
+   protonup
+   kdePackages.kdeconnect-kde
+
   ];
 }

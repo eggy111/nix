@@ -125,6 +125,9 @@
     shellAliases = { 
      rebuild-nix = "sudo nixos-rebuild switch --flake ~/Documents/nix/";
      cat = "bat";
+     lock = "hyprlock";
+     packages = "vim /home/eggy/Documents/nix/modules/packages.nix";
+     config-nix = "cd /home/eggy/Documents/nix";
          };
    };
 

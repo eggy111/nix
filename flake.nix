@@ -3,14 +3,18 @@
   inputs = {
     nixpkgs = { 
       url = "github:nixos/nixpkgs/nixos-unstable";
-    };
+     };
      home-manager = {
        url = "github:nix-community/home-manager";
        inputs.nixpkgs.follows = "nixpkgs";
-    };
+      };
     nix-colors.url = "github:misterio77/nix-colors";
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     nixos-hardware.url = "github:NixOS/nixos-hardware";
+     focal = {
+       url = "github:iynaix/focal";
+       inputs.nixpkgs.follows = "nixpkgs";
+     };
    };
    nixConfig = {
      extra-substituters = [
@@ -32,6 +36,7 @@
      self,
      nixpkgs,
      home-manager,
+     nixos-hardware,
      ...
    } @ inputs: let
      system = "x86_64-linux";
@@ -48,6 +53,7 @@
             modules = [
                 ./hosts/default/configuration.nix
                 inputs.home-manager.nixosModules.home-manager
+                nixos-hardware.nixosModules.framework-13-7040-amd
             ];
         };
     
@@ -58,6 +64,7 @@
                 inputs.home-manager.nixosModules.home-manager
             ];
         };
+    
     };
   };
 }
