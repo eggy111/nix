@@ -1,3 +1,4 @@
+#steam.nix
 #opengl, and maybe also proton stuff
 
  { pkgs, ... }:
@@ -18,11 +19,6 @@
 
    programs.gamemode.enable = true;
    
-  
-  # environment.systemPackages = with pkgs; [
-  #   protonup
-  # ];
-  
    environment.sessionVariables = {
      STEAM_EXTRA_COMPAT_TOOLS_PATH = 
      "/home/eggy/.stean/root/compatibilitytools.d";

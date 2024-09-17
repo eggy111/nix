@@ -8,6 +8,8 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+
+      # various modules which could be included in my configuration, but I modularized it for clarity
       ../../modules/bluetooth.nix
       ../../modules/discord.nix
       ../../modules/fonts.nix
@@ -32,6 +34,7 @@
   networking.hostName = "framework"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
+  #This enables support for flakes, and maybe also home-manager
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Configure network proxy if necessary
@@ -49,6 +52,8 @@
    pkgs.xdg-desktop-portal-gtk
    ];
  };
+ 
+ # Various config options to enable various graphical uis.  At this point I am using hyprland
  programs.hyprland = {
   enable = true;
   package = inputs.hyprland.packages.${pkgs.system}.hyprland;
@@ -75,8 +80,10 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  # Enable zsh
+#  Enable zsh
 #  programs.zsh.enable = true;
+
+#  Enable Fish
    programs.fish.enable = true;
  
     # use the example session manager (no others are packaged yet so this is enabled by default,
