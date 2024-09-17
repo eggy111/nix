@@ -45,6 +45,7 @@
    #terminal applications
    git
    fzf
+   frogmouth
    unar
    unzip
    bat
