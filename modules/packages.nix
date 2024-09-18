@@ -5,6 +5,7 @@
  environment.systemPackages = with pkgs; [
    qt6Packages.qwlroots #what is this package bruh
    mpv
+   onlyoffice-bin
    
    #misc
    nerdfonts
