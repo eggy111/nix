@@ -74,17 +74,17 @@
     ".config/wallpapers/14.png".source = ./wallpapers/14.png;
     ".config/wallpapers/15.png".source = ./wallpapers/15.png;
     ".config/wallpapers/16.png".source = ./wallpapers/16.png;
-    ".config/wallpapers/17.png".source = ./wallpapers/1.png;
-    ".config/wallpapers/18.png".source = ./wallpapers/2.png;
-    ".config/wallpapers/19.png".source = ./wallpapers/3.png;
-    ".config/wallpapers/20.png".source = ./wallpapers/4.png;
-    ".config/wallpapers/21.png".source = ./wallpapers/5.png;
-    ".config/wallpapers/22.png".source = ./wallpapers/6.png;
-    ".config/wallpapers/23.png".source = ./wallpapers/7.png;
-    ".config/wallpapers/24.png".source = ./wallpapers/8.png;
-    ".config/wallpapers/A.png".source = ./wallpapers/9.png;
-    ".config/wallpapers/B.png".source = ./wallpapers/10.png;
-    ".config/wallpapers/C.png".source = ./wallpapers/11.png;
+    ".config/wallpapers/17.png".source = ./wallpapers/17.png;
+    ".config/wallpapers/18.png".source = ./wallpapers/18.png;
+    ".config/wallpapers/19.png".source = ./wallpapers/19.png;
+    ".config/wallpapers/20.png".source = ./wallpapers/20.png;
+    ".config/wallpapers/21.png".source = ./wallpapers/21.png;
+    ".config/wallpapers/22.png".source = ./wallpapers/22.png;
+    ".config/wallpapers/23.png".source = ./wallpapers/23.png;
+    ".config/wallpapers/24.png".source = ./wallpapers/24.png;
+    ".config/wallpapers/A.png".source = ./wallpapers/A.png;
+    ".config/wallpapers/B.png".source = ./wallpapers/B.png;
+    ".config/wallpapers/C.png".source = ./wallpapers/C.png;
     ".config/wallpapers/jerma_nichijou.gif".source = ./wallpapers/jerma_nichijou.gif;
 
  #   #waybar config
