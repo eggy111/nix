@@ -10,6 +10,7 @@
       };
     nix-colors.url = "github:misterio77/nix-colors";
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
     nixos-hardware.url = "github:NixOS/nixos-hardware";
      focal = {
        url = "github:iynaix/focal";

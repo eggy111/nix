@@ -2,6 +2,11 @@
 #overlay for discord
 { config, pkgs, ... }:
 {
+
+   environment.systemPackages = with pkgs; [
+     discord  
+   ];
+
    # Discord Overlay
    nixpkgs.overlays = [
   (_: prev: {

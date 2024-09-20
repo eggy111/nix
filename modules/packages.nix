@@ -5,10 +5,17 @@
  environment.systemPackages = with pkgs; [
    qt6Packages.qwlroots #what is this package bruh
    mpv
-   onlyoffice-bin
    
+   #productivity related goods
+   onlyoffice-bin
+   qalculate-qt
+
    #misc
+   liberation_ttf_v1
    nerdfonts
+   procps
+   brightnessctl
+   inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
 
    #shell related packages
    fish
@@ -55,6 +62,8 @@
    vim 
    neovim
    pipes
+   pamixer
+   zip
 
    #file transfer things
    wireguard-tools
@@ -74,7 +83,6 @@
    networkmanagerapplet
    
    #gaming/music/misc-related
-   discord
    plexamp
    protonup
    kdePackages.kdeconnect-kde
