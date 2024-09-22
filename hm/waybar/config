@@ -44,7 +44,7 @@
          "format": "{name}: {icon}",
          "format-icons": {
              "1": "",
-             "2": "",
+             "2": "",
              "3": "",
              "4": "",
              "5": "",
@@ -70,14 +70,16 @@
     "group/quicklinks-left": {
      "orientation": "horizontal",
      "modules": [
-      "image",
+      "custom/nix",
       "custom/home-manager",
       "custom/hyprland",
      ],
     },
-    "image": {
-       "path": "/home/eggy/.config/nixos.png",
-       "on-click": "kitty vim ~/Documents/nix/hosts/default/configuration.nix",
+    "custom/nix": {
+       "format": "",
+       "tooltip": true,
+       "tooltip-format": "open nix config",
+       "on-click": "kitty ~/Documents/nix",
        "size": 18,
     },
 
@@ -160,7 +162,7 @@
         "critical-threshold": 80,
         // "format-critical": "{temperatureC}°C {icon}",
         "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
+        "format-icons": [""]
     },
     "backlight": {
         // "device": "acpi_video1",
@@ -175,7 +177,7 @@
         },
         "format": "{capacity}% {icon}",
         "format-full": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
+        "format-charging": "{capacity}% 󰂄",
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
@@ -199,9 +201,9 @@
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
+        "format-ethernet": "{ipaddr}/{cidr} 󰈀",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) 󰛵",
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
