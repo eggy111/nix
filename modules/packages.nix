@@ -13,6 +13,7 @@
    #misc
    liberation_ttf_v1
    nerdfonts
+   rofimoji
    procps
    brightnessctl
    inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default

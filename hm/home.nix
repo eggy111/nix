@@ -133,6 +133,14 @@
     
   };
 
+  programs.starship = {
+    enable = true;
+  # configuration written to ~/.config/starship.toml for now
+    settings = {
+    
+    };
+  };
+
   home ={
     shellAliases = { 
      rebuild-nix = "sudo nixos-rebuild switch --flake ~/Documents/nix/";
