@@ -16,18 +16,12 @@
   custom.nvidia.enable = false;
   custom.framework.enable = true;
 
-#  main-user.enable = true;
-#  main-user.userName = "eggy";
-
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "framework"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  #This enables support for flakes, and maybe also home-manager
-#  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -104,9 +98,6 @@
   };
   # Install firefox.
   programs.firefox.enable = true;
-
-  # Allow unfree packages
-#  nixpkgs.config.allowUnfree = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
