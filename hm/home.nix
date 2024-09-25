@@ -143,12 +143,12 @@
 
   home ={
     shellAliases = { 
-     rebuild-nix = "sudo nixos-rebuild switch --flake ~/Documents/nix/";
+     rebuild-switch = "sudo nixos-rebuild switch --flake ~/Documents/nix/";
      cat = "bat";
      lock = "hyprlock";
      packages = "vim /home/eggy/Documents/nix/modules/packages.nix";
      config-nix = "cd /home/eggy/Documents/nix";
-     test-nix = "sudo nixos-rebuild test --flake ~/Documents/nix/";
+     rebuild-test = "sudo nixos-rebuild test --flake ~/Documents/nix/";
          };
     pointerCursor = {
       package = pkgs.simp1e-cursors;
