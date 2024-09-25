@@ -24,6 +24,8 @@
       inputs.home-manager.nixosModules.home-manager
     ];
 
+  steam.enable = true;
+
   main-user.enable = true;
   main-user.userName = "eggy";
 
