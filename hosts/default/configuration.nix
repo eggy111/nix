@@ -1,6 +1,4 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
+# /hosts/default/configuration.nix 
 
 { config, pkgs, inputs, ... }:
 
@@ -8,28 +6,13 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-
-      # various modules which could be included in my configuration, but I modularized it for clarity
-      ../../modules/bluetooth.nix
-      ../../modules/discord.nix
-      ../../modules/fonts.nix
-      ../../modules/framework.nix
-      ../../modules/locale.nix
-      ../../modules/main-user.nix
-      ../../modules/neovim.nix
-      ../../modules/nvidia.nix
-      ../../modules/packages.nix
-      ../../modules/pipewire.nix
-      ../../modules/steam.nix
+      ../../modules
       inputs.home-manager.nixosModules.home-manager
     ];
 
   custom.steam.enable = true;
   custom.nvidia.enable = true;
-  custom.framewok.enable = false;
-
-  main-user.enable = true;
-  main-user.userName = "eggy";
+  custom.framework.enable = false;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -37,8 +20,6 @@
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -107,9 +88,6 @@
   };
   # Install firefox.
   programs.firefox.enable = true;
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
