@@ -14,7 +14,7 @@ I would love any and all help because again **I have no idea what I am doing eve
 - ~~set up screenshots~~
 - ~~set up hypridle~~
 - ~~set up hyprlock~~
-- set up hypr* (shade, shot, cursor, ... )
+- set up hypr* (~~shade~~, shot, ~~cursor~~, ... )
 - configure waybar
 - configure fish
 - configure yazi
