@@ -8,19 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-
-      # various modules which could be included in my configuration, but I modularized it for clarity
-      ../../modules/bluetooth.nix
-      ../../modules/discord.nix
-      ../../modules/fonts.nix
-      ../../modules/framework.nix
-      ../../modules/locale.nix
-      ../../modules/main-user.nix
-      ../../modules/neovim.nix
-      ../../modules/nvidia.nix
-      ../../modules/packages.nix
-      ../../modules/pipewire.nix
-      ../../modules/steam.nix
+      ../../modules
       inputs.home-manager.nixosModules.home-manager
     ];
 
@@ -28,8 +16,8 @@
   custom.nvidia.enable = false;
   custom.framework.enable = true;
 
-  main-user.enable = true;
-  main-user.userName = "eggy";
+#  main-user.enable = true;
+#  main-user.userName = "eggy";
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -39,7 +27,7 @@
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   #This enables support for flakes, and maybe also home-manager
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+#  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -118,7 +106,7 @@
   programs.firefox.enable = true;
 
   # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+#  nixpkgs.config.allowUnfree = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

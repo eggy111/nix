@@ -13,7 +13,7 @@
       ../../modules/bluetooth.nix
       ../../modules/discord.nix
       ../../modules/fonts.nix
-     # ../../modules/framework.nix
+      ../../modules/framework.nix
       ../../modules/locale.nix
       ../../modules/main-user.nix
       ../../modules/neovim.nix
@@ -23,6 +23,10 @@
       ../../modules/steam.nix
       inputs.home-manager.nixosModules.home-manager
     ];
+
+  custom.steam.enable = true;
+  custom.nvidia.enable = true;
+  custom.framewok.enable = false;
 
   main-user.enable = true;
   main-user.userName = "eggy";
