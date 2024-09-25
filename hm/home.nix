@@ -148,6 +148,7 @@
      lock = "hyprlock";
      packages = "vim /home/eggy/Documents/nix/modules/packages.nix";
      config-nix = "cd /home/eggy/Documents/nix";
+     test-nix = "sudo nixos-rebuild test --flake ~/Documents/nix/";
          };
     pointerCursor = {
       package = pkgs.simp1e-cursors;
