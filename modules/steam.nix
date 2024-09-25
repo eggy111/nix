@@ -5,11 +5,11 @@
 
  {
    options = {
-     steam.enable = 
+     custom.steam.enable = 
        lib.mkEnableOption "enables steam";
    };
 
-   config = lib.mkIf config.steam.enable {
+   config = lib.mkIf config.custom.steam.enable {
 
      hardware.graphics = {
        enable = true;

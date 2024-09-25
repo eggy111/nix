@@ -2,10 +2,10 @@
 
 {
   options = {
-    nvidia.enable = 
+    custom.nvidia.enable = 
       lib.mkEnableOption  "enables nvidia support";
   };
-  config = lib.mkIf config.nvidia.enable {
+  config = lib.mkIf config.custom.nvidia.enable {
     services.xserver.videoDrivers = [ "nvidia" ];
 
     boot = {

@@ -24,8 +24,9 @@
       inputs.home-manager.nixosModules.home-manager
     ];
 
-  steam.enable = true;
-  nvidia.enable = false;
+  custom.steam.enable = true;
+  custom.nvidia.enable = false;
+  custom.framework.enable = true;
 
   main-user.enable = true;
   main-user.userName = "eggy";
