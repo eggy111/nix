@@ -10,22 +10,22 @@ I have flakes, but I don't understand them they make my head hurt and I try to t
 I would love any and all help because again **I have no idea what I am doing ever** I am mostly following vimjoyers guides on youtube, and what the lovely people in his discord tell me I should do.  
 
 ## My current To Do
-- **setup modularity will need help but is important**
+- setup modularity will need help but is important **getting close!**
 - ~~set up screenshots~~
 - ~~set up hypridle~~
 - ~~set up hyprlock~~
-- set up hypr* (~~shade~~, shot, ~~cursor~~, ... )
-- configure waybar
+- ~~set up hypr* (shade, cursor, ... )~~
+- configure waybar **in progress**
 - configure fish
 - configure yazi
 - configure notifications
 - configure vim (more likely neovim)
 - ~~set up wireguard client~~
 - ~~configure wl-clipboard (just figure it out how it works and what it can do first)~~
-- setup screen recording
+- setup screen recording **in progress - almost done!**
 - configure rofi
 - ~~configure swww~~
 - make this (or a new repo, but preferably this) into a dotfiles repo
 - set up zfs
 - port all configs to home-manager
-- my desktop configuration is not up to speed yet so get it up to speed)
+- my desktop configuration is not up to speed yet so get it up to speed) **in progress**
