@@ -66,6 +66,7 @@
    pipes
    pamixer
    zip
+   yt-dlp
 
    #file transfer things
    wireguard-tools
