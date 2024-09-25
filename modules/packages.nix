@@ -14,6 +14,7 @@
    liberation_ttf_v1
    nerdfonts
    rofimoji
+   zint
    procps
    brightnessctl
    inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
