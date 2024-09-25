@@ -17,7 +17,7 @@
       ../../modules/locale.nix
       ../../modules/main-user.nix
       ../../modules/neovim.nix
-#      ../../modules/nvidia.nix
+      ../../modules/nvidia.nix
       ../../modules/packages.nix
       ../../modules/pipewire.nix
       ../../modules/steam.nix
@@ -25,6 +25,7 @@
     ];
 
   steam.enable = true;
+  nvidia.enable = false;
 
   main-user.enable = true;
   main-user.userName = "eggy";
