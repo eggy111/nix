@@ -9,7 +9,7 @@
        inputs.nixpkgs.follows = "nixpkgs";
       };
     nix-colors.url = "github:misterio77/nix-colors";
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+   # hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
     nixos-hardware.url = "github:NixOS/nixos-hardware";
      focal = {
@@ -54,7 +54,7 @@
             modules = [
                 ./hosts/default/configuration.nix
                 inputs.home-manager.nixosModules.home-manager
-                nixos-hardware.nixosModules.framework-13-7040-amd
+               # nixos-hardware.nixosModules.framework-13-7040-amd
             ];
         };
     
@@ -63,6 +63,7 @@
             modules = [
                 ./hosts/framework/configuration.nix
                 inputs.home-manager.nixosModules.home-manager
+                nixos-hardware.nixosModules.framework-13-7040-amd
             ];
         };
     

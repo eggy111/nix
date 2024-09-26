@@ -67,6 +67,7 @@
    pamixer
    zip
    yt-dlp
+   pokeget-rs
 
    #file transfer things
    wireguard-tools

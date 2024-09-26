@@ -24,7 +24,7 @@ PS: If you are reading this on github, it may be worthwhile to know that this re
 - configure vim (more likely neovim)
 - ~~set up wireguard client~~
 - ~~configure wl-clipboard (just figure it out how it works and what it can do first)~~
-- setup screen recording **in progress - almost done!**
+- ~~setup screen recording~~ 
 - configure rofi
 - ~~configure swww~~
 - make this (or a new repo, but preferably this) into a dotfiles repo

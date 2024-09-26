@@ -16,11 +16,4 @@
     ./steam.nix
   ];
 
-  main-user.enable = true;
-  main-user.userName = "eggy";
-  # Enables home-manager and flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  
-  # Allow unfree packages 
-  nixpkgs.config.allowUnfree = true;
 }
