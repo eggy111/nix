@@ -130,14 +130,56 @@
     enable = true;
     shellAliases = lib.mkForce { };
     shellAbbrs = config.home.shellAliases;
+          # fix starship prompt to only have newlines after the first command
+      # https://github.com/starship/starship/issues/560#issuecomment-1465630645
+      shellInit = ''
+        function postexec_newline --on-event fish_postexec
+          echo ""
+        end
+      '';
+      # add transient prompt for fish via transient.fish plugin in fish.nix
+      # the starship transience module doesn't handle empty commands properly
+      interactiveShellInit = lib.mkAfter ''
+        function transient_prompt_func
+          starship module character
+        end
+      '';
     
   };
 
   programs.starship = {
     enable = true;
+    enableFishIntegration = true;
   # configuration written to ~/.config/starship.toml for now
-    settings = {
-    
+    settings =
+      let 
+        dir_bg = "blue";
+        accent_style = "bg:${dir_bg} fg:black";
+        
+        important_style = "bg:white fg:bold #ff0000";
+      in 
+      {
+      add_newline = false;
+      format = lib.concatStrings [
+        # begin left format
+        "$username"
+        "$hostname"
+        "$directory[](${dir_bg}) "
+        "$git_branch"
+        "$git_state"
+        "$git_status"
+        "$nix_shell"
+        # end left format
+        "$fill"
+        # begin right format
+        "[](${dir_bg})"
+        "[ ](${accent_style})"
+        "$time"
+        # end right format
+        "$line_break"
+        "$character"
+      ];
+
     };
   };
 

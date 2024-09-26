@@ -22,4 +22,6 @@
 
  # Allow unfree packages
  nixpkgs.config.allowUnfree = true;
+ 
+ security.pam.services.hyprlock = { };
 }
