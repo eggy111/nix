@@ -7,9 +7,9 @@ I like how much I can make Nixos my own, and how easy it is to reproduce using i
 
 I have flakes, but I don't understand them they make my head hurt and I try to touch them as little as possible (I fear for when I get nixos on laptop and have two devices).  I also have home-manager which i am slowly learning and liking.  It seems easy enough :D 
 
-I would love any and all help because again **I have no idea what I am doing ever** I am mostly following vimjoyers guides on youtube, and what the lovely people in his discord tell me I should do.  #
+I would love any and all help because again **I have no idea what I am doing ever** I am mostly following vimjoyers guides on youtube, and what the lovely people in his discord tell me I should do.  
 
-**Wallpapers I use are made by 8pxl please check them out [here!](https://8pxl.co)
+**Wallpapers I use are made by 8pxl please check them out [here!](https://8pxl.co)**
 
 PS: If you are reading this on github, it may be worthwhile to know that this repo is a mirror of a repo I self host on my own gitea instance which is not publicly accessible.  But if you want to contribute I won't say no hehe
 
