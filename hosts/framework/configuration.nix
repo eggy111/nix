@@ -21,10 +21,10 @@
   networking.hostName = "framework"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-  main-user.enable = true;
-  main-user.userName = "eggy";
+#  main-user.enable = true;
+#  main-user.userName = "eggy";
   # Enables home-manager and flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes"];
+#  nix.settings.experimental-features = [ "nix-command" "flakes"];
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

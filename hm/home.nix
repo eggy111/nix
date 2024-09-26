@@ -147,7 +147,7 @@
      cat = "bat";
      lock = "hyprlock";
      packages = "vim /home/eggy/Documents/nix/modules/packages.nix";
-     config-nix = "cd /home/eggy/Documents/nix";
+     cn = "cd /home/eggy/Documents/nix";
      rebuild-test = "sudo nixos-rebuild test --flake ~/Documents/nix/";
          };
     pointerCursor = {
