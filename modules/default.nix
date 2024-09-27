@@ -7,6 +7,7 @@
     ./discord.nix
     ./fonts.nix
     ./framework.nix
+    ./graphics.nix
     ./locale.nix
     ./main-user.nix
     ./neovim.nix

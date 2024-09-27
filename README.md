@@ -20,8 +20,8 @@ PS: If you are reading this on github, it may be worthwhile to know that this re
 - ~~set up hyprlock~~
 - ~~set up hypr* (shade, cursor, ... )~~
 - configure waybar **in progress**
-- configure fish
-- configure kitty **in progress**
+- ~~configure fish~~
+- ~~configure kitty~~ (both kitty, fish, and starship (which ironically isn't named) can and will need more configuration, but I am happy with it for now) 
 - configure yazi
 - configure notifications
 - configure vim (more likely neovim)

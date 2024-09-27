@@ -47,7 +47,6 @@
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
     # ".screenrc".source = dotfiles/screenrc;
-
     #hyprland config files
 #    ".config/hypr/hyprland.conf".source = ./hypr/hyprland.conf;
 #    ".config/hypr/hypridle.conf".source = ./hypr/hypridle.conf;
@@ -151,46 +150,22 @@
     enable = true;
     enableFishIntegration = true;
   # configuration written to ~/.config/starship.toml for now
-    settings =
-      let 
-        dir_bg = "blue";
-        accent_style = "bg:${dir_bg} fg:black";
-        
-        important_style = "bg:white fg:bold #ff0000";
-      in 
-      {
-      add_newline = false;
-      format = lib.concatStrings [
-        # begin left format
-        "$username"
-        "$hostname"
-        "$directory[](${dir_bg}) "
-        "$git_branch"
-        "$git_state"
-        "$git_status"
-        "$nix_shell"
-        # end left format
-        "$fill"
-        # begin right format
-        "[](${dir_bg})"
-        "[ ](${accent_style})"
-        "$time"
-        # end right format
-        "$line_break"
-        "$character"
-      ];
-
-    };
+    enableTransience = true;
+#    settings =
+#      {
+#      add_newline = false;
+#
+#    };
   };
 
   home ={
     shellAliases = { 
-     rebuild-switch = "sudo nixos-rebuild switch --flake ~/Documents/nix/";
+     rs = "sudo nixos-rebuild switch --flake ~/Documents/nix/";
      cat = "bat";
      lock = "hyprlock";
      packages = "vim /home/eggy/Documents/nix/modules/packages.nix";
      cn = "cd /home/eggy/Documents/nix";
-     rebuild-test = "sudo nixos-rebuild test --flake ~/Documents/nix/";
+     rt = "sudo nixos-rebuild test --flake ~/Documents/nix/";
          };
     pointerCursor = {
       package = pkgs.simp1e-cursors;

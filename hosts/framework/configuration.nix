@@ -28,25 +28,25 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
-  xdg.portal = {
-   enable = true;
+#  xdg.portal = {
+#   enable = true;
    #wlr.enable = true
    # config.common.default = "*";
-   extraPortals = [
-   pkgs.xdg-desktop-portal-gtk
-   ];
- };
+#   extraPortals = [
+#   pkgs.xdg-desktop-portal-gtk
+#   ];
+# };
  
  # Various config options to enable various graphical uis.  At this point I am using hyprland
- programs.hyprland = {
-  enable = true;
+# programs.hyprland = {
+#  enable = true;
  # package = inputs.hyprland.packages.${pkgs.system}.hyprland;
- }; 
+# }; 
 
- hardware.graphics = {
-   enable = true;
-   enable32Bit = true;
- };
+# hardware.graphics = {
+#   enable = true;
+#   enable32Bit = true;
+# };
 
   # Enable the X11 windowing system.
  # services.xserver.enable = true;
