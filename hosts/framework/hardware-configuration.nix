@@ -19,6 +19,8 @@
       fsType = "ext4";
     };
 
+  services.fprintd.enable = false;
+
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/6B34-06FF";
       fsType = "vfat";

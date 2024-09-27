@@ -12,7 +12,7 @@
 
   custom.steam.enable = true;
   custom.nvidia.enable = false;
-  custom.framework.enable = true;
+  custom.framework.enable = false;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;

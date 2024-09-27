@@ -21,6 +21,7 @@ PS: If you are reading this on github, it may be worthwhile to know that this re
 - ~~set up hypr* (shade, cursor, ... )~~
 - configure waybar **in progress**
 - configure fish
+- configure kitty **in progress**
 - configure yazi
 - configure notifications
 - configure vim (more likely neovim)
