@@ -102,7 +102,7 @@ window#waybar.hidden {
 	background: #babbf1;
 }
 
-#custom-home-manager {
+#custom-focal {
 	margin-top: 6px;
 	margin-left: 6px;
 	padding-left: 10px;
@@ -110,7 +110,7 @@ window#waybar.hidden {
 	margin-bottom: 0;
 	transition: none;
 	color: #161320;
-	background: #ca9ee6;
+	background: #babbf1;
 }
 
 #idle_inhibitor {
@@ -144,7 +144,7 @@ window#waybar.hidden {
 	margin-bottom: 0;
 	transition: none;
 	color: #161320;
-	background: #babbf1;
+	background: #ca9ee6;
 }
 
 #hyrpland-workspaces {

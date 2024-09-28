@@ -9,6 +9,7 @@
     // Choose the order of the modules
     "modules-left": [
         "group/quicklinks-left",
+        "custom/focal",
         "hyprland/window",
         "custom/media"
 
@@ -71,10 +72,18 @@
      "orientation": "horizontal",
      "modules": [
       "custom/nix",
-      "custom/home-manager",
       "custom/hyprland",
      ],
     },
+
+    "custom/focal": {
+      "exec": "focal-waybar --signal 1 --recording 'REC'",
+      "format": "{}",
+      "interval": "once",
+      "on-click": "focal video -- --stop",
+      "signal": 1
+    },
+    
     "custom/nix": {
        "format": "",
        "tooltip": true,
@@ -151,7 +160,9 @@
     },
     "cpu": {
         "format": "{usage}% ",
-        "tooltip": false
+        "tooltip": false,
+        "on-click": "kitty btop"
+
     },
     "memory": {
         "format": "{}% "

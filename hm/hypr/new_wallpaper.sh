@@ -3,7 +3,7 @@
 #Modified version of the randomize script by swww to not require passing an input
 
 
-DEFAULT_DIR="/home/eggy/Documents/nix/hm/wallpapers"
+DEFAULT_DIR="/home/eggy/.config/wallpapers"
 DIR="${1:-$DEFAULT_DIR}"
 if [[ ! -d $DIR ]]; then
 	echo "Directory not found: $DIR"
