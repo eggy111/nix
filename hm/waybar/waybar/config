@@ -160,7 +160,9 @@
     },
     "cpu": {
         "format": "{usage}% ",
-        "tooltip": false
+        "tooltip": false,
+        "on-click": "kitty btop"
+
     },
     "memory": {
         "format": "{}% "

@@ -28,31 +28,6 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
-  xdg.portal = {
-   enable = true;
-   #wlr.enable = true
-   # config.common.default = "*";
-   extraPortals = [
-   pkgs.xdg-desktop-portal-gtk
-   ];
- };
- programs.hyprland = {
-  enable = true;
- # package = inputs.hyprland.packages.${pkgs.system}.hyprland;
- }; 
-
- hardware.graphics = {
-   enable = true;
-   enable32Bit = true;
- };
-
-  # Enable the X11 windowing system.
- # services.xserver.enable = true;
-
-  # Enable the GNOME Desktop Environment.
- # services.xserver.displayManager.gdm.enable = true;
- # services.xserver.desktopManager.gnome.enable = true;
-
   # Configure keymap in X11
   services.xserver = {
     xkb.layout = "us";
@@ -69,15 +44,6 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.eggy = {
-    isNormalUser = true;
-    #description = "eggy";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-    #  thunderbird
-    ];
-  };
   
   home-manager = {
     # also pass inputs to home-manger modules.

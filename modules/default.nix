@@ -3,21 +3,21 @@
 { 
   imports = 
    [
+    ./users
     ./bluetooth.nix
     ./discord.nix
     ./fonts.nix
     ./framework.nix
     ./graphics.nix
     ./locale.nix
-    ./main-user.nix
     ./neovim.nix
     ./nvidia.nix
     ./packages.nix
     ./pipewire.nix
     ./steam.nix
   ];
- main-user.enable = true;
- main-user.userName = "eggy";
+ #main-user.enable = true;
+ #main-user.userName = "eggy";
  # Enables home-manager, and flakes
  nix.settings.experimental-features = ["nix-command" "flakes"];
 
