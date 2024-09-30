@@ -18,6 +18,7 @@
    procps
    brightnessctl
    inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
+   texliveTeTeX
 
    #shell related packages
    fish
@@ -68,6 +69,7 @@
    zip
    yt-dlp
    pokeget-rs
+   pandoc
 
    #file transfer things
    wireguard-tools

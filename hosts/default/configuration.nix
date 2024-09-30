@@ -13,6 +13,7 @@
   custom.steam.enable = true;
   custom.nvidia.enable = true;
   custom.framework.enable = false;
+  custom.discord.enable = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -43,15 +44,7 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
-
   
-  home-manager = {
-    # also pass inputs to home-manger modules.
-    extraSpecialArgs = { inherit inputs; };
-    users = {
-      "eggy" = import ../../hm/home.nix;
-    };
-  };
   # Install firefox.
   programs.firefox.enable = true;
 

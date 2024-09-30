@@ -14,7 +14,7 @@ I would love any and all help because again **I have no idea what I am doing eve
 PS: If you are reading this on github, it may be worthwhile to know that this repo is a mirror of a repo I self host on my own gitea instance which is not publicly accessible.  But if you want to contribute I won't say no hehe
 
 ## My current To Do
-- setup modularity will need help but is important **getting close!**
+- ~~setup modularity will need help but is important~~ 
 - ~~set up screenshots~~
 - ~~set up hypridle~~
 - ~~set up hyprlock~~

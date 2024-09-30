@@ -1,8 +1,13 @@
 #discord.nix
 #overlay for discord
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 {
 
+  options = {
+    custom.discord.enable = 
+      lib.mkEnableOption "enables discord support, with overlays";
+  };
+ config = lib.mkIf config.custom.discord.enable {  
    environment.systemPackages = with pkgs; [
      discord  
    ];
@@ -29,4 +34,5 @@
     });
   })
  ];
+};
 }
