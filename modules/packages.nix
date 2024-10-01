@@ -52,6 +52,7 @@
    inputs.focal.packages.${pkgs.system}.default
    vlc
    ffmpeg
+   droidcam
 
    #terminal applications
    git
@@ -63,6 +64,8 @@
    neofetch
    wget
    vim 
+   eza
+   lavat
    neovim
    pipes
    pamixer
