@@ -5,6 +5,7 @@
    [
     ./users
     ./bluetooth.nix
+    ./desktop.nix
     ./discord.nix
     ./fonts.nix
     ./framework.nix

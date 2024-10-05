@@ -73,6 +73,7 @@
    yt-dlp
    #pokeget-rs
    pandoc
+   #whipper
 
    #file transfer things
    wireguard-tools

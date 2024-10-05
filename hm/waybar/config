@@ -80,7 +80,7 @@
       "exec": "focal-waybar --signal 1 --recording 'REC'",
       "format": "{}",
       "interval": "once",
-      "on-click": "focal video -- --stop",
+      "on-click": "focal video --stop",
       "signal": 1
     },
     
