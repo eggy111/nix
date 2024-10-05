@@ -34,3 +34,8 @@ PS: If you are reading this on github, it may be worthwhile to know that this re
 - set up zfs
 - port all configs to home-manager
 - my desktop configuration is not up to speed yet so get it up to speed) **in progress**
+- finish server config
+- setup zfs on server (install nixos??)
+- fonts.nix needs mkDefault support somehow, others do too, but it also needs mkOption 
+- finish modularizing the packages group
+- clean up the todo list (lol)

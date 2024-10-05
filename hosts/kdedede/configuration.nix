@@ -1,4 +1,4 @@
-# /hosts/framework/configuration.nix
+# /hosts/default/configuration.nix 
 
 { config, pkgs, inputs, ... }:
 
@@ -10,17 +10,17 @@
       inputs.home-manager.nixosModules.home-manager
     ];
 
-  custom.steam.enable = true;
+  custom.steam.enable = false;
   custom.nvidia.enable = false;
   custom.framework.enable = false;
-  custom.discord.enable = true;
+  custom.discord.enable = false;
   custom.hyprland.enable = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "framework"; # Define your hostname.
+  networking.hostName = "dedede"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -39,19 +39,13 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-#  Enable zsh
+  # Enable zsh
 #  programs.zsh.enable = true;
-
-#  Enable Fish
    programs.fish.enable = true;
- 
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
-
+  
   # Install firefox.
   programs.firefox.enable = true;
 
@@ -67,7 +61,7 @@
 
   # Enable the OpenSSH daemon.
    services.openssh.enable = true;
-
+ 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];

@@ -13,6 +13,7 @@
     ./neovim.nix
     ./nvidia.nix
     ./packages.nix
+    ./packages
     ./pipewire.nix
     ./steam.nix
   ];

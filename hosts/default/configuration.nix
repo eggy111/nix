@@ -14,6 +14,7 @@
   custom.nvidia.enable = true;
   custom.framework.enable = false;
   custom.discord.enable = true;
+  custom.hyprland.enable = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;

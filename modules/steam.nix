@@ -22,6 +22,7 @@
 
      environment.systemPackages = with pkgs; [
        mangohud
+       protonup
      ];
 
      programs.gamemode.enable = true;
