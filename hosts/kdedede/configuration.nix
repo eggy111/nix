@@ -1,4 +1,4 @@
-# /hosts/default/configuration.nix 
+# /hosts/kdedede/configuration.nix 
 
 { config, pkgs, inputs, ... }:
 
@@ -14,7 +14,8 @@
   custom.nvidia.enable = false;
   custom.framework.enable = false;
   custom.discord.enable = false;
-  custom.hyprland.enable = true;
+  custom.hyprland.enable = false;
+  custom.gui.enable = false;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
