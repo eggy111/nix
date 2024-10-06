@@ -70,10 +70,10 @@
      dedede = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
           modules = [
-               ./hosts/dedede/configuration.nix
-               inputs.home-manager.nixosModules.home-hmanager
+               ./hosts/kdedede/configuration.nix
+               inputs.home-manager.nixosModules.home-manager
       ];
-    
+     }; 
     };
   };
 }
