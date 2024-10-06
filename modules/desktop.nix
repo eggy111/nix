@@ -5,14 +5,14 @@
 
 {
   options = {
-    custom.desktop.enable = 
+    custom.desktopp.enable = 
       lib.mkEnableOption "desktop packages";
   };
   
-  custom.desktop.enable =
+  custom.desktopp.enable =
     lib.mkDefault false;
 
-  config = lib.mkIf config.custom.desktop.enable {
+  config = lib.mkIf config.custom.desktopp.enable {
  
   environtment.systemPackages = with pkgs; [
     whipper
