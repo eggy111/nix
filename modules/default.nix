@@ -1,6 +1,6 @@
 #default.nix
 #barrel file for my modules
-{ lib, ... }
+{ lib, ... }:
 { 
   imports = 
    [

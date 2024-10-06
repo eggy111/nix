@@ -11,7 +11,7 @@
   
   config = lib.mkIf config.custom.desktopp.enable {
  
-  environtment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs; [
     whipper
    ]; 
   };
