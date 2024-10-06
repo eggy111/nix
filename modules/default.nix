@@ -1,5 +1,6 @@
 #default.nix
 #barrel file for my modules
+{ lib, ... }
 { 
   imports = 
    [
@@ -27,4 +28,8 @@
  nixpkgs.config.allowUnfree = true;
  
  security.pam.services.hyprlock = { };
+
+ custom.desktopp.enable =
+   lib.mkDefault false;
+ 
 }

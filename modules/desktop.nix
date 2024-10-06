@@ -9,9 +9,6 @@
       lib.mkEnableOption "desktop packages";
   };
   
-  custom.desktopp.enable =
-    lib.mkDefault false;
-
   config = lib.mkIf config.custom.desktopp.enable {
  
   environtment.systemPackages = with pkgs; [
