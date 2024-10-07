@@ -18,6 +18,7 @@
 
      #file manager and related
      xfce.thunar
+     qdirstat
 
      #terminal applications #i know you dont need a gui for these, but they are applications i dont need on my servers :P
      lavat
@@ -32,7 +33,8 @@
 
      #game/music/misc-related
      plexamp
-     kdePackages.kdeconnect-kde
+     #kdePackages.kdeconnect-kde
    ];
+  programs.kdeconnect.enable = true;
  };
 }
