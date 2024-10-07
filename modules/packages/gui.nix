@@ -16,15 +16,24 @@
      #misc
      rofimoji
 
+     #shell related packages
+     kitty
+
      #file manager and related
      xfce.thunar
      qdirstat
+
+     #screen capture and video stuff
+     vlc
+     ffmpeg
+     droicam
 
      #terminal applications #i know you dont need a gui for these, but they are applications i dont need on my servers :P
      lavat
      pipes
      pamixer
      pokeget-rs
+     claws-mail
 
      #interfaces/menus
      overskride

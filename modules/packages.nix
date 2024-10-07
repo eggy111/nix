@@ -22,7 +22,7 @@
    #shell related packages
    fish
    starship
-   kitty
+   #kitty
    #eww # i know this isnt specific to wayland
 
    #wayland applications

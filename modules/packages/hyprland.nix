@@ -35,9 +35,6 @@
     slurp
     wf-recorder
     inputs.focal.packages.${pkgs.system}.default
-    vlc
-    ffmpeg
-    droidcam
 
     brightnessctl
     eww
