@@ -48,6 +48,8 @@
    #screen capture and video stuff
    #grim
    #slurp
+   swappy
+   gthumb
    #wf-recorder
    #inputs.focal.packages.${pkgs.system}.default
    #vlc
@@ -78,7 +80,6 @@
    #file transfer things
    wireguard-tools
    localsend
-   swappy
    termscp
    sshfs
 

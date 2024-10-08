@@ -18,6 +18,7 @@
     ./packages
     ./pipewire.nix
     ./steam.nix
+    ./zfs.nix
   ];
  #main-user.enable = true;
  #main-user.userName = "eggy";
@@ -30,6 +31,9 @@
  security.pam.services.hyprlock = { };
 
  custom.desktopp.enable =
+   lib.mkDefault false;
+
+ custom.zfs-server.enable = 
    lib.mkDefault false;
  
 }

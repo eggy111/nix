@@ -10,11 +10,14 @@
       inputs.home-manager.nixosModules.home-manager
     ];
 
-  custom.steam.enable = true;
-  custom.nvidia.enable = false;
-  custom.framework.enable = false;
-  custom.discord.enable = true;
-  custom.hyprland.enable = true;
+  custom = {
+    steam.enable = true;
+    nvidia.enable = false;
+    framework.enable = false;
+    discord.enable = true;
+    hyprland.enable = true;
+    desktop.enable = false;
+  };
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;

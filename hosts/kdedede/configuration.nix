@@ -10,12 +10,16 @@
       inputs.home-manager.nixosModules.home-manager
     ];
 
-  custom.steam.enable = false;
-  custom.nvidia.enable = false;
-  custom.framework.enable = false;
-  custom.discord.enable = false;
-  custom.hyprland.enable = false;
-  custom.gui.enable = false;
+  custom = {
+    steam.enable = false;
+    nvidia.enable = false;
+    framework.enable = false;
+    discord.enable = false;
+    hyprland.enable = false;
+    gui.enable = false;
+    desktop.enable = false;
+    zfs-server.enable = true;
+  };
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -38,7 +42,7 @@
   };
 
   # Enable CUPS to print documents.
-  services.printing.enable = true;
+  services.printing.enable = false;
 
   # Enable zsh
 #  programs.zsh.enable = true;
@@ -48,7 +52,7 @@
   # services.xserver.libinput.enable = true;
   
   # Install firefox.
-  programs.firefox.enable = true;
+  programs.firefox.enable = false;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
