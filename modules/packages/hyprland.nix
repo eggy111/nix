@@ -14,11 +14,12 @@
     #Wayland related packages
     rofi-wayland
     rofi-bluetooth
+    rofi-power-menu
     waybar
     swww
     wl-clipboard
 
-    #hyprland
+    hyprland
     hyprcursor
     #hyprshot #idk if I even want this since I got grim and slurp running
     hyprshade
