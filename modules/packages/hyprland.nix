@@ -13,6 +13,7 @@
    
     #Wayland related packages
     rofi-wayland
+    rofi-bluetooth
     waybar
     swww
     wl-clipboard

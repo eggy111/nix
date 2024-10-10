@@ -16,7 +16,7 @@
     framework.enable = false;
     discord.enable = true;
     hyprland.enable = true;
-    desktop.enable = false;
+    desktopp.enable = false;
   };
 
   # Bootloader.

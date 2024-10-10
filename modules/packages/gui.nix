@@ -7,6 +7,9 @@
  };
 
  config = lib.mkIf config.custom.gui.enable {
+
+   programs.droidcam.enable = true;
+
    environment.systemPackages = with pkgs; [
      mpv
 
@@ -26,7 +29,7 @@
      #screen capture and video stuff
      vlc
      ffmpeg
-     droidcam
+     #droidcam
 
      #terminal applications #i know you dont need a gui for these, but they are applications i dont need on my servers :P
      lavat

@@ -15,7 +15,7 @@
     nvidia.enable = true;
     framework.enable = false;
     discord.enable = true;
-    desktop.enable = true;
+    desktopp.enable = true;
   };
 
   # Bootloader.
