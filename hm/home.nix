@@ -166,6 +166,7 @@
      packages = "vim /home/eggy/Documents/nix/modules/packages.nix";
      cn = "cd /home/eggy/Documents/nix";
      rt = "sudo nixos-rebuild test --flake ~/Documents/nix/";
+     hyprland = "Hyprland";
          };
     pointerCursor = {
       package = pkgs.simp1e-cursors;
