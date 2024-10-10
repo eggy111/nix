@@ -17,6 +17,7 @@
     ./packages.nix
     ./packages
     ./pipewire.nix
+    ./sops.nix
     ./steam.nix
     #./zfs.nix
   ];
