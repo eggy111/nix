@@ -15,6 +15,7 @@
     rofi-wayland
     rofi-bluetooth
     rofi-power-menu
+    rofimoji
     waybar
     swww
     wl-clipboard

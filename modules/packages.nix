@@ -44,17 +44,7 @@
    lf
    #xfce.thunar
    ncdu
-
-   #screen capture and video stuff
-   #grim
-   #slurp
-   swappy
-   gthumb
-   #wf-recorder
-   #inputs.focal.packages.${pkgs.system}.default
-   #vlc
-   #ffmpeg
-   #droidcam
+   tree
 
    #terminal applications
    git

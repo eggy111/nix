@@ -6,11 +6,9 @@
    [
     ./users
     ./bluetooth.nix
-    ./desktop.nix
     ./discord.nix
     ./fonts.nix
     ./framework.nix
-    ./graphics.nix
     ./locale.nix
     ./neovim.nix
     ./nvidia.nix
@@ -31,10 +29,16 @@
  
  security.pam.services.hyprlock = { };
 
- custom.desktopp.enable =
+ custom.desktop.enable =
+   lib.mkDefault false;
+ custom.nvidia.enable = 
+   lib.mkDefault false;
+ custom.framework.enable =
    lib.mkDefault false;
 
  #custom.zfs-server.enable = 
  #  lib.mkDefault false;
+
+ # networking.wireless.enable = true; # Enables wireless support via wpa_supplicant
  
 }

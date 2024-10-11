@@ -12,12 +12,9 @@
 
   custom = {
     steam.enable = false;
-    nvidia.enable = false;
-    framework.enable = false;
     discord.enable = false;
     hyprland.enable = false;
     gui.enable = false;
-    desktop.enable = false;
     zfs-server.enable = true;
   };
 
@@ -26,20 +23,12 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "dedede"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-  # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
   networking.networkmanager.enable = true;
-
-  # Configure keymap in X11
-  services.xserver = {
-    xkb.layout = "us";
-    xkb.variant = "";
-  };
 
   # Enable CUPS to print documents.
   services.printing.enable = false;
@@ -61,8 +50,6 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
-
-  # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
    services.openssh.enable = true;

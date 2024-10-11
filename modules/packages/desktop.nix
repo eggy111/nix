@@ -5,11 +5,11 @@
 
 {
   options = {
-    custom.desktopp.enable = 
+    custom.desktop.enable = 
       lib.mkEnableOption "desktop packages";
   };
   
-  config = lib.mkIf config.custom.desktopp.enable {
+  config = lib.mkIf config.custom.desktop.enable {
  
   environment.systemPackages = with pkgs; [
     whipper
