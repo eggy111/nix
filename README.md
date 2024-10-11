@@ -14,28 +14,34 @@ I would love any and all help because again **I have no idea what I am doing eve
 PS: If you are reading this on github, it may be worthwhile to know that this repo is a mirror of a repo I self host on my own gitea instance which is not publicly accessible.  But if you want to contribute I won't say no hehe
 
 ## My current To Do
-- ~~setup modularity will need help but is important~~ 
-- ~~set up screenshots~~
-- ~~set up hypridle~~
-- ~~set up hyprlock~~
-- ~~set up hypr* (shade, cursor, ... )~~
-- configure waybar **in progress**
-- ~~configure fish~~
-- ~~configure kitty~~ (both kitty, fish, and starship (which ironically isn't named) can and will need more configuration, but I am happy with it for now) 
+
+### In Progress
+- configure waybar
+- port all configs to home-manager
+
+### To Do
 - configure yazi
 - configure notifications
 - configure vim (more likely neovim)
-- ~~set up wireguard client~~
-- ~~configure wl-clipboard (just figure it out how it works and what it can do first)~~
-- ~~setup screen recording~~ 
 - configure rofi
-- ~~configure swww~~
 - make this (or a new repo, but preferably this) into a dotfiles repo
 - set up zfs
-- port all configs to home-manager
-- my desktop configuration is not up to speed yet so get it up to speed) **in progress**
 - finish server config
 - setup zfs on server (install nixos??)
 - fonts.nix needs mkDefault support somehow, others do too, but it also needs mkOption 
 - finish modularizing the packages group
-- clean up the todo list (lol)
+
+### Completed
+- ~~setup modularity will need help but is important~~ 
+- ~~set up wireguard client~~
+- ~~configure wl-clipboard (just figure it out how it works and what it can do first)~~
+- ~~configure swww~~
+- ~~setup screen recording~~ 
+- ~~configure kitty~~ (both kitty, fish, and starship (which ironically isn't named) can and will need more configuration, but I am happy with it for now) 
+- ~~configure fish~~
+- ~~set up screenshots~~
+- ~~set up hypridle~~
+- ~~set up hyprlock~~
+- ~~set up hypr* (shade, cursor, ... )~~
+- ~~my desktop configuration is not up to speed yet so get it up to speed)~~
+- ~~clean up the todo list (lol)~~
