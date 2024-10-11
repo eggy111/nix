@@ -1,22 +1,30 @@
  { 
   description = "nixos config flake";
   inputs = {
+
     nixpkgs = { 
       url = "github:nixos/nixpkgs/nixos-unstable";
      };
+
      home-manager = {
        url = "github:nix-community/home-manager";
        inputs.nixpkgs.follows = "nixpkgs";
       };
+
     nix-colors.url = "github:misterio77/nix-colors";
    # hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
     nixos-hardware.url = "github:NixOS/nixos-hardware";
+
+    sops-nix.url = "github:Mic92/sops-nix";
+
      focal = {
        url = "github:iynaix/focal";
        inputs.nixpkgs.follows = "nixpkgs";
      };
    };
+ 
+
    nixConfig = {
      extra-substituters = [
        "https://hyprland.cachix.org"
@@ -32,7 +40,9 @@
        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
        "yazi.cachix.org-1:Dcdz63NZKfvUCbDGngQDAZq6kOroIrFoyO064uvLh8k="
            ];
-         };         
+         };
+
+         
    outputs = {
      self,
      nixpkgs,
@@ -48,32 +58,32 @@
        };
      };
     in {
- nixosConfigurations = {
-    nixos = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
-            modules = [
-                ./hosts/default/configuration.nix
-                inputs.home-manager.nixosModules.home-manager
-               # nixos-hardware.nixosModules.framework-13-7040-amd
-            ];
-        };
-    
-    framework = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
-            modules = [
-                ./hosts/framework/configuration.nix
-                inputs.home-manager.nixosModules.home-manager
-                nixos-hardware.nixosModules.framework-13-7040-amd
-            ];
-        };
-
-     dedede = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
-          modules = [
-               ./hosts/kdedede/configuration.nix
+       nixosConfigurations = {
+          nixos = nixpkgs.lib.nixosSystem {
+           specialArgs = {inherit inputs;};
+           modules = [
+               ./hosts/default/configuration.nix
                inputs.home-manager.nixosModules.home-manager
-      ];
-     }; 
+               # nixos-hardware.nixosModules.framework-13-7040-amd
+           ];
+          };
+    
+          framework = nixpkgs.lib.nixosSystem {
+           specialArgs = {inherit inputs;};
+           modules = [
+               ./hosts/framework/configuration.nix
+               inputs.home-manager.nixosModules.home-manager
+               nixos-hardware.nixosModules.framework-13-7040-amd
+           ];
+          };
+
+          dedede = nixpkgs.lib.nixosSystem {
+           specialArgs = {inherit inputs;};
+           modules = [
+              ./hosts/kdedede/configuration.nix
+              inputs.home-manager.nixosModules.home-manager
+           ];
+          }; 
+       };
     };
-  };
 }
