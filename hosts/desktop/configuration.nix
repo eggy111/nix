@@ -1,15 +1,13 @@
-# /hosts/default/configuration.nix 
-
-{ config, pkgs, inputs, ... }:
+# /hosts/default/configuration.nix
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ../../modules
-      inputs.home-manager.nixosModules.home-manager
-    ];
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
+{
   custom = {
     steam.enable = true;
     nvidia.enable = true;
@@ -34,12 +32,12 @@
   services.printing.enable = true;
 
   # Enable zsh
-#  programs.zsh.enable = true;
-   programs.fish.enable = true;
+  #  programs.zsh.enable = true;
+  programs.fish.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
-  
+
   # Install firefox.
   programs.firefox.enable = true;
 
@@ -52,8 +50,8 @@
   # };
 
   # Enable the OpenSSH daemon.
-   services.openssh.enable = true;
- 
+  services.openssh.enable = true;
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
