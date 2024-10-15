@@ -19,7 +19,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "desktop"; # Define your hostname.
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";

@@ -8,28 +8,18 @@
    enable = true;
    settings = {
 
-    env = [
-      "XCURSOR_SIZE,24"
-      "HYPRCURSOR_SIZE,24"
-      "HYPRCURSOR_THEME,rose-pine-hyprcursor"
-      "$EDITOR,vim"
-      "$mainMod,SUPER"
-      "$terminal,kitty"
-      
-    ];
-
     bind = [
   
-      "$mainMod, Q, exec, $terminal"
+      "$mainMod, Q, exec, kitty ~"
       "$mainMod SHIFT, Q, exec, kitty ~/Documents/nix"
       "$mainMod, C, killactive,"
       "$mainMod, M, exit,"
       "$mainMod, V, togglefloating,"
-      "$mainMod, R, exec $menu"
+      "$mainMod, R, exec, $menu"
       "$mainMod, P, pseudo # dwindle"
       "$mainMod, J, togglesplit # dwindle"
       "$mainMod, F, exec, firefox"
-      "$mainMod, e, exec, kitty yazi"
+      "$mainMod, e, exec, kitty yazi ~"
       "$mainMod, D, exec, discord"
       "$mainMod SHIFT, D, exec, [floating] plexamp"
       "$mainMod, l, exec, hyprlock"
@@ -38,12 +28,12 @@
       "bin = $mainMod SHIFT, e, exec, [floating] rofimoji"
       
       #wireguard bindings
-      "$mainMod, W, exec, [floating] kitty wg-quick up desktop"
-      "$mainMod SHIFT, W, exec, [floating] kitty wg-quick down desktop"
+      "$mainMod, W, exec, [floating] kitty wg-quick up $(hostname)"
+      "$mainMod SHIFT, W, exec, [floating] kitty wg-quick down $(hostname)"
       
       #screen capture bindings
       ''$mainMod, S, exec, grim -g "$(slurp -w 0)" - | wl-copy''
-      ''$mainMod SHIFT, S, exec, grim -g "$(slur -w 0)" - | swappy -f -''
+      ''$mainMod SHIFT, S, exec, grim -g "$(slurp -w 0)" - | swappy -f -''
       "$mainMod, backslash, exec, focal-waybar --toggle --signal 1 --recording 'REC' --rofi --no-rounded-windows"
       "$mainMod SHIFT, backslash, exec, focal-waybar --toggle --signal 1 --recording 'REC' --rofi --no-rounded-windows --audio"
      
@@ -70,19 +60,19 @@
       "$mainMod, 7, workspace, 7"
       "$mainMod, 8, workspace, 8"
       "$mainMod, 9, workspace, 9"
-      "$mainMod, 10, workspace, 10"
+      "$mainMod, 0, workspace, 10"
 
       # Move active window to a workspace with  mainMOd + SHIFT + [0-9]
-      "$mainMod SHIFT, 1, workspace, 1"
-      "$mainMod SHIFT, 2, workspace, 2"
-      "$mainMod SHIFT, 3, workspace, 3"
-      "$mainMod SHIFT, 4, workspace, 4"
-      "$mainMod SHIFT, 5, workspace, 5"
-      "$mainMod SHIFT, 6, workspace, 6"
-      "$mainMod SHIFT, 7, workspace, 7"
-      "$mainMod SHIFT, 8, workspace, 8"
-      "$mainMod SHIFT, 9, workspace, 9"
-      "$mainMod SHIFT, 10, workspace, 10"
+      "$mainMod SHIFT, 1, movetoworkspace, 1"
+      "$mainMod SHIFT, 2, movetoworkspace, 2"
+      "$mainMod SHIFT, 3, movetoworkspace, 3"
+      "$mainMod SHIFT, 4, movetoworkspace, 4"
+      "$mainMod SHIFT, 5, movetoworkspace, 5"
+      "$mainMod SHIFT, 6, movetoworkspace, 6"
+      "$mainMod SHIFT, 7, movetoworkspace, 7"
+      "$mainMod SHIFT, 8, movetoworkspace, 8"
+      "$mainMod SHIFT, 9, movetoworkspace, 9"
+      "$mainMod SHIFT, 0, movetoworkspace, 10"
       
       # Example special workspace (scratchpad)
       "$mainMod, a, togglespecialworkspace, magic"
@@ -90,14 +80,14 @@
 
       # Scroll through existing workspaces with mainMod + scroll
       "$mainMod, mouse_down, workspace, e+1"
-      "$mainMod, mouse_up, worksapce, e-1"
+      "$mainMod, mouse_up, workspace, e-1"
 
 
       # Volume and brightness control for laptop
-      "XF86MonBrightnessDown, exec, brightnessctl set 5%-"
-      "XF86MonBrightnessUp, exec, brightness set +5%"
-      "XF86AudioLowerVolume, exec, pamixer -d 5"
-      "XF86AudioRaiseVolume, exec, pamixer -i 5"
+      ",XF86MonBrightnessDown, exec, brightnessctl set 5%-"
+      ",XF86MonBrightnessUp, exec, brightnessctl set +5%"
+      ",XF86AudioLowerVolume, exec, pamixer -d 5"
+      ",XF86AudioRaiseVolume, exec, pamixer -i 5"
     ];
 
     bindm = [  
@@ -121,6 +111,18 @@
       "DP-2, preferred, 2560x0, auto #dell s3222dgm"
     ];
 
+    env = [
+      "XCURSOR_SIZE,24"
+      "HYPRCURSOR_SIZE,24"
+      "HYPRCURSOR_THEME,rose-pine-hyprcursor"
+      "EDITOR,vim"
+      
+    ];
+
+      "$EDITOR" = "vim";
+      "$mainMod" = "SUPER";
+      "$terminal" = "kitty";
+      "$menu" = "rofi -show drun -show-icons";
 
     general = {
       gaps_in = 5;
@@ -128,8 +130,8 @@
       border_size = 2;
 
       # https://wiki.hyprland.org/Configuring/Variables/#variable-types for info about colors
-      col.active_border = "rgba(ea76cbee) rgba(7287fdee) 45deg";
-      col.inactive_border = "rgba(595959aa)";
+      "col.active_border" = "rgba(ea76cbee) rgba(7287fdee) 45deg";
+      "col.inactive_border" = "rgba(595959aa)";
 
       # Set to true enable resizing windows by clicking and dragging on borders and gaps
       resize_on_border = false; 
@@ -180,7 +182,7 @@
     };
 
     dwindle = {
-      psuedotile = true; # Master switch for pseudotiling. Enabling is bound in keybinds
+      pseudotile = true; # Master switch for pseudotiling. Enabling is bound in keybinds
       preserve_split = true; 
     };
 
@@ -199,7 +201,7 @@
     };
     
     gestures = {
-      workspace_swuoe = true;
+      workspace_swipe = true;
     };
 
     device = {
