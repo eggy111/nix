@@ -10,7 +10,7 @@
 
     bind = [
   
-      "$mainMod, Q, exec, kitty"
+      "$mainMod, Q, exec, kitty ~"
       "$mainMod SHIFT, Q, exec, kitty ~/Documents/nix"
       "$mainMod, C, killactive,"
       "$mainMod, M, exit,"
@@ -19,7 +19,7 @@
       "$mainMod, P, pseudo # dwindle"
       "$mainMod, J, togglesplit # dwindle"
       "$mainMod, F, exec, firefox"
-      "$mainMod, e, exec, kitty yazi"
+      "$mainMod, e, exec, kitty yazi ~"
       "$mainMod, D, exec, discord"
       "$mainMod SHIFT, D, exec, [floating] plexamp"
       "$mainMod, l, exec, hyprlock"
@@ -33,7 +33,7 @@
       
       #screen capture bindings
       ''$mainMod, S, exec, grim -g "$(slurp -w 0)" - | wl-copy''
-      ''$mainMod SHIFT, S, exec, grim -g "$(slur -w 0)" - | swappy -f -''
+      ''$mainMod SHIFT, S, exec, grim -g "$(slurp -w 0)" - | swappy -f -''
       "$mainMod, backslash, exec, focal-waybar --toggle --signal 1 --recording 'REC' --rofi --no-rounded-windows"
       "$mainMod SHIFT, backslash, exec, focal-waybar --toggle --signal 1 --recording 'REC' --rofi --no-rounded-windows --audio"
      
@@ -60,19 +60,19 @@
       "$mainMod, 7, workspace, 7"
       "$mainMod, 8, workspace, 8"
       "$mainMod, 9, workspace, 9"
-      "$mainMod, 10, workspace, 10"
+      "$mainMod, 0, workspace, 10"
 
       # Move active window to a workspace with  mainMOd + SHIFT + [0-9]
-      "$mainMod SHIFT, 1, workspace, 1"
-      "$mainMod SHIFT, 2, workspace, 2"
-      "$mainMod SHIFT, 3, workspace, 3"
-      "$mainMod SHIFT, 4, workspace, 4"
-      "$mainMod SHIFT, 5, workspace, 5"
-      "$mainMod SHIFT, 6, workspace, 6"
-      "$mainMod SHIFT, 7, workspace, 7"
-      "$mainMod SHIFT, 8, workspace, 8"
-      "$mainMod SHIFT, 9, workspace, 9"
-      "$mainMod SHIFT, 10, workspace, 10"
+      "$mainMod SHIFT, 1, movetoworkspace, 1"
+      "$mainMod SHIFT, 2, movetoworkspace, 2"
+      "$mainMod SHIFT, 3, movetoworkspace, 3"
+      "$mainMod SHIFT, 4, movetoworkspace, 4"
+      "$mainMod SHIFT, 5, movetoworkspace, 5"
+      "$mainMod SHIFT, 6, movetoworkspace, 6"
+      "$mainMod SHIFT, 7, movetoworkspace, 7"
+      "$mainMod SHIFT, 8, movetoworkspace, 8"
+      "$mainMod SHIFT, 9, movetoworkspace, 9"
+      "$mainMod SHIFT, 0, movetoworkspace, 10"
       
       # Example special workspace (scratchpad)
       "$mainMod, a, togglespecialworkspace, magic"
