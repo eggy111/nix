@@ -10,12 +10,12 @@
 
     bind = [
   
-      "$mainMod, Q, exec, $terminal"
+      "$mainMod, Q, exec, kitty"
       "$mainMod SHIFT, Q, exec, kitty ~/Documents/nix"
       "$mainMod, C, killactive,"
       "$mainMod, M, exit,"
       "$mainMod, V, togglefloating,"
-      "$mainMod, R, exec $menu"
+      "$mainMod, R, exec, $menu"
       "$mainMod, P, pseudo # dwindle"
       "$mainMod, J, togglesplit # dwindle"
       "$mainMod, F, exec, firefox"
@@ -80,14 +80,14 @@
 
       # Scroll through existing workspaces with mainMod + scroll
       "$mainMod, mouse_down, workspace, e+1"
-      "$mainMod, mouse_up, worksapce, e-1"
+      "$mainMod, mouse_up, workspace, e-1"
 
 
       # Volume and brightness control for laptop
-      "XF86MonBrightnessDown, exec, brightnessctl set 5%-"
-      "XF86MonBrightnessUp, exec, brightness set +5%"
-      "XF86AudioLowerVolume, exec, pamixer -d 5"
-      "XF86AudioRaiseVolume, exec, pamixer -i 5"
+      ",XF86MonBrightnessDown, exec, brightnessctl set 5%-"
+      ",XF86MonBrightnessUp, exec, brightnessctl set +5%"
+      ",XF86AudioLowerVolume, exec, pamixer -d 5"
+      ",XF86AudioRaiseVolume, exec, pamixer -i 5"
     ];
 
     bindm = [  
@@ -115,11 +115,14 @@
       "XCURSOR_SIZE,24"
       "HYPRCURSOR_SIZE,24"
       "HYPRCURSOR_THEME,rose-pine-hyprcursor"
-      "$EDITOR,vim"
-      "$mainMod,SUPER"
-      "$terminal,kitty"
+      "EDITOR,vim"
       
     ];
+
+      "$EDITOR" = "vim";
+      "$mainMod" = "SUPER";
+      "$terminal" = "kitty";
+      "$menu" = "rofi -show drun -show-icons";
 
     general = {
       gaps_in = 5;
