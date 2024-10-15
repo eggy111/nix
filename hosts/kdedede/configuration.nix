@@ -1,21 +1,19 @@
-# /hosts/kdedede/configuration.nix 
-
-{ config, pkgs, inputs, ... }:
+# /hosts/kdedede/configuration.nix
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ../../modules
-      inputs.home-manager.nixosModules.home-manager
-    ];
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
+{
   custom = {
     steam.enable = false;
     discord.enable = false;
     hyprland.enable = false;
     gui.enable = false;
-    zfs-server.enable = true;
+    # zfs-server.enable = true;
   };
 
   # Bootloader.
@@ -34,12 +32,12 @@
   services.printing.enable = false;
 
   # Enable zsh
-#  programs.zsh.enable = true;
-   programs.fish.enable = true;
+  #  programs.zsh.enable = true;
+  programs.fish.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
-  
+
   # Install firefox.
   programs.firefox.enable = false;
 
@@ -52,8 +50,8 @@
   # };
 
   # Enable the OpenSSH daemon.
-   services.openssh.enable = true;
- 
+  services.openssh.enable = true;
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];

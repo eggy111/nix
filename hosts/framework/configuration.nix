@@ -1,15 +1,13 @@
 # /hosts/framework/configuration.nix
 
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ../../modules
-      inputs.home-manager.nixosModules.home-manager
-    ];
-
   custom = {
     steam.enable = true;
     framework.enable = false;
@@ -33,10 +31,10 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-#  Enable zsh
-#  programs.zsh.enable = true;
-   programs.fish.enable = true;
- 
+  #  Enable zsh
+  #  programs.zsh.enable = true;
+  programs.fish.enable = true;
+
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
@@ -52,7 +50,7 @@
   # };
 
   # Enable the OpenSSH daemon.
-   services.openssh.enable = true;
+  services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
