@@ -8,16 +8,6 @@
    enable = true;
    settings = {
 
-    env = [
-      "XCURSOR_SIZE,24"
-      "HYPRCURSOR_SIZE,24"
-      "HYPRCURSOR_THEME,rose-pine-hyprcursor"
-      "$EDITOR,vim"
-      "$mainMod,SUPER"
-      "$terminal,kitty"
-      
-    ];
-
     bind = [
   
       "$mainMod, Q, exec, $terminal"
@@ -38,8 +28,8 @@
       "bin = $mainMod SHIFT, e, exec, [floating] rofimoji"
       
       #wireguard bindings
-      "$mainMod, W, exec, [floating] kitty wg-quick up desktop"
-      "$mainMod SHIFT, W, exec, [floating] kitty wg-quick down desktop"
+      "$mainMod, W, exec, [floating] kitty wg-quick up $(hostname)"
+      "$mainMod SHIFT, W, exec, [floating] kitty wg-quick down $(hostname)"
       
       #screen capture bindings
       ''$mainMod, S, exec, grim -g "$(slurp -w 0)" - | wl-copy''
@@ -121,6 +111,15 @@
       "DP-2, preferred, 2560x0, auto #dell s3222dgm"
     ];
 
+    env = [
+      "XCURSOR_SIZE,24"
+      "HYPRCURSOR_SIZE,24"
+      "HYPRCURSOR_THEME,rose-pine-hyprcursor"
+      "$EDITOR,vim"
+      "$mainMod,SUPER"
+      "$terminal,kitty"
+      
+    ];
 
     general = {
       gaps_in = 5;
@@ -128,8 +127,8 @@
       border_size = 2;
 
       # https://wiki.hyprland.org/Configuring/Variables/#variable-types for info about colors
-      col.active_border = "rgba(ea76cbee) rgba(7287fdee) 45deg";
-      col.inactive_border = "rgba(595959aa)";
+      "col.active_border" = "rgba(ea76cbee) rgba(7287fdee) 45deg";
+      "col.inactive_border" = "rgba(595959aa)";
 
       # Set to true enable resizing windows by clicking and dragging on borders and gaps
       resize_on_border = false; 
@@ -180,7 +179,7 @@
     };
 
     dwindle = {
-      psuedotile = true; # Master switch for pseudotiling. Enabling is bound in keybinds
+      pseudotile = true; # Master switch for pseudotiling. Enabling is bound in keybinds
       preserve_split = true; 
     };
 
@@ -199,7 +198,7 @@
     };
     
     gestures = {
-      workspace_swuoe = true;
+      workspace_swipe = true;
     };
 
     device = {
