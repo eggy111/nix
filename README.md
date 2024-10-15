@@ -17,7 +17,7 @@ PS: If you are reading this on github, it may be worthwhile to know that this re
 
 ### In Progress
 - configure waybar
-- port all configs to home-manager
+- port all configs to home-manager (this has begun! hyprland is not managed by hm!)
 
 ### To Do
 - configure yazi
@@ -29,7 +29,6 @@ PS: If you are reading this on github, it may be worthwhile to know that this re
 - finish server config
 - setup zfs on server (install nixos??)
 - fonts.nix needs mkDefault support somehow, others do too, but it also needs mkOption 
-- finish modularizing the packages group
 
 ### Completed
 - ~~setup modularity will need help but is important~~ 
@@ -45,3 +44,4 @@ PS: If you are reading this on github, it may be worthwhile to know that this re
 - ~~set up hypr* (shade, cursor, ... )~~
 - ~~my desktop configuration is not up to speed yet so get it up to speed)~~
 - ~~clean up the todo list (lol)~~
+- ~~finish modularizing the packages group~~ (tbh ill never be done with this, but it is good enough for now!)
