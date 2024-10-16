@@ -6,10 +6,14 @@
    enable = true;
    
    settings = {
-     source = "/home/eggy/hypr/colors.conf";
+     "$background" = "rgb(010204)";
+     "$foreground" = "rgb(CAE6E6)";
+     "$color2" = "rgb(14272E)";
+
+    # source = "/home/eggy/hypr/colors.conf";
      general = {
        ignore_empty_input = true;
-       grace = 120;
+       grace = 30;
      };
 
      background = [

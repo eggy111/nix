@@ -98,10 +98,13 @@
     ];
    
     exec-once = [
-      "bash ~/.config/hypr/start.sh &"
+      #"bash ~/.config/hypr/start.sh &"
       "hypridle &"
       "swww-daemon &"
-      "hyprctl set cursor rose-pine-hyprcursor 28&"
+      "hyprctl set cursor rose-pine-hyprcursor 28 &"
+      "waybar &"
+      "nm-applet --indicator &"
+      "dunst"
     ];
   
     windowrulev2 = "suppressevent maximize, class:.*";
