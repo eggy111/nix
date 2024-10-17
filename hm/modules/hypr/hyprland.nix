@@ -24,7 +24,7 @@
       "$mainMod SHIFT, D, exec, [floating] plexamp"
       "$mainMod, l, exec, hyprlock"
       "$mainMod, G, exec, steam"
-      "$mainMod SHIFT, C, exec, [floating] mpv av://v4l2:/dev/video0 --profile=low-latency --untimed"
+      "$mainMod SHIFT, C, exec, [floating] mpv av://v4l2:/dev/video1 --profile=low-latency --untimed"
       "bin = $mainMod SHIFT, e, exec, [floating] rofimoji"
       
       #wireguard bindings
