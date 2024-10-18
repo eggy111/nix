@@ -19,6 +19,7 @@
     waybar
     swww
     wl-clipboard
+    pyprland
 
     hyprland
     hyprcursor

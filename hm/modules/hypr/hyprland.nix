@@ -25,7 +25,10 @@
       "$mainMod, l, exec, hyprlock"
       "$mainMod, G, exec, steam"
       "$mainMod SHIFT, C, exec, [floating] mpv av://v4l2:/dev/video1 --profile=low-latency --untimed"
-      "bin = $mainMod SHIFT, e, exec, [floating] rofimoji"
+      "$mainMod SHIFT, e, exec, [floating] rofimoji"
+      "$mainMod, B, exec, pypr expose"
+      "$mainMod SHIFT, V, exec, pypr toggle volume"
+      "$mainMod, T, exec, pypr toggle term"
       
       #wireguard bindings
       "$mainMod, W, exec, [floating] kitty wg-quick up $(hostname)"
@@ -104,7 +107,8 @@
       "hyprctl set cursor rose-pine-hyprcursor 28 &"
       "waybar &"
       "nm-applet --indicator &"
-      "dunst"
+      "dunst &"
+      "pypr"
     ];
   
     windowrulev2 = "suppressevent maximize, class:.*";

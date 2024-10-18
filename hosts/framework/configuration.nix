@@ -10,7 +10,7 @@
 {
   custom = {
     steam.enable = true;
-    framework.enable = false;
+    framework.enable = true;
     discord.enable = true;
     desktop.enable = false;
   };
