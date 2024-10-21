@@ -54,6 +54,7 @@
    unzip
    bat
    neofetch
+   fastfetch
    wget
    vim 
    eza
