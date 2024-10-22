@@ -36,6 +36,7 @@
      pamixer
      pokeget-rs
      claws-mail
+     playerctl
 
      #interfaces/menus
      overskride

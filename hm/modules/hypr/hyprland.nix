@@ -29,6 +29,7 @@
       "$mainMod, B, exec, pypr expose"
       "$mainMod SHIFT, V, exec, pypr toggle volume"
       "$mainMod, T, exec, pypr toggle term"
+      "$mainMod SHIFT, T, exec, pypr toggle btop"
       
       #wireguard bindings
       "$mainMod, W, exec, [floating] kitty wg-quick up $(hostname)"
@@ -91,6 +92,10 @@
       ",XF86MonBrightnessUp, exec, brightnessctl set +5%"
       ",XF86AudioLowerVolume, exec, pamixer -d 5"
       ",XF86AudioRaiseVolume, exec, pamixer -i 5"
+      ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+      ",XF86AudioPlay, exec, playerctl play-pause"
+      ",XF86AudioPrev, exec, playerctl previous"
+      ",XF86AudioNext, exec, playerctl next"
     ];
 
     bindm = [  
