@@ -25,7 +25,7 @@
       "$mainMod, l, exec, hyprlock"
       "$mainMod, G, exec, steam"
       "$mainMod SHIFT, C, exec, [floating] mpv av://v4l2:/dev/video1 --profile=low-latency --untimed"
-      "$mainMod SHIFT, e, exec, [floating] rofimoji"
+      ''$mainMod SHIFT, e, exec, rofi -modi "emoji:rofimoji" -show emoji''
       "$mainMod, B, exec, pypr expose"
       "$mainMod SHIFT, V, exec, pypr toggle volume"
       "$mainMod, T, exec, pypr toggle term"
