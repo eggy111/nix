@@ -1,0 +1,178 @@
+# waybar.nix
+# a home-manager module
+
+{pkgs, lib, config, ... }:
+{
+ programs.waybar = {
+   enable = true;
+   settings = {
+     mainBar = {
+       "reload_style_on_change" = true;
+       height = 33;
+       spacing = 4;
+       modules-left = [ "group/quicklinks-left" "custom/plexbar" "custom/focal" ];
+       modules-center = [ "hyprland/workspaces" ];
+       modules-right = [
+         "bluetooth"
+         "mpd"
+         "idle_inhibitor"
+         "pulseaudio"
+         "network"
+         "power-profiles-daemon"
+         "cpu"
+         "memory"
+         "temperature"
+         "backlight"
+         "battery"
+         "clock"
+         "tray"
+         "custom/power"
+       ];
+       "hyprland/workspaces" = {
+         disable-scroll = true;
+         sort-by = "number";
+         all-outputs = true;
+         warp-on-scroll = false;
+         format = "{name}";
+         #"format-icons": {
+         
+         #};
+       };
+       
+       "group/quicklinks-left" = {
+         orientation = "horizontal";
+         modules = [
+           "custom/nix"
+           "custom/hyprland"
+         ];
+       };
+       "custom/nix" = {
+         format = "";
+         tooltip = true;
+         tooltip-format = "Open nix directory";
+         on-click = "kitty ~/Documents/nix";
+         size = 18;
+       };
+
+       "custom/focal" = {
+         exec = "focal-waybar --signal 1 --recording 'REC'";
+         format = "{}";
+         on-click = "focal video -- --stop";
+         signal = 1;
+       };
+       #"custom/hyprland" = {
+       #  "format" = " home ";
+       #  "tooltip = true; 
+       #  "tooltip-format" = "open hyprland config";
+       #  "on-click" = "kitty vim ~/.config/hypr/hyprland.conf";
+       #};
+
+       clock = {
+         tooltip-format = ''<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>'';
+         format-alt = "{:%Y-%m-%d}";
+       };
+
+       cpu = {
+         format = "{usage}% ";
+         tooltip = false;
+         on-click = "pypr toggle btop";
+       };
+
+       memory = {
+         format = "{}% ";
+       };
+
+       temperature = {
+         critical-threshold = 80;
+         format = "{temperatureC}°C {icon}";
+         format-icons = [""];
+       };
+ 
+       backlight = {
+         format = "{percent}% {icon}";
+         format-icons = ["" "" "" "" "" "" "" "" ""];
+       };
+
+       battery = {
+         states = {
+           "good" = 95;
+           "warning" = 30;
+           "critical" = 15;
+         };
+         format = "{capacity}% {icon}";
+         format-full = "{capacity}% {icon}";
+         format-charging = "{capacity}% 󰂄";
+         format-plugged = "{capacity}% ";
+         format-alt = "{time} {icon}";
+         format-good = "";
+         #format-full = "";
+         format-icons = ["" "" "" "" ""];
+       };
+     
+       power-profiles-daemon = { 
+         format = "{icon}";
+         tooltip-format = ''Power profile: {profile}\nDriver: {driver}'';
+         tooltip = true;
+         format-icons = {
+          #"default" = " ";
+          performance = ""; 
+          balanced = "";
+          power-saver = "";
+         };
+       };
+
+       network = {
+         format-wifi = "{essid} ({signalStrength}%) ";
+         format-ethernet = "{ipaddr}/{cidr} 󰈀";
+         tooltip-format = "{ifname} via {gwaddr}  ";
+         format-linked = "{ifname} (No IP) 󰛵 "; 
+         format-disconnected = "Disconnected ⚠";
+         format-alt = "{ifname}: {ipaddr}/{cidr}";
+       };
+
+       pulseaudio = {
+         format = "{volume}% {icon} {format_source}";
+         format-bluetooth = "{volume}% {icon} {format_source}";
+         format-bluetooth-muted = "󰝟 {icon} {format_source}";
+         format-muted = "󰝟 {format_source}";
+         format-source = "{volume}% ";
+         format-source-muted = "";
+         format-icons = {
+           "default" = ["" "" ""];
+         };
+         on-click = "pypr toggle volume";
+       };
+
+       "custom/power" = {
+         format = "⏻ ";
+         tooltip = false;
+         menu = "on-click";
+         menu-file = "$HOME/.config/waybar/power-menu.xml";
+         menu-actions = {
+           shutdown = "shutdown";
+           reboot = "reboot";
+           suspend = "systemctl suspend";
+           hibernate = "systemctl hibernate";
+         };
+       };
+
+       idle_inhibitor = {
+         format = "{icon}";
+         format-icons = {
+           activated = "";
+           deactivated = "";
+         };
+       };
+
+       bluetooth = {
+         format = " {status}";
+         format-disabled = "";
+         format-connected = " {num_connections} connected";
+         tooltip-format = "{controller_alias}\t{controller_address}";
+         tooltip-format-connected = ''{controller_alias}\t{controller_address}\n\n{device_enumerate}'';
+         tooltip-format-enumerate-connected = ''{device_alias}\t{device_address}'';
+       };
+     };
+   };
+ };
+}

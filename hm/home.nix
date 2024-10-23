@@ -87,6 +87,7 @@
     settings = {
       shell = lib.getExe pkgs.fish;
     };
+    themeFile = "Eldritch";
   };
   
   programs.fish = { 

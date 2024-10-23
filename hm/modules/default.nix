@@ -4,5 +4,6 @@
 {
   imports = [
     ./hypr
+    ./waybar.nix
   ];
 }
