@@ -127,11 +127,11 @@
       "XCURSOR_SIZE,24"
       "HYPRCURSOR_SIZE,24"
       "HYPRCURSOR_THEME,rose-pine-hyprcursor"
-      "EDITOR,vim"
+      "EDITOR,nvim"
       
     ];
 
-      "$EDITOR" = "vim";
+      "$EDITOR" = "nvim";
       "$mainMod" = "SUPER";
       "$terminal" = "kitty";
       "$menu" = "rofi -show drun -show-icons";

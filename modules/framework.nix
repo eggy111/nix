@@ -3,6 +3,7 @@
 { config, pkgs, lib, ... }:
 {
  
+
  options = {
    custom.framework.enable =
      lib.mkEnableOption "enables framework config";

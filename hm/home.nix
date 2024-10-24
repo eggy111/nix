@@ -79,7 +79,7 @@
   #  /etc/profiles/per-user/eggy/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-     EDITOR = "vim";
+     EDITOR = "nvim";
      XCURSOR_SIZE = config.home.pointerCursor.size;
   };
   

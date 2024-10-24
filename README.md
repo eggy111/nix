@@ -16,21 +16,21 @@ PS: If you are reading this on github, it may be worthwhile to know that this re
 ## My current To Do
 
 ### In Progress
-- configure waybar
-- port all configs to home-manager (this has begun! hyprland is not managed by hm!)
+- port all configs to home-manager (this has begun! hypr\*, and waybar (just config, need to port style) are now managed by hm!)
+- configure neovim 
 
 ### To Do
 - configure yazi
 - configure notifications
-- configure vim (more likely neovim)
+- configure waybar
 - configure rofi
-- make this (or a new repo, but preferably this) into a dotfiles repo
 - set up zfs
 - finish server config
 - setup zfs on server (install nixos??)
 - fonts.nix needs mkDefault support somehow, others do too, but it also needs mkOption 
 
 ### Completed
+- ~~make this (or a new repo, but preferably this) into a dotfiles repo~~ (essentially because of home-manager it is, just a bad name)
 - ~~setup modularity will need help but is important~~ 
 - ~~set up wireguard client~~
 - ~~configure wl-clipboard (just figure it out how it works and what it can do first)~~

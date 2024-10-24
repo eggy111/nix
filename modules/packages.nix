@@ -7,42 +7,22 @@
    #mpv
    
    #productivity related goods
-   #onlyoffice-bin
    qalculate-qt
 
    #misc
-   #liberation_ttf_v1
-   #nerdfonts
-   #rofimoji
    zint
    procps # Utilities that give information about processes using the /proc filesystem
-   #brightnessctl
    texliveTeTeX
+   gnumake
+   libgcc
 
    #shell related packages
    fish
    starship
-   #kitty
-   #eww # i know this isnt specific to wayland
-
-   #wayland applications
-   #rofi-wayland
-   #waybar
-   #swww
-   #wl-clipboard
-
-   #hypr
-   #hyprcursor
-   #inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
-   #hyprshot #idk if I even want this isnce I got frim and slurp running
-   #hyprshade
-   #hypridle
-   #hyprlock
 
    #file manager and related
    yazi
    lf
-   #xfce.thunar
    ncdu
    tree
 
@@ -50,6 +30,8 @@
    git
    fzf
    frogmouth
+   nixfmt-rfc-style
+   nixd
    unar
    unzip
    bat
@@ -58,35 +40,16 @@
    wget
    vim 
    eza
-   #lavat
    neovim
-   #pipes
-   #pamixer
    zip
    yt-dlp
-   #pokeget-rs
    pandoc
-   #whipper
 
    #file transfer things
    wireguard-tools
    localsend
    termscp
    sshfs
-
-   #notifications
-   #libnotify
-   #inotify-tools
-   #dunst
-
-   #interfaces/menus
-   #overskride
-   #pavucontrol
-   #networkmanagerapplet
-   
-   #gaming/music/misc-related
-   #plexamp
-   #kdePackages.kdeconnect-kde
 
   ];
 }

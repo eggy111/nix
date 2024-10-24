@@ -1,6 +1,6 @@
 #default.nix
 #barrel file for my modules
-{ lib, ... }:
+{ lib, inputs, ... }:
 {
   imports = [
     ./users
@@ -31,6 +31,8 @@
   custom.desktop.enable = lib.mkDefault false;
   custom.nvidia.enable = lib.mkDefault false;
   custom.framework.enable = lib.mkDefault false;
+
+  nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 
   #custom.zfs-server.enable =
   #  lib.mkDefault false;
