@@ -2,6 +2,9 @@
 # install system packages here
 { config, pkgs, inputs,... }:
 {
+
+ programs.localsend.enable = true;
+
  environment.systemPackages = with pkgs; [
    qt6Packages.qwlroots #what is this package bruh
    #mpv
@@ -47,7 +50,7 @@
 
    #file transfer things
    wireguard-tools
-   localsend
+   #localsend
    termscp
    sshfs
 

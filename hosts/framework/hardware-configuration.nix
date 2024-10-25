@@ -32,7 +32,7 @@
     fsType = "ext4";
   };
 
-  services.fprintd.enable = false;
+  services.fprintd.enable = true;
 
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/6B34-06FF";

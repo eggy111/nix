@@ -23,6 +23,7 @@
       "$mainMod, D, exec, discord"
       "$mainMod SHIFT, D, exec, [floating] plexamp"
       "$mainMod, l, exec, hyprlock"
+      "$mainMod SHIFT, l, exec, hyprlock --immediate"
       "$mainMod, G, exec, steam"
       "$mainMod SHIFT, C, exec, [floating] mpv av://v4l2:/dev/video1 --profile=low-latency --untimed"
       ''$mainMod SHIFT, e, exec, rofi -modi "emoji:rofimoji" -show emoji''

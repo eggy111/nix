@@ -14,6 +14,7 @@
       general = {
         ignore_empty_input = true;
         grace = 30;
+        enable_fingerprint = true;
       };
 
       background = [
