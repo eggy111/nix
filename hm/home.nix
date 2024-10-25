@@ -52,7 +52,7 @@
     # # symlink to the Nix store copy.
     # ".screenrc".source = dotfiles/screenrc;
      ".config/hypr/pyprland.toml".source = ./modules/pyprland.toml;
-     ".config/waybar/style.css".souce = ./modules/waybar/style.css;
+     ".config/waybar/style.css".source = ./modules/waybar/style.css;
 
     
     # # You can also set the file content immediately.

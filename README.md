@@ -16,11 +16,10 @@ PS: If you are reading this on github, it may be worthwhile to know that this re
 ## My current To Do
 
 ### In Progress
-- port all configs to home-manager (this has begun! hypr\*, and waybar (just config, need to port style) are now managed by hm!)
 - configure neovim 
+- configure yazi
 
 ### To Do
-- configure yazi
 - configure notifications
 - configure waybar
 - configure rofi
@@ -30,6 +29,7 @@ PS: If you are reading this on github, it may be worthwhile to know that this re
 - fonts.nix needs mkDefault support somehow, others do too, but it also needs mkOption 
 
 ### Completed
+- ~~port all configs to home-manager~~ happy with this for now, it doesnt need to be a big todo i can make it smaller moving forward
 - ~~make this (or a new repo, but preferably this) into a dotfiles repo~~ (essentially because of home-manager it is, just a bad name)
 - ~~setup modularity will need help but is important~~ 
 - ~~set up wireguard client~~
