@@ -51,7 +51,8 @@
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
     # ".screenrc".source = dotfiles/screenrc;
-     ".config/hypr/pyprland.toml".source = ./pyprland.toml;
+     ".config/hypr/pyprland.toml".source = ./modules/pyprland.toml;
+     ".config/waybar/style.css".souce = ./modules/waybar/style.css;
 
     
     # # You can also set the file content immediately.

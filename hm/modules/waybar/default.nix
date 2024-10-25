@@ -1,9 +1,9 @@
-# hm/modules/default.nix
+# hm/modules/waybar/default.nix
 # barrel file for hm modules
 { lib, ... }:
 {
+
   imports = [
-    ./hypr
-    ./waybar
+    ./waybar.nix
   ];
 }
