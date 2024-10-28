@@ -5,11 +5,11 @@
 
 {
 
- environment.systemPackages =  with pkgs; [
-   liberation_ttf_v1
-   nerdfonts
-   
- ];
+  environment.systemPackages = with pkgs; [
+    liberation_ttf_v1
+    nerdfonts
 
- fonts.packages = [pkgs.nerdfonts];
- }
+  ];
+
+  fonts.packages = [ pkgs.nerdfonts ];
+}

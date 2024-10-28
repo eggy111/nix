@@ -1,47 +1,52 @@
 #hyprland.nix
-{ config, pkgs, inputs, lib, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  lib,
+  ...
+}:
 
 {
- options = {
-  custom.hyprland.enable = 
-    lib.mkEnableOption "enables hyprland";
- };
+  options = {
+    custom.hyprland.enable = lib.mkEnableOption "enables hyprland";
+  };
 
- config = lib.mkIf config.custom.hyprland.enable {
+  config = lib.mkIf config.custom.hyprland.enable {
 
-   environment.systemPackages = with pkgs; [
-   
-    #Wayland related packages
-    rofi-wayland
-    rofi-bluetooth
-    rofi-power-menu
-    rofimoji
-    waybar
-    swww
-    wl-clipboard
-    pyprland
+    environment.systemPackages = with pkgs; [
 
-    hyprland
-    hyprcursor
-    #hyprshot #idk if I even want this since I got grim and slurp running
-    hyprshade
-    hypridle
-    hyprlock
-    inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
+      #Wayland related packages
+      rofi-wayland
+      rofi-bluetooth
+      rofi-power-menu
+      rofimoji
+      waybar
+      swww
+      wl-clipboard
+      pyprland
 
-    #notifications
-    libnotify
-    inotify-tools
-    dunst
+      hyprland
+      hyprcursor
+      #hyprshot #idk if I even want this since I got grim and slurp running
+      hyprshade
+      hypridle
+      hyprlock
+      inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
 
-    #screen capture and video stuff
-    grim
-    slurp
-    wf-recorder
-    inputs.focal.packages.${pkgs.system}.default
+      #notifications
+      libnotify
+      inotify-tools
+      dunst
 
-    brightnessctl
-    eww
-   ];
- };
+      #screen capture and video stuff
+      grim
+      slurp
+      wf-recorder
+      inputs.focal.packages.${pkgs.system}.default
+
+      brightnessctl
+      eww
+    ];
+  };
 }

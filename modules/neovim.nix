@@ -2,7 +2,7 @@
 # configuration for neovim
 { config, pkgs, ... }:
 {
- programs.neovim = {
-   defaultEditor = true;
- };
+  programs.neovim = {
+    defaultEditor = true;
+  };
 }

@@ -1,9 +1,13 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   options = {
-    custom.nvidia.enable = 
-      lib.mkEnableOption  "enables nvidia support";
+    custom.nvidia.enable = lib.mkEnableOption "enables nvidia support";
   };
   config = lib.mkIf config.custom.nvidia.enable {
     services.xserver.videoDrivers = [ "nvidia" ];
@@ -17,7 +21,10 @@
         # https://wiki.hyprland.org/Nvidia/#suspendwakeup-issues
         "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
       ];
-      blacklistedKernelModules = [ "amdgpu" "i915" ];
+      blacklistedKernelModules = [
+        "amdgpu"
+        "i915"
+      ];
     };
 
     hardware = {
@@ -39,7 +46,9 @@
 
     nix.settings = {
       substituters = [ "https://cuda-maintainers.cachix.org" ];
-      trusted-public-keys = [ "cuda-maintainers.cachix.org-1:0dq3bujKpuEPMCX6U4WylrUDZ9JyUG0VpVZa7CNfq5E=" ];
+      trusted-public-keys = [
+        "cuda-maintainers.cachix.org-1:0dq3bujKpuEPMCX6U4WylrUDZ9JyUG0VpVZa7CNfq5E="
+      ];
     };
   };
 }

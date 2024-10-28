@@ -1,12 +1,12 @@
 # config for default locales
 
-{config, pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
- # Set you time zone.
- time.timeZone = "America/Detroit";
- 
- # Select internationalisation properties.
+  # Set you time zone.
+  time.timeZone = "America/Detroit";
+
+  # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
   i18n.extraLocaleSettings = {
@@ -21,9 +21,9 @@
     LC_TIME = "en_US.UTF-8";
   };
 
- # Configure keymap in X11 # do I even need this?
- services.xserver = {
-  xkb.layout = "us";
-  xkb.variant = "";
- };
+  # Configure keymap in X11 # do I even need this?
+  services.xserver = {
+    xkb.layout = "us";
+    xkb.variant = "";
+  };
 }

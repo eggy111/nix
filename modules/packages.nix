@@ -1,58 +1,63 @@
 # packages.nix
 # install system packages here
-{ config, pkgs, inputs,... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 {
 
- programs.localsend.enable = true;
+  programs.localsend.enable = true;
 
- environment.systemPackages = with pkgs; [
-   qt6Packages.qwlroots #what is this package bruh
-   #mpv
-   
-   #productivity related goods
-   qalculate-qt
+  environment.systemPackages = with pkgs; [
+    qt6Packages.qwlroots # what is this package bruh
+    #mpv
 
-   #misc
-   zint
-   procps # Utilities that give information about processes using the /proc filesystem
-   texliveTeTeX
-   gnumake
-   libgcc
+    #productivity related goods
+    qalculate-qt
 
-   #shell related packages
-   fish
-   starship
+    #misc
+    zint
+    procps # Utilities that give information about processes using the /proc filesystem
+    texliveTeTeX
+    gnumake
+    libgcc
 
-   #file manager and related
-   yazi
-   lf
-   ncdu
-   tree
+    #shell related packages
+    fish
+    starship
 
-   #terminal applications
-   git
-   fzf
-   frogmouth
-   nixfmt-rfc-style
-   nixd
-   unar
-   unzip
-   bat
-   neofetch
-   fastfetch
-   wget
-   vim 
-   eza
-   neovim
-   zip
-   yt-dlp
-   pandoc
+    #file manager and related
+    yazi
+    lf
+    ncdu
+    tree
 
-   #file transfer things
-   wireguard-tools
-   #localsend
-   termscp
-   sshfs
+    #terminal applications
+    git
+    fzf
+    frogmouth
+    nixfmt-rfc-style
+    nixd
+    unar
+    unzip
+    bat
+    neofetch
+    fastfetch
+    wget
+    vim
+    eza
+    neovim
+    zip
+    yt-dlp
+    pandoc
+
+    #file transfer things
+    wireguard-tools
+    #localsend
+    termscp
+    sshfs
 
   ];
 }
