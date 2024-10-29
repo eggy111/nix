@@ -75,10 +75,7 @@
       enable32Bit = true;
     };
 
-<<<<<<< HEAD
     programs.droidcam.enable = true;
-=======
->>>>>>> 84dded5 (idk what I did again)
 
     programs.kdeconnect.enable = true;
 
