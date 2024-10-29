@@ -83,7 +83,12 @@
      EDITOR = "nvim";
      XCURSOR_SIZE = config.home.pointerCursor.size;
   };
-  
+
+  services.kdeconnect = {
+    enable = true;
+    indicator = true;
+  };
+
   programs.kitty = { 
     settings = {
       shell = lib.getExe pkgs.fish;

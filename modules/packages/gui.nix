@@ -12,6 +12,10 @@
 
   config = lib.mkIf config.custom.gui.enable {
 
+   networking.firewall = rec {
+     allowedTCPPortRanges = [ { from = 1714; to = 1764; } ];
+     allowedUDPPortRanges = allowedTCPPortRanges;
+   };
     environment.systemPackages = with pkgs; [
       mpv
 
@@ -46,10 +50,18 @@
       pavucontrol
       networkmanagerapplet
 
+<<<<<<< HEAD
       #game/music/misc-related
       plexamp
       #kdePackages.kdeconnect-kde
     ];
+=======
+     #game/music/misc-related
+     plexamp
+     freetube
+     #kdePackages.kdeconnect-kde
+   ];
+>>>>>>> 84dded5 (idk what I did again)
 
     xdg.portal = {
       enable = true;
@@ -70,7 +82,10 @@
       enable32Bit = true;
     };
 
+<<<<<<< HEAD
     programs.droidcam.enable = true;
+=======
+>>>>>>> 84dded5 (idk what I did again)
 
     programs.kdeconnect.enable = true;
 
