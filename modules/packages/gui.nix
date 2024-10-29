@@ -50,18 +50,11 @@
       pavucontrol
       networkmanagerapplet
 
-<<<<<<< HEAD
-      #game/music/misc-related
-      plexamp
-      #kdePackages.kdeconnect-kde
-    ];
-=======
      #game/music/misc-related
      plexamp
      freetube
      #kdePackages.kdeconnect-kde
    ];
->>>>>>> 84dded5 (idk what I did again)
 
     xdg.portal = {
       enable = true;
