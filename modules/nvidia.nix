@@ -12,6 +12,10 @@
   config = lib.mkIf config.custom.nvidia.enable {
     services.xserver.videoDrivers = [ "nvidia" ];
 
+    environment.systemPackages = [
+      pkgs.nvtopPackages.nvidia
+    ]; 
+
     boot = {
       # See: https://wiki.gentoo.org/wiki/NVIDIA/nvidia-drivers#Kernel_module_parameters
       kernelParams = [

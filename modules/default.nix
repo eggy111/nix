@@ -16,6 +16,7 @@
     ./pipewire.nix
     ./sops.nix
     ./steam.nix
+    ./commands.nix
     #./zfs.nix
   ];
   #main-user.enable = true;

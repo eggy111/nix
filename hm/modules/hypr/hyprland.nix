@@ -4,6 +4,11 @@
 { pkgs, lib, config, ... }:
 
 {
+
+  home.file = {
+    ".config/hypr/word-lookup.sh".source = ./word-lookup.sh;
+  };
+
   wayland.windowManager.hyprland = {
    enable = true;
    settings = {
@@ -31,6 +36,7 @@
       "$mainMod SHIFT, V, exec, pypr toggle volume"
       "$mainMod, T, exec, pypr toggle term"
       "$mainMod SHIFT, T, exec, pypr toggle btop"
+      "$mainMod, X, exec, word-lookup"
       
       #wireguard bindings
       "$mainMod, W, exec, [floating] kitty wg-quick up $(hostname)"

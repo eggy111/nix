@@ -8,6 +8,12 @@
   ...
 }:
 {
+  home.file = { 
+    ".config/waybar/custom/plexbar/plexbar" = {
+      executable = true;
+      source = ./plexbar;
+    };
+  };
   programs.waybar = {
     enable = true;
     settings = {
@@ -75,6 +81,17 @@
         #  "tooltip-format" = "open hyprland config";
         #  "on-click" = "kitty vim ~/.config/hypr/hyprland.conf";
         #};
+
+        "custom/plexbar" = {
+          format = "{} ♪";
+          max-length = 60;
+          interval = 30;
+          return-type = "json";
+          exec = "bash ~/.config/waybar/custom/plexbar/plexbar";
+          signal = 5;
+          smooth-scrolling-threshold = 1.0;
+          exec-if = "pgrep plexamp";
+        };
 
         clock = {
           tooltip-format = ''<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>'';

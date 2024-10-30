@@ -23,6 +23,7 @@
       onlyoffice-bin
 
       #misc
+      dos2unix
 
       #shell related packages
       kitty

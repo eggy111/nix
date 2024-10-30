@@ -1,0 +1,83 @@
+#!/bin/bash
+#
+#   Copyright 2023 Tony García
+#
+#   Licensed under the Apache License, Version 2.0 (the "License");
+#   you may not use this file except in compliance with the License.
+#   You may obtain a copy of the License at
+#
+#       http://www.apache.org/licenses/LICENSE-2.0
+#
+#   Unless required by applicable law or agreed to in writing, software
+#   distributed under the License is distributed on an "AS IS" BASIS,
+#   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#   See the License for the specific language governing permissions and
+#   limitations under the License.
+
+## Configurations
+PLEX_TOKEN=${PLEXBAR_TOKEN}
+PLEX_SERVER=${PLEXBAR_SERVER}
+PLATFORM_TYPE=${PLEXBAR_PLATFORM_TYPE:-Linux}
+PRODUCT_NAME=${PLEXBAR_PRODUCT_NAME:-Plexamp}
+
+## Default values
+status=stopped
+app=waybar-plex-$(hostname)
+product=waybar-plex
+version=0.0.1
+
+headers+=(
+    "Accept: application/json"
+    "X-Plex-Client-Identifier: ${app}"
+    "X-Plex-Product: ${product}"
+    "X-Plex-Version: ${version}"
+    "X-Plex-Token: ${PLEX_TOKEN}"
+)
+
+plex_api() {
+    local path=$1
+    local http_code=0
+
+    response=$( \
+        curl -ksi \
+        "${headers[@]/#/-H}" \
+        "${PLEX_SERVER}${path}" |
+        dos2unix
+    )
+
+    http_code=$( awk '/^HTTP/ {print $2}' <<< "${response}" )
+    response_headers=$( sed -n '/^HTTP/,/^$/p' <<< "${response}" )
+    response_headers=$( grep -v '^HTTP' <<< "${response_headers}" )
+
+    if [[ "${http_code}" -ge 200 ]] &&
+       [[ "${http_code}" -le 226 ]]; then
+        tail -1 <<< "${response}"
+        return 0
+    fi
+
+    exit 1
+}
+
+session=$( plex_api "/status/sessions" )
+
+# No output
+if [[ -z "${session}" ]]; then
+    exit 0
+fi
+
+#  No sessions
+if [[ $(jq '.MediaContainer.size' <<< "${session}") -eq 0 ]] &>/dev/null; then
+    exit 0
+fi
+
+media=$(jq '.MediaContainer.Metadata[] | select((.Player.product == "'"${PRODUCT_NAME}"'") and (.Player.platform == "'"${PLATFORM_TYPE}"'"))' <<< "${session}" )
+
+if jq -e '.Player.state' <<< "${media}" &>/dev/null; then
+    status=$( jq -r '.Player.state' <<< "${media}" )
+fi
+artist=$( jq -r '.grandparentTitle' <<< "${media}" ) 
+album=$( jq -r '.parentTitle' <<< "${media}" )
+title=$( jq -r '.title' <<< "${media}" )
+
+echo "{\"class\": \"${status}\", \"text\": \"${title} - ${artist}\", \"tooltip\": \"$artist - $album\"}"
+pkill -RTMIN+5 waybar
