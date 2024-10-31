@@ -53,6 +53,7 @@
     # ".screenrc".source = dotfiles/screenrc;
      ".config/hypr/pyprland.toml".source = ./modules/pyprland.toml;
      ".config/waybar/style.css".source = ./modules/waybar/style.css;
+     ".config/rofimoji.rc".source = ./rofimoji.rc;
 
     
     # # You can also set the file content immediately.
