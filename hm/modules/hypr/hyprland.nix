@@ -120,6 +120,7 @@
       "waybar &"
       "nm-applet --indicator &"
       "dunst &"
+      "bash ~/.config/hypr/new_wallpaper.sh"
       "pypr"
     ];
   
