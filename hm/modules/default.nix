@@ -5,5 +5,6 @@
   imports = [
     ./hypr
     ./waybar
+    ./nvim/nvim.nix
   ];
 }
