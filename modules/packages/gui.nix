@@ -53,6 +53,7 @@
 
      #game/music/misc-related
      plexamp
+     shortwave
      freetube
      #kdePackages.kdeconnect-kde
    ];
