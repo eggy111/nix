@@ -65,7 +65,6 @@
           modules = [
             ./hosts/${host}/configuration.nix
             ./hosts/${host}/hardware-configuration.nix
-            ./hosts/${host}/home.nix
             ./modules
             inputs.home-manager.nixosModules.home-manager
             {
