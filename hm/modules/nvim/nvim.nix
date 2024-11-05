@@ -24,6 +24,7 @@
 
 	extraPackages = with pkgs; [
 	  nil
+      nixd
       luajitPackages.lua-lsp
 	  # xclip
 	  wl-clipboard

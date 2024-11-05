@@ -130,8 +130,8 @@
     windowrulev2 = "suppressevent maximize, class:.*";
      
     monitor = [
-      "DP-3, preferred, 0x0, auto #Dell U2515hx"
-      "DP-2, preferred, 2560x0, auto #dell s3222dgm"
+      "DP-2, preferred, 0x0, auto #dell s3222dgm"
+      "DP-3, preferred, 2560x0, auto #Dell U2515hx"
     ];
 
     env = [

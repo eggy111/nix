@@ -3,6 +3,7 @@
   config,
   pkgs,
   lib,
+  inputs,
   ...
 }:
 {
@@ -11,6 +12,8 @@
   };
 
   config = lib.mkIf config.custom.gui.enable {
+
+    nix.nixPath = ["nixpkgs=${inputs.nixpkgs}" ];
 
    networking.firewall = rec {
      allowedTCPPortRanges = [ { from = 1714; to = 1764; } ];

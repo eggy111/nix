@@ -42,7 +42,25 @@ require('lspconfig').lua_ls.setup {
     }
 }
 
-require('lspconfig').nil_ls.setup {
-    on_attach = on_attach,
-    capabilities = capabilities,
+require('lspconfig').nixd.setup {
+    -- on_attach = on_attach,
+    -- capabilities = capabilities,
+	cmd = { "nixd" },
+	settings = {
+		nixd = {
+			nixpkgs = {
+				expr = "import <nixpkgs> { }",
+			},
+			formatting = {
+		      command = { "nixfmt" },
+			},
+
+			options = {
+				nixos = {
+					expr = '(builtins.getFlake "/home/eggy/Documents/nix").nixosConfigurations.${host}.options'
+				},
+			},
+		},
+	},
+
 }
