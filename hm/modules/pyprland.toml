@@ -24,3 +24,12 @@ class = "org.pulseaudio.pavucontrol"
 size = "40% 90%"
 unfocus = "hide"
 lazy = true
+
+[scratchpads.bluetooth]
+animation = "fromLeft"
+command = "blueman-manager"
+class = ".blueman-manager-wrapped"
+size = "40% 90%"
+unfocus = "hide"
+lazy = true
+

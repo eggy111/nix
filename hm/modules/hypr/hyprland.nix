@@ -32,11 +32,14 @@
       "$mainMod, G, exec, steam"
       "$mainMod SHIFT, C, exec, [floating] mpv av://v4l2:/dev/video1 --profile=low-latency --untimed"
       ''$mainMod SHIFT, e, exec, rofi -modi "emoji:rofimoji" -show emoji''
-      "$mainMod, B, exec, pypr expose"
+      "$mainMod, X, exec, word-lookup"
+
+      # Pyprland Shortcuts
+      # "$mainMod, B exec, pypr expose"
       "$mainMod SHIFT, V, exec, pypr toggle volume"
       "$mainMod, T, exec, pypr toggle term"
       "$mainMod SHIFT, T, exec, pypr toggle btop"
-      "$mainMod, X, exec, word-lookup"
+      "$mainMod, B, exec, pypr toggle bluetooth" 
       
       #wireguard bindings
       "$mainMod, W, exec, [floating] kitty wg-quick up $(hostname)"

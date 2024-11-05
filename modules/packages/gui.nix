@@ -21,6 +21,7 @@
 
       #productivity related goods
       onlyoffice-bin
+      thunderbird
 
       #misc
       dos2unix
