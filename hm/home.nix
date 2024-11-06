@@ -135,7 +135,7 @@
      rs = "sudo nixos-rebuild switch --flake ~/Documents/nix/";
      cat = "bat";
      lock = "hyprlock";
-     packages = "vim /home/eggy/Documents/nix/modules/packages.nix";
+     packages = "vim /home/eggy/Documents/nix/modules/packages/packages.nix";
      cn = "cd /home/eggy/Documents/nix";
      rt = "sudo nixos-rebuild test --flake ~/Documents/nix/";
      hyprland = "Hyprland";

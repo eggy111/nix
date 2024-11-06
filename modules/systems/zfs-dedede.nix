@@ -1,13 +1,11 @@
 {
-  config,
   lib,
-  pkgs,
   ...
 }:
 
 {
   options = {
-    custom.zfs-server.enable = lib.mkEnableOption "configures zfs pool for my server";
+    custom.zfs-dedede.enable = lib.mkEnableOption "configures zfs pool for my server";
   };
 
   config = {

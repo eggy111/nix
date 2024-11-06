@@ -1,16 +1,17 @@
 #modules/packages/default.nix
 {
-  config,
-  pkgs,
-  inputs,
   lib,
   ...
 }:
 {
   imports = [
     ./desktop.nix
-    ./hyprland.nix
+    ./discord.nix
     ./gui.nix
+    ./hyprland.nix
+    ./neovim.nix
+    ./packages.nix
+    ./steam.nix
   ];
   custom.gui.enable = lib.mkDefault true;
   custom.hyprland.enable = lib.mkDefault true;
