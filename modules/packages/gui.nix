@@ -59,6 +59,7 @@
      plexamp
      shortwave
      freetube
+      r2modman
      #kdePackages.kdeconnect-kde
    ];
 

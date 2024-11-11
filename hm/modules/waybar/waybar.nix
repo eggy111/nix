@@ -2,9 +2,9 @@
 # a home-manager module
 
 {
-  pkgs,
-  lib,
-  config,
+  # pkgs,
+  # lib,
+  # config,
   ...
 }:
 {
@@ -70,11 +70,12 @@
         };
 
         "custom/focal" = {
-          exec = "focal-waybar --signal 1 --recording 'REC'";
+          exec = "focal-waybar --recording 'REC'";
           format = "{}";
-          on-click = "focal video -- --stop";
+          on-click = "focal video --stop";
           signal = 1;
         };
+ 
         #"custom/hyprland" = {
         #  "format" = " home ";
         #  "tooltip = true; 
@@ -192,14 +193,7 @@
         "custom/power" = {
           format = "⏻ ";
           tooltip = false;
-          menu = "on-click";
-          menu-file = "$HOME/.config/waybar/power-menu.xml";
-          menu-actions = {
-            shutdown = "shutdown";
-            reboot = "reboot";
-            suspend = "systemctl suspend";
-            hibernate = "systemctl hibernate";
-          };
+          on-click = ''rofi -show power-menu -modi power-menu:~/.config/rofi/rofi-power-menu -theme Paper -theme-str 'window {width: 8em;} listview {lines: 6;}' '';
         };
 
         idle_inhibitor = {

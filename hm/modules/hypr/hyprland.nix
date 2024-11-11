@@ -48,8 +48,8 @@
       #screen capture bindings
       ''$mainMod, S, exec, grim -g "$(slurp -w 0)" - | wl-copy''
       ''$mainMod SHIFT, S, exec, grim -g "$(slurp -w 0)" - | swappy -f -''
-      "$mainMod, backslash, exec, focal-waybar --toggle --signal 1 --recording 'REC' --rofi --no-rounded-windows"
-      "$mainMod SHIFT, backslash, exec, focal-waybar --toggle --signal 1 --recording 'REC' --rofi --no-rounded-windows --audio"
+      "$mainMod, backslash, exec, focal video --rofi --no-rounded-windows"
+      "$mainMod SHIFT, backslash, exec, focal --rofi --no-rounded-windows --audio"
      
       # hyprshade bindings
       "$mainMod, Z, exec, hyprshade on blue-light-filter"
@@ -123,7 +123,7 @@
       "waybar &"
       "nm-applet --indicator &"
       "dunst &"
-      "wallpaper_setup"
+      "wallpaper_setup&"
       "pypr"
     ];
   

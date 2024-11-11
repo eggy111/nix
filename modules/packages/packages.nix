@@ -1,9 +1,9 @@
 # packages.nix
 # install system packages here
 {
-  config,
+  # config,
   pkgs,
-  inputs,
+  # inputs,
   ...
 }:
 {
@@ -56,7 +56,7 @@
     #file transfer things
     wireguard-tools
     #localsend
-    termscp
+    # termscp
     sshfs
 
   ];
