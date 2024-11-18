@@ -23,6 +23,7 @@
     texliveTeTeX
     gnumake
     libgcc
+    whois
 
     #shell related packages
     fish

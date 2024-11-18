@@ -95,7 +95,7 @@
         };
 
         clock = {
-          tooltip-format = ''<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>'';
+          tooltip-format = ''<big>{:%Y %B}</big>"\n"<tt><small>{calendar}</small></tt>'';
           format-alt = "{:%Y-%m-%d}";
         };
 
