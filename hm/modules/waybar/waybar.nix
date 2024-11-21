@@ -49,10 +49,22 @@
           all-outputs = true;
           warp-on-scroll = false;
           format = "{name}";
-          #"format-icons": {
+          # "format-icons": {
 
-          #};
+          # };
         };
+
+        # "hyprland/workspaces" = {
+        #   "format" = ''<sub>{icon}</sub>\n{windows}'';
+        #   "format-window-separator" = "\n";
+        #   "window-rewrite-default"= "";
+        #   "window-rewrite" = {
+        #     "title<.*youtube.*>" = "";
+        #     "class<firefox" = "";
+        #     "class<firefox> title<.*github.*>" = "";
+        #     "foot" = "";
+        #   };
+        # };
 
         "group/quicklinks-left" = {
           orientation = "horizontal";

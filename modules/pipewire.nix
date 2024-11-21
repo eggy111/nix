@@ -1,7 +1,7 @@
 # pipewire.nix
 # used for configuring sound
 
-{ config, pkgs, ... }:
+{ ... }:
 #enable sound with pipewire
 {
   hardware.pulseaudio.enable = false;

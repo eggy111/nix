@@ -133,6 +133,7 @@
   home ={
     shellAliases = { 
      rs = "sudo nixos-rebuild switch --flake ~/Documents/nix/";
+     fu = "sudo nix flake update --flake ~/Documents/nix/";
      cat = "bat";
      lock = "hyprlock";
      packages = "vim /home/eggy/Documents/nix/modules/packages/packages.nix";

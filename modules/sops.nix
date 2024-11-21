@@ -1,6 +1,5 @@
 # sops.nix
 {
-  pkgs,
   inputs,
   config,
   ...

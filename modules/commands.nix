@@ -1,17 +1,16 @@
 # commands.nix
 # in theory this should create some bash scripts for me...fingers crossed
 {
-  config,
   pkgs,
   ...
 }:
 {
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs; [ # the blocks below create my own shell applications, thus they are listed within systemPackages
 
     (writeShellApplication {
       name = "wallpaper_setup";
 
-      runtimeInputs = [ ];
+      runtimeInputs = [ ]; # usually I think any dependencies are listed here
 
       text = ''
                 

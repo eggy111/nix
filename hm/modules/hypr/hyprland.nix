@@ -1,7 +1,7 @@
 # hyprland.nix
 # a home-manager module
 
-{ pkgs, lib, config, ... }:
+{ ... }:
 
 {
 
@@ -119,6 +119,7 @@
       #"bash ~/.config/hypr/start.sh &"
       "hypridle &"
       "swww-daemon &"
+      "swww img ~/.config/wallpapers/1.png"
       "hyprctl set cursor rose-pine-hyprcursor 28 &"
       "waybar &"
       "nm-applet --indicator &"

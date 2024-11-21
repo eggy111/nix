@@ -1,7 +1,7 @@
 # fonts.nix
 # configuration file to load fonts
 
-{ config, pkgs, ... }:
+{  pkgs, ... }:
 
 {
 

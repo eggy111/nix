@@ -1,11 +1,12 @@
 # hm/modules/default.nix
 # barrel file for hm modules
-{ lib, host, ... }:
+{ host, ... }:
 {
   imports = [
     ../../hosts/${host}/home.nix
+    ./atuin.nix
     ./hypr
-    ./waybar
     ./nvim/nvim.nix
+    ./waybar
   ];
 }

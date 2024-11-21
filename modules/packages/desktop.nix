@@ -16,7 +16,7 @@
   config = lib.mkIf config.custom.desktop.enable {
 
     environment.systemPackages = with pkgs; [
-      whipper
+      whipper # ripping tool for CDs
     ];
   };
 }

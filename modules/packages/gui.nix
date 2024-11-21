@@ -20,46 +20,46 @@
      allowedUDPPortRanges = allowedTCPPortRanges;
    };
     environment.systemPackages = with pkgs; [
-      mpv
+      mpv # camera tool
 
       #productivity related goods
-      onlyoffice-bin
-      thunderbird
+      onlyoffice-bin # office suite
+      thunderbird # mail client
 
       #misc
-      dos2unix
+      dos2unix # girl i dont even know what this is
 
       #shell related packages
-      kitty
+      kitty # terminal emulator
 
       #file manager and related
-      xfce.thunar
-      qdirstat
+      xfce.thunar # gui file manager
+      qdirstat # gui filesize viewer
 
       #screen capture and video stuff
-      vlc
-      ffmpeg
-      swappy
-      gthumb
+      vlc # video player
+      ffmpeg # tool for interacting with video
+      swappy # quick picture editor
+      gthumb # slower but in depth picture editor i think
 
       #terminal applications #i know you dont need a gui for these, but they are applications i dont need on my servers :P
-      lavat
-      pipes
-      pamixer
-      pokeget-rs
-      claws-mail
-      playerctl
+      lavat # lava lamp, just for funsies
+      pipes # pipes, just for funsies, like the screensaver
+      pamixer # i think this is for volume?
+      pokeget-rs # generates pixel pokemon in terminal
+      claws-mail # mail client I want to setup
+      playerctl # tbh idk
 
       #interfaces/menus
-      overskride
-      pavucontrol
-      networkmanagerapplet
+      overskride # bluetooth manager
+      pavucontrol # more audio thing
+      networkmanagerapplet # manage network in tray
 
      #game/music/misc-related
-     plexamp
-     shortwave
-     freetube
-      r2modman
+     plexamp # music player
+     shortwave # ipradio
+     freetube # youtube client
+      r2modman # mod manager for risk of rain 2, i should move it into steam 
      #kdePackages.kdeconnect-kde
    ];
 
@@ -82,9 +82,9 @@
       enable32Bit = true;
     };
 
-    programs.droidcam.enable = true;
+    programs.droidcam.enable = true; # use phone as camera
 
-    programs.kdeconnect.enable = true;
+    programs.kdeconnect.enable = true; # interact with phone from computer
 
     #Enable the X11 windowing system
     #services.xserver.enable - true;

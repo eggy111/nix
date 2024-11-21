@@ -1,6 +1,6 @@
 #default.nix
 #barrel file for my modules
-{ lib, inputs, ... }:
+{ lib, inputs, ... }: # lib is used in the .mkDefault, and inputs is used to define nixpkgs
 {
   imports = [
     ./bluetooth.nix
@@ -13,8 +13,10 @@
     ./systems
     ./users
   ];
+
   #main-user.enable = true;
   #main-user.userName = "eggy";
+
   # Enables home-manager, and flakes
   nix.settings.experimental-features = [
     "nix-command"
@@ -23,9 +25,9 @@
 
   security.pam.services.hyprlock = { };
 
-  custom.desktop.enable = lib.mkDefault false;
+  custom.desktop.enable = lib.mkDefault false; # sets desktop.nix to be disabled by default since I only want it on my desktop system
 
-  nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
+  nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ]; # sets nixpkgs to follow it as defined in flake.nix
 
   # networking.wireless.enable = true; # Enables wireless support via wpa_supplicant
 

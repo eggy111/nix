@@ -1,6 +1,6 @@
 # config for default locales
 
-{ config, pkgs, ... }:
+{ ... }:
 
 {
   # Set you time zone.

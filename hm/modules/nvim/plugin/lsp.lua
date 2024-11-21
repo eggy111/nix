@@ -1,3 +1,4 @@
+vim.lsp.set_log_level("debug")
 local on_attach = function(_, bufnr)
 
   local bufmap = function(keys, func)

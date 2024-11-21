@@ -1,9 +1,6 @@
 # /hosts/framework/configuration.nix
 
 {
-  config,
-  pkgs,
-  inputs,
   ...
 }:
 
