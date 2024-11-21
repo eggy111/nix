@@ -16,11 +16,9 @@ PS: If you are reading this on github, it may be worthwhile to know that this re
 ## My current To Do
 
 ### In Progress
-- configure neovim 
-- configure yazi
+- configure notifications
 
 ### To Do
-- configure notifications
 - configure waybar
 - configure rofi
 - set up zfs
@@ -29,19 +27,21 @@ PS: If you are reading this on github, it may be worthwhile to know that this re
 - fonts.nix needs mkDefault support somehow, others do too, but it also needs mkOption 
 
 ### Completed
-- ~~port all configs to home-manager~~ happy with this for now, it doesnt need to be a big todo i can make it smaller moving forward
-- ~~make this (or a new repo, but preferably this) into a dotfiles repo~~ (essentially because of home-manager it is, just a bad name)
-- ~~setup modularity will need help but is important~~ 
-- ~~set up wireguard client~~
-- ~~configure wl-clipboard (just figure it out how it works and what it can do first)~~
-- ~~configure swww~~
-- ~~setup screen recording~~ 
-- ~~configure kitty~~ (both kitty, fish, and starship (which ironically isn't named) can and will need more configuration, but I am happy with it for now) 
-- ~~configure fish~~
-- ~~set up screenshots~~
-- ~~set up hypridle~~
-- ~~set up hyprlock~~
-- ~~set up hypr* (shade, cursor, ... )~~
-- ~~my desktop configuration is not up to speed yet so get it up to speed)~~
-- ~~clean up the todo list (lol)~~
-- ~~finish modularizing the packages group~~ (tbh ill never be done with this, but it is good enough for now!)
+- ~configure neovim~
+- ~configure yazi~
+- ~port all configs to home-manager~ happy with this for now, it doesnt need to be a big todo i can make it smaller moving forward
+- ~make this (or a new repo, but preferably this) into a dotfiles repo~ (essentially because of home-manager it is, just a bad name)
+- ~setup modularity will need help but is important~
+- ~set up wireguard client~
+- ~configure wl-clipboard (just figure it out how it works and what it can do first)~
+- ~configure swww~
+- ~setup screen recording~ 
+- ~configure kitty~ (both kitty, fish, and starship (which ironically isn't named) can and will need more configuration, but I am happy with it for now) 
+- ~configure fish~
+- ~set up screenshots~
+- ~set up hypridle~
+- ~set up hyprlock~
+- ~set up hypr* (shade, cursor, ... )~
+- ~my desktop configuration is not up to speed yet so get it up to speed)~
+- ~clean up the todo list (lol)~
+- ~finish modularizing the packages group~ (tbh ill never be done with this, but it is good enough for now!)
