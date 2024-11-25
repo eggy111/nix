@@ -39,6 +39,7 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
     btop
+    waybar-mpris
 
     # nix related
     nix-output-monitor # provides the command nom that function like nix, btu makes it nicer

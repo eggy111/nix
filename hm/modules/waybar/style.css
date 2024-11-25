@@ -125,6 +125,16 @@ window#waybar.hidden {
 	background: #babbf1;
 }
 
+#workspaces button {
+	padding: 0 5px;
+	margin: 0 2px;
+}
+
+#workspaces button.focused {
+	background: #babbf1;
+	color: #161320;
+}
+
 #power-profiles-daemon {
 	margin-top: 6px;
 	margin-left: 6px;
@@ -147,7 +157,7 @@ window#waybar.hidden {
 	background: #ca9ee6;
 }
 
-#hyrpland-workspaces {
+#workspaces {
 	margin-top: 6px;
 	margin-left: 6px;
 	padding-left: 10px;

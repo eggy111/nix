@@ -23,7 +23,7 @@
         spacing = 4;
         modules-left = [
           "group/quicklinks-left"
-          "custom/plexbar"
+          "custom/waybar-mpris"
           "custom/focal"
         ];
         modules-center = [ "hyprland/workspaces" ];
@@ -70,7 +70,7 @@
           orientation = "horizontal";
           modules = [
             "custom/nix"
-            "custom/hyprland"
+            # "custom/hyprland"
           ];
         };
         "custom/nix" = {
@@ -95,15 +95,22 @@
         #  "on-click" = "kitty vim ~/.config/hypr/hyprland.conf";
         #};
 
-        "custom/plexbar" = {
-          format = "{} ♪";
-          max-length = 60;
-          interval = 30;
-          return-type = "json";
-          exec = "bash ~/.config/waybar/custom/plexbar/plexbar";
-          signal = 5;
-          smooth-scrolling-threshold = 1.0;
-          exec-if = "pgrep plexamp";
+        # "custom/plexbar" = {
+        #   format = "{} ♪";
+        #   max-length = 60;
+        #   interval = 30;
+        #   return-type = "json";
+        #   exec = "bash ~/.config/waybar/custom/plexbar/plexbar";
+        #   signal = 5;
+        #   smooth-scrolling-threshold = 1.0;
+        #   exec-if = "pgrep plexamp";
+        # };
+
+        "custom/waybar-mpris" = {
+          "return-type" = "json";
+          exec = "waybar-mpris --position --autofocus";
+          on-click = "waybar-mpris --send toggle";
+          "escape" = true;
         };
 
         clock = {
