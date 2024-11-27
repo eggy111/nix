@@ -30,7 +30,6 @@
       dos2unix # girl i dont even know what this is
 
       #shell related packages
-      kitty # terminal emulator
 
       #file manager and related
       xfce.thunar # gui file manager

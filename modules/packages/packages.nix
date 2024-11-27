@@ -28,6 +28,7 @@
     #shell related packages
     fish # shell
     starship # a sort of theme manager similiar to powerlevel10k
+    kitty
 
     #file manager and related
     yazi # file manager
