@@ -23,7 +23,7 @@
         spacing = 4;
         modules-left = [
           "group/quicklinks-left"
-          "custom/waybar-mpris"
+          # "custom/waybar-mpris"
           "custom/focal"
         ];
         modules-center = [ "hyprland/workspaces" ];

@@ -14,6 +14,11 @@
 
   config = lib.mkIf config.custom.hyprland.enable {
 
+    programs.hyprland = {
+      enable = true;
+      #package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+    };
+
     environment.systemPackages = with pkgs; [
 
       #Wayland related packages

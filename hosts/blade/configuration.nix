@@ -1,9 +1,9 @@
 # /hosts/kdedede/configuration.nix
 
 {
-  config,
-  pkgs,
-  inputs,
+  # config,
+  # pkgs,
+  # inputs,
   ...
 }:
 
@@ -14,6 +14,18 @@
     hyprland.enable = false;
     gui.enable = false;
     # zfs-server.enable = true;
+  };
+
+  services.xserver = {
+    enable = true;
+    displayManager = {
+      lightdm.enable = true;
+      xfce.enable = true;
+    };
+    xkb = {
+      layout = "us";
+      variant = "";
+    };
   };
 
   # Bootloader.

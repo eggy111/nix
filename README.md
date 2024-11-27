@@ -16,10 +16,12 @@ PS: If you are reading this on github, it may be worthwhile to know that this re
 ## My current To Do
 
 ### In Progress
+- move things around for server introduction!!!
 - configure notifications
 
 ### To Do
 - configure waybar
+- Try out niri
 - configure rofi
 - set up zfs
 - finish server config
