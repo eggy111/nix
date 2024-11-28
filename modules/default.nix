@@ -1,6 +1,6 @@
 #default.nix
 #barrel file for my modules
-{ lib, inputs, ... }: # lib is used in the .mkDefault, and inputs is used to define nixpkgs
+{ inputs, ... }: # lib is used in the .mkDefault, and inputs is used to define nixpkgs
 {
   imports = [
     ./bluetooth.nix
@@ -25,7 +25,6 @@
 
   security.pam.services.hyprlock = { };
 
-  custom.desktop.enable = lib.mkDefault false; # sets desktop.nix to be disabled by default since I only want it on my desktop system
 
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ]; # sets nixpkgs to follow it as defined in flake.nix
 

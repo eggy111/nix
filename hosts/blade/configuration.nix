@@ -9,6 +9,7 @@
 
 {
   custom = {
+    bluetooth.enable = false;
     steam.enable = false;
     discord.enable = false;
     hyprland.enable = false;

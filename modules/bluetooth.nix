@@ -1,14 +1,21 @@
 #bluetooth.nix
 # set up bluetooth
 
-{ ... }:
+{ lib, config, ... }:
 
 {
-  #enable bluetooth
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = true;
-  }; # this block enables bluetooth, and has it startup when I boot
+  options = {
+    custom.bluetooth.enable = lib.mkEnableOption "whether sysytem has bluetooth";
+  };
 
-  services.blueman.enable = true; # blueman helps manage bluetooth devices
+  config = lib.mkIf config.custom.bluetooth.enable {
+    #enable bluetooth
+    hardware.bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+    }; # this block enables bluetooth, and has it startup when I boot
+
+    services.blueman.enable = true; # blueman helps manage bluetooth devices
+  };
+
 }

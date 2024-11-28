@@ -1,9 +1,9 @@
 # /hosts/default/configuration.nix
 
 {
-  config,
+  # config,
   pkgs,
-  inputs,
+  # inputs,
   ...
 }:
 
@@ -12,8 +12,11 @@
     steam.enable = true;
     nvidia.enable = true;
     discord.enable = true;
-    desktop.enable = true;
   };
+
+  environment.systemPackages = with pkgs; [
+    whipper # CD ripper
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;

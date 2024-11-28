@@ -5,7 +5,6 @@
 }:
 {
   imports = [
-    ./desktop.nix
     ./discord.nix
     ./gui.nix
     ./hyprland.nix
@@ -15,5 +14,6 @@
   ];
   custom.gui.enable = lib.mkDefault true;
   custom.hyprland.enable = lib.mkDefault true;
-  custom.desktop.enable = lib.mkDefault false;
+  custom.bluetooth.enable = lib.mkDefault true;
+  custom.sops.enable = lib.mkDefault false;
 }
