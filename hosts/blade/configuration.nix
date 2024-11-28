@@ -21,8 +21,8 @@
     enable = true;
     displayManager = {
       lightdm.enable = true;
-      xfce.enable = true;
     };
+    desktopManager.xfce.enable = true;
     xkb = {
       layout = "us";
       variant = "";
