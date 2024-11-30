@@ -62,6 +62,8 @@
      r2modman # mod manager for risk of rain 2, i should move it into steam 
      #kdePackages.kdeconnect-kde
    ];
+    hardware.keyboard.qmk.enable = true;
+    services.udev.packages = [pkgs.via];
 
     xdg.portal = {
       enable = true;
