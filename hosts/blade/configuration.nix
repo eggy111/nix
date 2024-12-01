@@ -2,7 +2,7 @@
 
 {
   # config,
-  # pkgs,
+   pkgs,
   # inputs,
   ...
 }:
@@ -16,6 +16,10 @@
     gui.enable = false;
     # zfs-server.enable = true;
   };
+
+  environment.systemPackages = with pkgs; [
+    parted 
+  ];
 
   services.xserver = {
     enable = true;
