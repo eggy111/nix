@@ -4,5 +4,5 @@
     ./dashy.nix
   ];
 
-  custom.dashy.nix = lib.mkDefault true;
+  custom.dashy.enable = lib.mkDefault true;
 }
