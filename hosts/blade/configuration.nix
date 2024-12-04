@@ -10,6 +10,7 @@
 {
   custom = {
     bluetooth.enable = false;
+    dashy.enable = true;
     steam.enable = false;
     discord.enable = false;
     hyprland.enable = false;
