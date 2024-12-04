@@ -9,6 +9,7 @@
     ./locale.nix
     ./packages
     ./pipewire.nix
+    ./services
     ./sops.nix
     ./systems
     ./users
