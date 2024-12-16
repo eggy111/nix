@@ -55,6 +55,7 @@
      ".config/hypr/pyprland.toml".source = ./modules/pyprland.toml;
      ".config/waybar/style.css".source = ./modules/waybar/style.css;
      ".config/rofimoji.rc".source = ./rofimoji.rc;
+     ".config/rofi/rofi-power-menu".source = ./modules/rofi-power-menu;
 
     
     # # You can also set the file content immediately.
@@ -141,6 +142,7 @@
      cn = "cd /home/eggy/Documents/nix";
      rt = "sudo nixos-rebuild test --flake ~/Documents/nix/";
      hyprland = "Hyprland";
+     picotron = ''nix-shell -p steam-run --run "steam-run ~/Downloads/picotron/picotron"'';
          };
     pointerCursor = {
       package = pkgs.simp1e-cursors;

@@ -60,6 +60,7 @@
      shortwave # ipradio
      freetube # youtube client
      r2modman # mod manager for risk of rain 2, i should move it into steam 
+      sunvox # synth software
      #kdePackages.kdeconnect-kde
    ];
     hardware.keyboard.qmk.enable = true;
