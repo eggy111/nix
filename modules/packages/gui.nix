@@ -15,12 +15,18 @@
 
     nix.nixPath = ["nixpkgs=${inputs.nixpkgs}" ];
 
+    services.resolved = {
+      enable = true;
+    };
+    
    networking.firewall = rec {
      allowedTCPPortRanges = [ { from = 1714; to = 1764; } ];
      allowedUDPPortRanges = allowedTCPPortRanges;
    };
     environment.systemPackages = with pkgs; [
       mpv # camera tool
+      nodejs
+      python312Packages.pip
 
       #productivity related goods
       onlyoffice-bin # office suite
