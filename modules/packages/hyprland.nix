@@ -32,6 +32,7 @@
       pyprland
 
       hyprland
+      hyprland-qtutils
       hyprcursor
       #hyprshot #idk if I even want this since I got grim and slurp running
       hyprshade
@@ -51,7 +52,7 @@
       inputs.focal.packages.${pkgs.system}.default
 
       brightnessctl
-      eww
+      # eww
     ];
   };
 }

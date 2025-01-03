@@ -33,6 +33,7 @@
       "$mainMod SHIFT, C, exec, [floating] mpv av://v4l2:/dev/video1 --profile=low-latency --untimed"
       ''$mainMod SHIFT, e, exec, rofi -modi "emoji:rofimoji" -show emoji''
       "$mainMod, X, exec, word-lookup"
+      ''$mainMod, Space, global, kando:example-menu''
 
       # Pyprland Shortcuts
       # "$mainMod, B exec, pypr expose"
@@ -127,6 +128,16 @@
       "wallpaper_setup&"
       "pypr"
     ];
+
+      windowrule = [
+        "noblur, kando"
+        "opaque, kando"
+        "size 100% 100%, kando"
+        "noborder, kando"
+        "noanim, kando"
+        "float, kando"
+        "pin, kando"
+      ];
   
     windowrulev2 = "suppressevent maximize, class:.*";
      

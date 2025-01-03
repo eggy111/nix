@@ -35,6 +35,7 @@
       #misc
       dos2unix # girl i dont even know what this is
       via
+      kando
 
       #shell related packages
 
