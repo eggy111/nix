@@ -61,6 +61,7 @@
       overskride # bluetooth manager
       pavucontrol # more audio thing
       networkmanagerapplet # manage network in tray
+      rpiboot
 
      #game/music/misc-related
      plexamp # music player

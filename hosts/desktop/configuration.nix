@@ -17,6 +17,11 @@
   environment.systemPackages = with pkgs; [
     whipper # CD ripper
   ];
+  
+  services.hardware.openrgb = {
+    enable = true;
+    # package = [ pkgs.openrgb-with-all-plugins ];
+  };
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
