@@ -11,7 +11,7 @@ margin = 50
 
 [scratchpads.btop]
 animation = "fromBottom"
-command = "kitty --class kitty-dropterm btop"
+command = "kitty --class kitty btop"
 class = "kitty-dropterm"
 size = "75% 60%"
 max_size = "1920px 100%"

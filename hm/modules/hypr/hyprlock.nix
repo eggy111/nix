@@ -1,6 +1,6 @@
 # hyprlock.nix
 # an hm module
-{ lib, config, ... }:
+{ ... }:
 {
   programs.hyprlock = {
     enable = true;
@@ -14,7 +14,15 @@
       general = {
         ignore_empty_input = true;
         grace = 30;
-        enable_fingerprint = true;
+        # enable_fingerprint = true; # old way 
+      };
+
+      auth = {
+        fingerprint = {
+          enabled = true;
+          ready_message = "Scan fingerprint to unlock";
+          present_message = "Scanning fingerprint";
+        };
       };
 
       background = [
@@ -22,7 +30,7 @@
           path = "/home/eggy/.config/wallpapers/A.png";
           blur_passes = 2;
           blur_size = 5;
-          vibrance = 0.1696;
+          vibrancy = 0.1696;
           brightness = 0.5;
         }
       ];
@@ -81,7 +89,7 @@
           hide_input = false;
           rounding = 20;
           check_color = "$color2";
-          fail_color = "rgb(204, 34, 34)";
+          fail_color = "rgba(204, 34, 34, 1.0)";
           fail_text = "<i>$FAIL <b>($ATTEMPTS)</b></i>";
           fail_timeout = 2000;
           fail_transition = 200;
