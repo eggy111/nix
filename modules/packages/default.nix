@@ -8,7 +8,8 @@
     ./discord.nix
     ./gui.nix
     ./hyprland.nix
-    ./neovim.nix
+    # ./neovim.nix
+    ./nvim.nix
     ./packages.nix
     ./steam.nix
   ];

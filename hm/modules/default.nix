@@ -7,7 +7,7 @@
     ./atuin.nix
     ./dunst.nix
     ./hypr
-    ./nvim/nvim.nix
+    # ./nvim/nvim.nix
     ./waybar
   ];
 }
