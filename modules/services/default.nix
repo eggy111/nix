@@ -1,8 +1,8 @@
 { lib, ... }:
 {
   imports = [
-    ./dashy.nix
+    ./homepage.nix
   ];
 
-  custom.dashy.enable = lib.mkDefault true;
+  custom.homepage.enable = lib.mkDefault false;
 }

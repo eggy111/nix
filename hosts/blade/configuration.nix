@@ -2,7 +2,7 @@
 
 {
   # config,
-   pkgs,
+  pkgs,
   # inputs,
   ...
 }:
@@ -10,7 +10,7 @@
 {
   custom = {
     bluetooth.enable = false;
-    dashy.enable = true;
+    homepage.enable = true;
     steam.enable = false;
     discord.enable = false;
     hyprland.enable = false;
@@ -19,7 +19,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    parted 
+    parted
     testdisk
   ];
 
