@@ -13,16 +13,21 @@
 
   config = lib.mkIf config.custom.gui.enable {
 
-    nix.nixPath = ["nixpkgs=${inputs.nixpkgs}" ];
+    nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 
     services.resolved = {
       enable = true;
     };
-    
-   networking.firewall = rec {
-     allowedTCPPortRanges = [ { from = 1714; to = 1764; } ];
-     allowedUDPPortRanges = allowedTCPPortRanges;
-   };
+
+    networking.firewall = rec {
+      allowedTCPPortRanges = [
+        {
+          from = 1714;
+          to = 1764;
+        }
+      ];
+      allowedUDPPortRanges = allowedTCPPortRanges;
+    };
     environment.systemPackages = with pkgs; [
       mpv # camera tool
       nodejs
@@ -61,20 +66,20 @@
       overskride # bluetooth manager
       pavucontrol # more audio thing
       networkmanagerapplet # manage network in tray
-      rpiboot
+      # rpiboot
 
-     #game/music/misc-related
-     plexamp # music player
+      #game/music/misc-related
+      plexamp # music player
       dualsensectl
       trigger-control
-     shortwave # ipradio
-     freetube # youtube client
-     r2modman # mod manager for risk of rain 2, i should move it into steam 
+      shortwave # ipradio
+      freetube # youtube client
+      r2modman # mod manager for risk of rain 2, i should move it into steam
       sunvox # synth software
-     #kdePackages.kdeconnect-kde
-   ];
+      #kdePackages.kdeconnect-kde
+    ];
     hardware.keyboard.qmk.enable = true;
-    services.udev.packages = [pkgs.via];
+    services.udev.packages = [ pkgs.via ];
 
     xdg.portal = {
       enable = true;

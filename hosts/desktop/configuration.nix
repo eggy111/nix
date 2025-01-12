@@ -16,8 +16,9 @@
 
   environment.systemPackages = with pkgs; [
     whipper # CD ripper
+    esphome
   ];
-  
+
   services.hardware.openrgb = {
     enable = true;
     # package = [ pkgs.openrgb-with-all-plugins ];
