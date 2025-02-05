@@ -23,52 +23,57 @@
             scrollDocsDown = "<C-f>";
             scrollDocsUp = "<C-d>";
           };
-          sourcePlugins = [ "nvim-lspconfig" "luasnip" ];
+          sourcePlugins = [
+            "nvim-lspconfig"
+            "luasnip"
+          ];
         };
-          binds = {
-            cheatsheet.enable = true;
+        binds = {
+          cheatsheet.enable = true;
+        };
+        comments.comment-nvim = {
+          enable = true;
+          mappings = {
+            toggleCurrentBlock = "gbc";
+            toggleCurrentLine = "gcc";
           };
-          comments.comment-nvim = {
+        };
+        languages = {
+          enableFormat = true;
+          enableLSP = true;
+          enableTreesitter = true;
+          bash.enable = true;
+          css.enable = true;
+          html.enable = true;
+          lua.enable = true;
+          markdown.enable = true;
+          nix = {
             enable = true;
-            mappings = {
-              toggleCurrentBlock = "gbc";
-              toggleCurrentLine = "gcc";
-            };
+            format.type = "nixfmt";
+            lsp.enable = true;
+            lsp.server = "nil";
           };
-          languages = {
-            enableFormat = true;
-            enableLSP = true;
-            enableTreesitter = true;
-            bash.enable = true;
-            css.enable = true;
-            html.enable = true;
-            lua.enable = true;
-            markdown.enable = true;
-            nix = {
+        };
+        lsp.formatOnSave = true;
+        theme = {
+          enable = true;
+          name = "catppuccin";
+          style = "mocha";
+        };
+        utility = {
+          diffview-nvim.enable = true;
+          icon-picker.enable = true;
+          images = {
+            image-nvim = {
               enable = true;
-              format.type = "nixfmt";
-            };
-          };
-          lsp.formatOnSave = true;
-          theme = {
-            enable = true;
-            name = "catppuccin";
-            style = "mocha";
-          };
-          utility = {
-            diffview-nvim.enable = true;
-            icon-picker.enable = true;
-            images = {
-              image-nvim = {
+              setupOpts.backend = "kitty";
+              setupOpts.integrations.markdown = {
                 enable = true;
-                setupOpts.backend = "kitty";
-                setupOpts.integrations.markdown = {
-                  enable = true;
-                  downloadRemoteImages = true;
-                };
+                downloadRemoteImages = true;
               };
             };
           };
+        };
       };
     };
   };

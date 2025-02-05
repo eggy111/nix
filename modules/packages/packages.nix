@@ -34,11 +34,12 @@
     yazi # file manager
     # lf # file manager but i dont want it anymore, lf is aliased to yazi
     ncdu # tui tool for viewing and interacting with disk space
-    tree # nice way to view directory structure 
+    wiper # Disk analyser and cleanup tool
+    tree # nice way to view directory structure
     smartmontools
 
     #terminal applications
-    git # version control 
+    git # version control
     lazygit
     fzf # fuzzy finder
     frogmouth # i think this is a markdown viewer

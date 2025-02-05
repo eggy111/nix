@@ -5,6 +5,9 @@
 }:
 
 {
+  imports = [
+    ./glance.nix
+  ];
   custom = {
     steam.enable = true;
     framework.enable = true;
