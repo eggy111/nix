@@ -39,8 +39,8 @@
 
       #misc
       dos2unix # girl i dont even know what this is
-      via
-      kando
+      via # supposed to manage keyboards but doesn't work v well
+      xmlstarlet # used for a plex terminal app
 
       #shell related packages
 
