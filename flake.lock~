@@ -391,19 +391,11 @@
     },
     "nixos-hardware": {
       "locked": {
-<<<<<<< HEAD
         "lastModified": 1738816619,
         "narHash": "sha256-5yRlg48XmpcX5b5HesdGMOte+YuCy9rzQkJz+imcu6I=",
         "owner": "NixOS",
         "repo": "nixos-hardware",
         "rev": "2eccff41bab80839b1d25b303b53d339fbb07087",
-=======
-        "lastModified": 1736441705,
-        "narHash": "sha256-OL7leZ6KBhcDF3nEKe4aZVfIm6xQpb1Kb+mxySIP93o=",
-        "owner": "NixOS",
-        "repo": "nixos-hardware",
-        "rev": "8870dcaff63dfc6647fb10648b827e9d40b0a337",
->>>>>>> a12e0aa (rats i updated my flake)
         "type": "github"
       },
       "original": {

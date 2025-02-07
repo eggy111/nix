@@ -18,18 +18,9 @@
     },
     "cachix": {
       "inputs": {
-        "devenv": [
-          "focal",
-          "devenv"
-        ],
-        "flake-compat": [
-          "focal",
-          "devenv"
-        ],
-        "git-hooks": [
-          "focal",
-          "devenv"
-        ],
+        "devenv": ["focal", "devenv"],
+        "flake-compat": ["focal", "devenv"],
+        "git-hooks": ["focal", "devenv"],
         "nixpkgs": "nixpkgs"
       },
       "locked": {
@@ -87,12 +78,7 @@
     },
     "flake-parts": {
       "inputs": {
-        "nixpkgs-lib": [
-          "focal",
-          "devenv",
-          "nix",
-          "nixpkgs"
-        ]
+        "nixpkgs-lib": ["focal", "devenv", "nix", "nixpkgs"]
       },
       "locked": {
         "lastModified": 1712014858,
@@ -165,9 +151,7 @@
       "inputs": {
         "devenv": "devenv",
         "flake-parts": "flake-parts_2",
-        "nixpkgs": [
-          "nixpkgs"
-        ],
+        "nixpkgs": ["nixpkgs"],
         "systems": "systems"
       },
       "locked": {
@@ -186,16 +170,9 @@
     },
     "git-hooks": {
       "inputs": {
-        "flake-compat": [
-          "focal",
-          "devenv"
-        ],
+        "flake-compat": ["focal", "devenv"],
         "gitignore": "gitignore",
-        "nixpkgs": [
-          "focal",
-          "devenv",
-          "nixpkgs"
-        ]
+        "nixpkgs": ["focal", "devenv", "nixpkgs"]
       },
       "locked": {
         "lastModified": 1737301351,
@@ -213,12 +190,7 @@
     },
     "gitignore": {
       "inputs": {
-        "nixpkgs": [
-          "focal",
-          "devenv",
-          "git-hooks",
-          "nixpkgs"
-        ]
+        "nixpkgs": ["focal", "devenv", "git-hooks", "nixpkgs"]
       },
       "locked": {
         "lastModified": 1709087332,
@@ -236,9 +208,7 @@
     },
     "home-manager": {
       "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
+        "nixpkgs": ["nixpkgs"]
       },
       "locked": {
         "lastModified": 1738878603,
@@ -256,10 +226,7 @@
     },
     "hyprlang": {
       "inputs": {
-        "nixpkgs": [
-          "rose-pine-hyprcursor",
-          "nixpkgs"
-        ],
+        "nixpkgs": ["rose-pine-hyprcursor", "nixpkgs"],
         "systems": "systems_4"
       },
       "locked": {
@@ -309,14 +276,8 @@
     },
     "nil": {
       "inputs": {
-        "flake-utils": [
-          "nvf",
-          "flake-utils"
-        ],
-        "nixpkgs": [
-          "nvf",
-          "nixpkgs"
-        ],
+        "flake-utils": ["nvf", "flake-utils"],
+        "nixpkgs": ["nvf", "nixpkgs"],
         "rust-overlay": "rust-overlay"
       },
       "locked": {
@@ -335,25 +296,13 @@
     },
     "nix": {
       "inputs": {
-        "flake-compat": [
-          "focal",
-          "devenv"
-        ],
+        "flake-compat": ["focal", "devenv"],
         "flake-parts": "flake-parts",
         "libgit2": "libgit2",
         "nixpkgs": "nixpkgs_2",
-        "nixpkgs-23-11": [
-          "focal",
-          "devenv"
-        ],
-        "nixpkgs-regression": [
-          "focal",
-          "devenv"
-        ],
-        "pre-commit-hooks": [
-          "focal",
-          "devenv"
-        ]
+        "nixpkgs-23-11": ["focal", "devenv"],
+        "nixpkgs-regression": ["focal", "devenv"],
+        "pre-commit-hooks": ["focal", "devenv"]
       },
       "locked": {
         "lastModified": 1734114420,
@@ -493,19 +442,11 @@
     },
     "nixpkgs_4": {
       "locked": {
-<<<<<<< HEAD
         "lastModified": 1738680400,
         "narHash": "sha256-ooLh+XW8jfa+91F1nhf9OF7qhuA/y1ChLx6lXDNeY5U=",
         "owner": "nixos",
         "repo": "nixpkgs",
         "rev": "799ba5bffed04ced7067a91798353d360788b30d",
-=======
-        "lastModified": 1736701207,
-        "narHash": "sha256-jG/+MvjVY7SlTakzZ2fJ5dC3V1PrKKrUEOEE30jrOKA=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "ed4a395ea001367c1f13d34b1e01aa10290f67d6",
->>>>>>> a12e0aa (rats i updated my flake)
         "type": "github"
       },
       "original": {
@@ -569,9 +510,7 @@
         "flake-utils": "flake-utils",
         "mnw": "mnw",
         "nil": "nil",
-        "nixpkgs": [
-          "nixpkgs"
-        ],
+        "nixpkgs": ["nixpkgs"],
         "nmd": "nmd",
         "plugin-aerial-nvim": "plugin-aerial-nvim",
         "plugin-alpha-nvim": "plugin-alpha-nvim",
@@ -713,10 +652,7 @@
         "plugin-precognition-nvim": "plugin-precognition-nvim",
         "plugin-project-nvim": "plugin-project-nvim",
         "plugin-promise-async": "plugin-promise-async",
-<<<<<<< HEAD
         "plugin-rainbow-delimiters": "plugin-rainbow-delimiters",
-=======
->>>>>>> a12e0aa (rats i updated my flake)
         "plugin-registers": "plugin-registers",
         "plugin-render-markdown-nvim": "plugin-render-markdown-nvim",
         "plugin-rose-pine": "plugin-rose-pine",
@@ -741,7 +677,6 @@
         "plugin-vim-repeat": "plugin-vim-repeat",
         "plugin-vim-startify": "plugin-vim-startify",
         "plugin-which-key": "plugin-which-key",
-<<<<<<< HEAD
         "plugin-yanky-nvim": "plugin-yanky-nvim",
         "systems": "systems_3"
       },
@@ -751,16 +686,6 @@
         "owner": "notashelf",
         "repo": "nvf",
         "rev": "ff31e0fe25ab21e138efa8d7a3f8628c75a845fd",
-=======
-        "systems": "systems_3"
-      },
-      "locked": {
-        "lastModified": 1736795850,
-        "narHash": "sha256-8/ltv9RZoL3ZH3OPpO4lyxCEsnn48/awkWWMkFH3/fI=",
-        "owner": "notashelf",
-        "repo": "nvf",
-        "rev": "4b9047025f863ac05115437f97b4225ae8f6fb1a",
->>>>>>> a12e0aa (rats i updated my flake)
         "type": "github"
       },
       "original": {
@@ -3011,7 +2936,6 @@
         "type": "github"
       }
     },
-<<<<<<< HEAD
     "plugin-rainbow-delimiters": {
       "flake": false,
       "locked": {
@@ -3028,8 +2952,6 @@
         "type": "github"
       }
     },
-=======
->>>>>>> a12e0aa (rats i updated my flake)
     "plugin-registers": {
       "flake": false,
       "locked": {
@@ -3414,7 +3336,6 @@
         "type": "github"
       }
     },
-<<<<<<< HEAD
     "plugin-yanky-nvim": {
       "flake": false,
       "locked": {
@@ -3431,8 +3352,6 @@
         "type": "github"
       }
     },
-=======
->>>>>>> a12e0aa (rats i updated my flake)
     "root": {
       "inputs": {
         "focal": "focal",
@@ -3467,11 +3386,7 @@
     },
     "rust-overlay": {
       "inputs": {
-        "nixpkgs": [
-          "nvf",
-          "nil",
-          "nixpkgs"
-        ]
+        "nixpkgs": ["nvf", "nil", "nixpkgs"]
       },
       "locked": {
         "lastModified": 1731983527,
@@ -3492,19 +3407,11 @@
         "nixpkgs": "nixpkgs_6"
       },
       "locked": {
-<<<<<<< HEAD
         "lastModified": 1738291974,
         "narHash": "sha256-wkwYJc8cKmmQWUloyS9KwttBnja2ONRuJQDEsmef320=",
         "owner": "Mic92",
         "repo": "sops-nix",
         "rev": "4c1251904d8a08c86ac6bc0d72cc09975e89aef7",
-=======
-        "lastModified": 1736808430,
-        "narHash": "sha256-wlgdf/n7bJMLBheqt1jmPoxJFrUP6FByKQFXuM9YvIk=",
-        "owner": "Mic92",
-        "repo": "sops-nix",
-        "rev": "553c7cb22fed19fd60eb310423fdc93045c51ba8",
->>>>>>> a12e0aa (rats i updated my flake)
         "type": "github"
       },
       "original": {
