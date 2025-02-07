@@ -14,8 +14,7 @@
       general = {
         ignore_empty_input = true;
         grace = 30;
-        # enable_fingerprint = true; # old way
-        immediate_render = true;
+        # enable_fingerprint = true; # old way 
       };
 
       auth = {
@@ -28,7 +27,6 @@
 
       background = [
         {
-          color = "rgba(200, 120, 230, 0.5)";
           path = "/home/eggy/.config/wallpapers/A.png";
           blur_passes = 2;
           blur_size = 5;
@@ -88,7 +86,6 @@
           fade_timeout = 1500;
           font_family = "JetBrainsMono Nerd Font Bold";
           placeholder_text = "<i>Enter Password...</i>";
-          capslock_color = "rgba(255, 0, 0, 1)";
           hide_input = false;
           rounding = 20;
           check_color = "$color2";
