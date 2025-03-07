@@ -73,6 +73,7 @@
       plexamp # music player
       dualsensectl
       trigger-control
+      itch # game client
       shortwave # ipradio
       freetube # youtube client
       r2modman # mod manager for risk of rain 2, i should move it into steam
