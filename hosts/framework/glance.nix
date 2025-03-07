@@ -67,11 +67,36 @@
                     "LadybirdBrowser/ladybird"
                   ];
                 }
-                # {
-                # type = "repository";
-                # repository = ;
-                # }
+                {
+                  type = "rss";
+                  title = "News";
+                  style = "horizontal-cards";
+                  feeds = [
+                    {
+                      url = "https://feeds.arstechnica.com/arstechnica/index";
+                      title = "Ars Technica";
+                    }
+                  ];
+                }
               ];
+            }
+          ];
+        }
+        {
+          name = "test";
+          columns = [
+            {
+              size = "full";
+              widgets = [
+                {
+                  type = "calendar";
+                }
+                {
+                  location = "Grand Rapids, Michigan, United States";
+                  type = "weather";
+                }
+              ];
+
             }
           ];
         }

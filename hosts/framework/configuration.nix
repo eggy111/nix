@@ -32,15 +32,15 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  #  Enable zsh
-  #  programs.zsh.enable = true;
-  programs.fish.enable = true;
+  # programs.zsh.enable = true; # enables zsh shell
+  programs.fish.enable = true; # enables the fish shell
+
+  programs.ladybird.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # Install firefox.
-  programs.firefox.enable = true;
+  programs.firefox.enable = true; # Install Firefox
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
