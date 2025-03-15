@@ -35,6 +35,8 @@
 
       #productivity related goods
       onlyoffice-bin # office suite
+      chromium
+      sublime3
       thunderbird # mail client
 
       #misc
