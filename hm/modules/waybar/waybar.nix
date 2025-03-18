@@ -8,7 +8,7 @@
   ...
 }:
 {
-  home.file = { 
+  home.file = {
     ".config/waybar/custom/plexbar/plexbar" = {
       executable = true;
       source = ./plexbar;
@@ -87,10 +87,10 @@
           on-click = "focal video --stop";
           signal = 1;
         };
- 
+
         #"custom/hyprland" = {
         #  "format" = " home ";
-        #  "tooltip = true; 
+        #  "tooltip = true;
         #  "tooltip-format" = "open hyprland config";
         #  "on-click" = "kitty vim ~/.config/hypr/hyprland.conf";
         #};
