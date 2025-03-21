@@ -7,6 +7,7 @@
   options = {
     custom.zfs-dedede.enable = lib.mkEnableOption "configures zfs pool for my server";
   };
+  boot.supportedFilesystems.zfs = true;
 
   config = {
     services.zfs = {
@@ -23,23 +24,6 @@
             devices = [
               "dev/disk/by-id/xxxx"
             ];
-          }
-          # SLOG (mirrored NVMes for the log devices)
-          {
-            vdev = "log";
-            devices = [
-              {
-                vdev = "mirror";
-                devices = [
-                  "/dev/disk/by-id/nvme-xxx"
-                ];
-              }
-            ];
-          }
-          # L2ARC (read cache)
-          {
-            vdev = "cache";
-            devices = [ "/dev/disk/by-id/nvme-xxx" ];
           }
         ];
       };
