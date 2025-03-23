@@ -13,6 +13,6 @@
 
   custom.framework.enable = lib.mkDefault false;
   custom.nvidia.enable = lib.mkDefault false;
-  custom.zfs-dedede = lib.mkDefault false;
+  # custom.zfs-dedede = lib.mkDefault false;
   # custom.zfs-blade = lib.mkDefault false;
 }
