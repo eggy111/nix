@@ -44,6 +44,7 @@
       via # supposed to manage keyboards but doesn't work v well
       kando
       xmlstarlet # used for a plex terminal app
+      filezilla
 
       #shell related packages
 

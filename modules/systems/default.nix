@@ -7,7 +7,7 @@
   imports = [
     ./framework.nix
     ./nvidia.nix
-    # ./dedede_zfs.nix
+    # ./zfs-dedede.nix
     # ./blade_zfs.nix
   ];
 
