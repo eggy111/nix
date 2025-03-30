@@ -63,7 +63,7 @@
       pipes # pipes, just for funsies, like the screensaver
       pamixer # i think this is for volume?
       pokeget-rs # generates pixel pokemon in terminal
-      claws-mail # mail client I want to setup
+      # claws-mail # mail client I want to setup
       playerctl # tbh idk
 
       #interfaces/menus
