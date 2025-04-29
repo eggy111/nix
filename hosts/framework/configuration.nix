@@ -1,6 +1,7 @@
 # /hosts/framework/configuration.nix
 
 {
+  pkgs,
   ...
 }:
 
@@ -31,6 +32,14 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+
+  fonts.packages = with pkgs; [
+    liberation_ttf_v1
+  ];
+  environment.systemPackages = with pkgs; [
+    liberation_ttf_v1
+    tlrc
+  ];
 
   # programs.zsh.enable = true; # enables zsh shell
   programs.fish.enable = true; # enables the fish shell

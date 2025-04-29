@@ -18,20 +18,10 @@
         autoScrub.enable = true;
         autoScrub.interval = "weekly";
       };
-      # boot.zfs.extraPools = [ "mypool" ];
-
-      # boot.zfs.pools = {
-      #   "mypool" = {
-      #     devices = [
-      #       {
-      #         vdev = "raidz2";
-      #         devices = [
-      #           "dev/disk/by-id/xxxx"
-      #         ];
-      #       }
-      #     ];
-      #   };
-      # };
+    };
+    boot.zfs = {
+      requestEncryptionCredentials = true;
+      extraPools = [ "rpool" ];
     };
   };
 }
