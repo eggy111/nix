@@ -17,4 +17,5 @@
   custom.hyprland.enable = lib.mkDefault true;
   custom.bluetooth.enable = lib.mkDefault true;
   custom.sops.enable = lib.mkDefault false;
+  custom.minecraft = lib.mkDefault false;
 }

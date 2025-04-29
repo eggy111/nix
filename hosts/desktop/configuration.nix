@@ -12,6 +12,7 @@
     steam.enable = true;
     nvidia.enable = true;
     discord.enable = true;
+    minecraft.enable = true;
   };
 
   environment.systemPackages = with pkgs; [
