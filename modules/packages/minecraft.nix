@@ -2,6 +2,7 @@
   config,
   pkgs,
   lib,
+  ...
 }:
 {
   options = {
@@ -9,7 +10,7 @@
   };
 
   config = lib.mkIf config.custom.minecraft.enable {
-    envrionment.systemPackages = with pkgs; [
+    environment.systemPackages = with pkgs; [
       prismlauncher
     ];
 

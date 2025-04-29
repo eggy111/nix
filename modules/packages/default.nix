@@ -8,6 +8,7 @@
     ./discord.nix
     ./gui.nix
     ./hyprland.nix
+    ./minecraft.nix
     # ./neovim.nix
     ./nvim.nix
     ./packages.nix
@@ -17,5 +18,5 @@
   custom.hyprland.enable = lib.mkDefault true;
   custom.bluetooth.enable = lib.mkDefault true;
   custom.sops.enable = lib.mkDefault false;
-  custom.minecraft = lib.mkDefault false;
+  custom.minecraft.enable = lib.mkDefault false;
 }
