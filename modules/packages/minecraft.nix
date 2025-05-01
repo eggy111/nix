@@ -2,6 +2,7 @@
   config,
   pkgs,
   lib,
+  inputs,
   ...
 }:
 {
@@ -10,8 +11,10 @@
   };
 
   config = lib.mkIf config.custom.minecraft.enable {
+
+    nixpkgs.overlays = [ inputs.polymc.overlay ];
     environment.systemPackages = with pkgs; [
-      prismlauncher
+      polymc
     ];
 
   };

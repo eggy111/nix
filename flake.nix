@@ -29,6 +29,7 @@
     niri = {
       url = "github:sodiboo/niri-flake";
     };
+    polymc.url = "github:PolyMC/PolyMC";
   };
 
   nixConfig = {
