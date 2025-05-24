@@ -13,6 +13,7 @@
     steam.enable = true;
     framework.enable = true;
     discord.enable = true;
+    minecraft.enable = true;
   };
 
   # Bootloader.
