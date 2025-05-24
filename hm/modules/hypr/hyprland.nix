@@ -18,7 +18,7 @@
         "$mainMod, Q, exec, kitty ~"
         "$mainMod SHIFT, Q, exec, kitty ~/Documents/nix"
         "$mainMod, C, killactive,"
-        "$mainMod, M, exit,"
+        "$mainMod SHIFT, M, exit,"
         "$mainMod, V, togglefloating,"
         "$mainMod, R, exec, $menu"
         "$mainMod, P, pseudo # dwindle"
@@ -34,6 +34,7 @@
         ''$mainMod SHIFT, e, exec, rofi -modi "emoji:rofimoji" -show emoji''
         "$mainMod, X, exec, word-lookup"
         ''$mainMod, Space, global, kando:example-menu''
+        "$mainMod, M, exec, polymc"
 
         # Pyprland Shortcuts
         # "$mainMod, B exec, pypr expose"
@@ -123,7 +124,7 @@
         "waybar &"
         "nm-applet --indicator &"
         "dunst &"
-        "wallpaper_setup&"
+        "wallpaper_setup &"
         "pypr"
       ];
 
@@ -140,8 +141,8 @@
       windowrulev2 = "suppressevent maximize, class:.*";
 
       monitor = [
-        "DP-2, preferred, 0x0, auto #dell s3222dgm"
-        "DP-3, preferred, 2560x0, auto #Dell U2515hx"
+        "DP-3, preferred, 0x0, 1.5 #Dell U2515hx high res, good for big images lol"
+        "DP-2, preferred, 2560x0, auto #dell s3222dgm curved monitor"
       ];
 
       env = [
