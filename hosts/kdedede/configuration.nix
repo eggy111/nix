@@ -37,6 +37,7 @@
 
   boot.zfs.extraPools = [ "zpool" ];
   boot.zfs.requestEncryptionCredentials = true;
+  boot.zfs.devNodes = "/dev/disk/by-id";
 
   swapDevices = [
     { device = "/dev/nvme0n1p2"; }
