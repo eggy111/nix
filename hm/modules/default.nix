@@ -9,5 +9,6 @@
     ./hypr
     # ./nvim/nvim.nix
     ./waybar
+    # ./yazi.nix
   ];
 }

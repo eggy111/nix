@@ -40,7 +40,7 @@
         };
         languages = {
           enableFormat = true;
-          enableLSP = true;
+          # enableLSP = true;
           enableTreesitter = true;
           bash.enable = true;
           css.enable = true;
