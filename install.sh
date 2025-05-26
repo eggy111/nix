@@ -87,7 +87,7 @@ else
         # Get second user selection
         while true; do
                 echo ""
-                read -rp "Enter the number of the mirror disk to install to: " selection
+                read -rp "Enter the number of the mirror disk to install to: " selection2
                 if [[ "$selection2" =~ ^[0-9]+$ ]] && [ "$selection2" -ge 1 ] && [ "$selection2" -le ${#disks[@]} ]; then
                         break
                 else
@@ -179,7 +179,7 @@ sudo mkswap "$SWAPDISK2" --label "SWAP"
 sudo swapon "$SWAPDISK2"
 
 echo "Creating Boot Disk2"
-sudo mkfs.fat -F 32 "$BOOTDISK2" -n NIXBOOT
+sudo mkfs.fat -F 32 "$BOOTDISK2" -n NIXBOOT2
 
 # setup encryption
 use_encryption=$(yesno "Use encryption? (Encryption must also be enabled within host config with boot.zfs.requestEncryptionCredentials = true)")
@@ -203,7 +203,7 @@ sudo zpool create -f \
         -O normalization=formD \
         -O mountpoint=none \
         "${encryption_options[@]}" \
-        zroot mirro \
+        zroot mirror \
         "$ZFSDISK" "$ZFSDISK2"
 
 # NOTE: legacy mounts are used so they can be managed by fstab and swapped out via nixos configuration, e.g. for tmpfs
