@@ -26,8 +26,8 @@
     mirroredBoots = [
       {
         devices = [
-          "/dev/nvme1n1"
-          "/dev/nvme2n1"
+          "/dev/nvme1n1p3"
+          "/dev/nvme2n1p3"
         ];
         path = "/boot";
       }

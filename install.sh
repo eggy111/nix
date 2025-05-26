@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# Originally written by Iynaix, I have edited it (marginally) to work for my system lol
 set -o errexit
 set -o nounset
 set -o pipefail
@@ -247,12 +248,12 @@ fi
 sudo mount --mkdir -t zfs zroot/persist /mnt/persist
 
 # get repo to install from
-read -rp "Enter flake URL (default: github:iynaix/dotfiles): " repo
-repo="${repo:-github:iynaix/dotfiles}"
+read -rp "Enter flake URL (default: github:eggy111/nix): " repo
+repo="${repo:-github:eggy111/nix}"
 
-# only relevant for IynaixOS
-if [[ $repo == "github:iynaix/dotfiles" ]]; then
-        hosts=("desktop" "framework" "xps" "vm" "vm-hyprland")
+# only relevant for EggOS
+if [[ $repo == "github:eggy111/nix" ]]; then
+        hosts=("desktop" "framework" "kdedede" "blade")
 
         echo "Available hosts:"
         for i in "${!hosts[@]}"; do
