@@ -17,8 +17,36 @@
   };
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.supportedFilesystems = [ "zfs" ];
+  networking.hostId = "78eace7a";
+  boot.loader.grub = {
+    enable = true;
+    efiSupport = true;
+    mirroredBoots = [
+      {
+        devices = [
+          "/dev/nvme1n1"
+          "/dev/nvme2n1"
+        ];
+        path = "/boot";
+      }
+    ];
+    zfsSupport = true;
+  };
+
+  boot.zfs.extraPools = [ "zpool" ];
+  boot.zfs.requestEncryptionCredentials = true;
+
+  swapDevices = [
+    { device = "/dev/nvme0n1p2"; }
+    { device = "/dev/nvme1n1p2"; }
+  ];
+
+  services.zfs = {
+    autoScrub.enable = true;
+    trim.enable = true;
+  };
 
   networking.hostName = "kdedede"; # Define your hostname.
 
