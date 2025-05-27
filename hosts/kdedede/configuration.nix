@@ -33,6 +33,7 @@
       }
     ];
     zfsSupport = true;
+    device = "nodev";
   };
 
   boot.zfs.extraPools = [ "zpool" ];
