@@ -26,8 +26,8 @@
     mirroredBoots = [
       {
         devices = [
-          "/dev/nvme1n1p3"
-          "/dev/nvme2n1p3"
+          "/dev/disk/by-id/nvme-KINGSTON-SNV2S1000G_50026B7686C1464-part1"
+          "/dev/disk/by-id/nvme-KINGSTON-SNV2S1000G_50026B7686C138FE-part1"
         ];
         path = "/boot";
       }
@@ -41,8 +41,8 @@
   boot.zfs.devNodes = "/dev/disk/by-id";
 
   swapDevices = [
-    { device = "/dev/nvme0n1p2"; }
-    { device = "/dev/nvme1n1p2"; }
+    { device = "/dev/disk/by-id/nvme-KINGSTON-SNV2S1000G_50026B7686C138FE-part2"; }
+    { device = "/dev/disk/by-id/nvme-KINGSTON-SNV2S1000G_50026B7686C138FE-part1"; }
   ];
 
   services.zfs = {
