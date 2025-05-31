@@ -15,6 +15,7 @@
     discord.enable = true;
     minecraft.enable = true;
   };
+  nix.settings.warn-dirty = false;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
