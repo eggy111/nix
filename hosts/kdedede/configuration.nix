@@ -18,37 +18,6 @@
 
   # Bootloader.
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.supportedFilesystems = [ "zfs" ];
-  networking.hostId = "78eace7a";
-  boot.loader.grub = {
-    enable = true;
-    efiSupport = true;
-    mirroredBoots = [
-      {
-        devices = [
-          "/dev/disk/by-id/nvme-KINGSTON-SNV2S1000G_50026B7686C1464-part1"
-          "/dev/disk/by-id/nvme-KINGSTON-SNV2S1000G_50026B7686C138FE-part1"
-        ];
-        path = "/boot";
-      }
-    ];
-    zfsSupport = true;
-    device = "nodev";
-  };
-
-  boot.zfs.extraPools = [ "zpool" ];
-  boot.zfs.requestEncryptionCredentials = true;
-  boot.zfs.devNodes = "/dev/disk/by-id";
-
-  swapDevices = [
-    { device = "/dev/disk/by-id/nvme-KINGSTON-SNV2S1000G_50026B7686C138FE-part2"; }
-    { device = "/dev/disk/by-id/nvme-KINGSTON-SNV2S1000G_50026B7686C138FE-part1"; }
-  ];
-
-  services.zfs = {
-    autoScrub.enable = true;
-    trim.enable = true;
-  };
 
   networking.hostName = "kdedede"; # Define your hostname.
 

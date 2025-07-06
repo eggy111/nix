@@ -80,25 +80,6 @@ else
 
         # Get the selected disk
         DISK="/dev/$(echo "${disks[$selection - 1]}" | awk '{print $1}')"
-
-        ###################################################################################################
-        # PROMPT FOR MIRROR HERE
-        ###################################################################################################
-
-        # Get second user selection
-        while true; do
-                echo ""
-                read -rp "Enter the number of the mirror disk to install to: " selection2
-                if [[ "$selection2" =~ ^[0-9]+$ ]] && [ "$selection2" -ge 1 ] && [ "$selection2" -le ${#disks[@]} ]; then
-                        break
-                else
-                        echo "Invalid selection. Please try again."
-                fi
-        done
-
-        # Get the selected disk
-        DISK2="/dev/$(echo "${disks[$selection2 - 1]}" | awk '{print $1}')"
-
 fi
 
 # if disk contains "nvme", append "p" to partitions
@@ -112,27 +93,9 @@ else
         ZFSDISK="${DISK}1"
 fi
 
-###################################################################################################
-# SET MIRROR DISK VARIABLES HERE
-###################################################################################################
-
-# if disk contains "nvme", append "p" to partitions
-if [[ "$DISK2" =~ "nvme" ]]; then
-        BOOTDISK2="${DISK2}p3"
-        SWAPDISK2="${DISK2}p2"
-        ZFSDISK2="${DISK2}p1"
-else
-        BOOTDISK2="${DISK2}3"
-        SWAPDISK2="${DISK2}2"
-        ZFSDISK2="${DISK2}1"
-fi
-
-echo "Boot Partition: $BOOTDISK"
-echo "Boot Partition2: $BOOTDISK2"
-echo "SWAP Partition: $SWAPDISK"
-echo "SWAP Partition2: $SWAPDISK2"
-echo "ZFS Partition: $ZFSDISK"
-echo "ZFS Partition2: $ZFSDISK2"
+echo "Boot Partiton: $BOOTDISK"
+echo "SWAP Partiton: $SWAPDISK"
+echo "ZFS Partiton: $ZFSDISK"
 
 echo ""
 do_format=$(yesno "This irreversibly formats the entire disk. Are you sure?")
@@ -159,29 +122,6 @@ sudo swapon "$SWAPDISK"
 echo "Creating Boot Disk"
 sudo mkfs.fat -F 32 "$BOOTDISK" -n NIXBOOT
 
-###################################################################################################
-# SET MIRROR DISK PARTITIONS HERE
-###################################################################################################
-
-echo "Creating mirror partitions"
-sudo blkdiscard -f "$DISK2"
-sudo sgdisk --clear"$DISK2"
-
-sudo sgdisk -n3:1M:+1G -t3:EF00 "$DISK2"
-sudo sgdisk -n2:0:+16G -t2:8200 "$DISK2"
-sudo sgdisk -n1:0:0 -t1:BF01 "$DISK2"
-
-# notify kernel of partition changes
-sudo sgdisk -p "$DISK2" >/dev/null
-sleep 5
-
-echo "Creating Swap"
-sudo mkswap "$SWAPDISK2" --label "SWAP"
-sudo swapon "$SWAPDISK2"
-
-echo "Creating Boot Disk2"
-sudo mkfs.fat -F 32 "$BOOTDISK2" -n NIXBOOT2
-
 # setup encryption
 use_encryption=$(yesno "Use encryption? (Encryption must also be enabled within host config with boot.zfs.requestEncryptionCredentials = true)")
 if [[ $use_encryption == "y" ]]; then
@@ -190,9 +130,6 @@ else
         encryption_options=()
 fi
 
-###################################################################################################
-# ADD MIRROR TO POOL
-###################################################################################################
 echo "Creating base zpool"
 sudo zpool create -f \
         -o ashift=12 \
@@ -204,8 +141,7 @@ sudo zpool create -f \
         -O normalization=formD \
         -O mountpoint=none \
         "${encryption_options[@]}" \
-        zroot mirror \
-        "$ZFSDISK" "$ZFSDISK2"
+        zroot "$ZFSDISK"
 
 # NOTE: legacy mounts are used so they can be managed by fstab and swapped out via nixos configuration, e.g. for tmpfs
 echo "Creating /"
@@ -271,26 +207,15 @@ if [[ $repo == "github:eggy111/nix" ]]; then
                 fi
         done
 else
-        # non IynaixOS, prompt for host
+        # non EggOS, prompt for host
         read -rp "Which host to install?" host
 fi
 
 read -rp "Enter git rev for flake (default: main): " git_rev
 
 echo "Installing NixOS"
-if [[ $repo == "github:iynaix/dotfiles" ]]; then
-        # root password is irrelevant if initialPassword is set in the config
-        sudo nixos-install --no-root-password --flake "$repo/${git_rev:-main}#$host" --option tarball-ttl 0
-else
-        sudo nixos-install --flake "$repo/${git_rev:-main}#$host" --option tarball-ttl 0
-fi
 
-# only relevant for IynaixOS
-if [[ $repo == "github:iynaix/dotfiles" ]]; then
-        echo "To setup secrets, run \"install-remote-secrets\" on the other host."
-
-        IP_ADDR=$(ifconfig | awk '/inet / && !/127.0.0.1/ {print $2; exit}')
-        echo "The IP address of this host is $IP_ADDR"
-fi
+sudo nixos-install --flake "$repo/${git_rev:-main}#$host" --option tarball-ttl 0
 
 echo "Installation complete. It is now safe to reboot."
+
