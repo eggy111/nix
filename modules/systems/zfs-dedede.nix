@@ -14,7 +14,7 @@
       supportedFilesystems.zfs = true;
       zfs = {
         devNodes = "/dev/disk/by-id";
-        extraPools = [ "zpool" ];
+        extraPools = [ "zroot" ];
         requestEncryptionCredentials = true;
       };
       loader.grub = {
