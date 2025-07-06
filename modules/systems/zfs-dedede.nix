@@ -37,7 +37,7 @@
         neededForBoot = true;
       };
       "/boot" = {
-        device = "/dev/disk/by-label/NIXBOOK";
+        device = "/dev/disk/by-label/NIXBOOT";
         fsType = "vfat";
       };
       "/nix" = {
