@@ -13,7 +13,7 @@
     discord.enable = false;
     hyprland.enable = false;
     gui.enable = false;
-    # zfs-dedede.enable = false;
+    zfs-dedede.enable = true;
   };
 
   # Bootloader.
