@@ -218,4 +218,3 @@ echo "Installing NixOS"
 sudo nixos-install --flake "$repo/${git_rev:-main}#$host" --option tarball-ttl 0
 
 echo "Installation complete. It is now safe to reboot."
-

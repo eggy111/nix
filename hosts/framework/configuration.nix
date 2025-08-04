@@ -8,6 +8,7 @@
 {
   imports = [
     ./glance.nix
+    # ./copyparty.nix
   ];
   custom = {
     steam.enable = true;
@@ -41,6 +42,7 @@
   environment.systemPackages = with pkgs; [
     liberation_ttf_v1
     tlrc
+    frogmouth
   ];
 
   # programs.zsh.enable = true; # enables zsh shell

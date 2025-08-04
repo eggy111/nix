@@ -15,6 +15,7 @@
     # hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
     nixos-hardware.url = "github:NixOS/nixos-hardware";
+    copyparty.url = "github:9001/copyparty";
 
     sops-nix.url = "github:Mic92/sops-nix";
 
@@ -53,6 +54,7 @@
     {
       self,
       nixpkgs,
+      copyparty,
       ...
     }@inputs:
     let
@@ -82,6 +84,16 @@
                 };
               };
             }
+            copyparty.nixosModules.default
+            (
+              { pkgs, ... }:
+              {
+                # add the copyparty overlay to expose the package to the module
+                nixpkgs.overlays = [ copyparty.overlays.default ];
+                # (optional) install the package globally
+                environment.systemPackages = [ pkgs.copyparty ];
+              }
+            )
           ];
         };
     in

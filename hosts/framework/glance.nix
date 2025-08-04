@@ -21,7 +21,7 @@
                   type = "calendar";
                 }
                 {
-                  location = "Okemos, Michigan, United States";
+                  location = "Grand Rapids, Michigan, United States";
                   type = "weather";
                   units = "imperial";
                 }
