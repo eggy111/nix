@@ -36,6 +36,7 @@
       hyprcursor
       #hyprshot #idk if I even want this since I got grim and slurp running
       hyprshade
+      hyprsunset
       hypridle
       hyprlock
       inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default

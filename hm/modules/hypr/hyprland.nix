@@ -53,9 +53,13 @@
         "$mainMod, backslash, exec, focal video --rofi --no-rounded-windows"
         "$mainMod SHIFT, backslash, exec, focal --rofi --no-rounded-windows --audio"
 
-        # hyprshade bindings
-        "$mainMod, Z, exec, hyprshade on blue-light-filter"
-        "$mainMod SHIFT, Z, exec, hyprshade off"
+        # hyprshade bindings # not working so im switching to hyprsunset, should be better too anyways
+        # "$mainMod, Z, exec, hyprshade on blue-light-filter"
+        # "$mainMod SHIFT, Z, exec, hyprshade off"
+        "$mainMod, Z, exec, hyprctl hyprsunset temperature 2500"
+        "$mainMod SHIFT, Z, exec, hyprctl hyprsunset identity"
+        # "XF86MonBrightnessUp SHIFT, exec, hyprctl hyprsunset temperature +10"
+        # "$XF86MonBrightnessUp SHIFT, exec, hyprctl hyprsunset temperature -10"
 
         # Move focus with mainMod + arrow keys
         "$mainMod, left, movefocus, l"
@@ -125,6 +129,7 @@
         "nm-applet --indicator &"
         "dunst &"
         "wallpaper_setup &"
+        "hyprsunset &"
         "pypr"
       ];
 
