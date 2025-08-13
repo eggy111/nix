@@ -7,9 +7,9 @@
 }:
 
 {
-    imports = [
-      inputs.sops-nix.nixosModules.sops
-    ];
+  imports = [
+    inputs.sops-nix.nixosModules.sops
+  ];
   options = {
     custom.sops.enable = lib.mkEnableOption "tired of error and i havent figured it out, or needed to so";
   };
