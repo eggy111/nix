@@ -147,7 +147,8 @@
 
       monitor = [
         "DP-3, preferred, 0x0, 1.5 #Dell U2515hx high res, good for big images lol"
-        "DP-2, preferred, 2560x0, auto #dell s3222dgm curved monitor"
+        "DP-2, preferred, auto-right, auto #dell s3222dgm curved monitor"
+        "DP-1, preferred, auto, 1.75 # Samsung u28e590, also good for big images"
       ];
 
       env = [
