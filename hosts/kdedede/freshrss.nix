@@ -1,0 +1,7 @@
+{ ... }:
+{
+  services.freshrss = {
+    enable = true;
+
+  };
+}

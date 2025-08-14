@@ -8,6 +8,9 @@
 }:
 
 {
+  imports = [
+    ./freshrss.nix
+  ];
   custom = {
     steam.enable = false;
     discord.enable = false;
