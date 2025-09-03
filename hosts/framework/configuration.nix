@@ -44,6 +44,7 @@
     tlrc
     frogmouth
   ];
+  virtualisation.waydroid.enable = true;
 
   # programs.zsh.enable = true; # enables zsh shell
   programs.fish.enable = true; # enables the fish shell
