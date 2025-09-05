@@ -19,4 +19,11 @@
   custom.bluetooth.enable = lib.mkDefault true;
   custom.sops.enable = lib.mkDefault false;
   custom.minecraft.enable = lib.mkDefault false;
+
+  programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 4d --keep 3";
+    flake = "/home/eggy/Documents/nix";
+  };
 }
