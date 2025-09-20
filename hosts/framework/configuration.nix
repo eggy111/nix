@@ -43,6 +43,7 @@
     liberation_ttf_v1
     tlrc
     frogmouth
+    anki
   ];
   virtualisation.waydroid.enable = true;
 
