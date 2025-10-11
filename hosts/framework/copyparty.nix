@@ -12,7 +12,7 @@
       ignored-flag = false;
     };
     accounts = {
-      eggy.passwordFile = "/run/keys/copyparty/eggy_test_key";
+      eggy.passwordFile = "/run/keys/copyparty/eggy_password";
     };
     volumes = {
       "/" = {

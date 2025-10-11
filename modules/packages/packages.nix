@@ -63,6 +63,7 @@
     #localsend # a tool to send files locally similiar to airdrop
     # termscp # transfer manager
     sshfs # mounts file directory using ssh
+    croc # file transfers
 
   ];
 }

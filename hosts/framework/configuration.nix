@@ -22,6 +22,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # programs.niri.enable = true;
   networking.hostName = "framework"; # Define your hostname.
 
   # Configure network proxy if necessary
@@ -44,6 +45,7 @@
     tlrc
     frogmouth
     anki
+    forge-mtg
   ];
   virtualisation.waydroid.enable = true;
 

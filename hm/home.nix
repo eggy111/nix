@@ -121,6 +121,7 @@
       rt = "sudo nixos-rebuild test --flake ~/Documents/nix/";
       hyprland = "Hyprland";
       picotron = ''nix-shell -p steam-run --run "steam-run ~/Downloads/picotron/picotron"'';
+      q = "exit";
     };
     pointerCursor = {
       package = pkgs.simp1e-cursors;

@@ -22,7 +22,8 @@
     environment.systemPackages = with pkgs; [
 
       #Wayland related packages
-      rofi-wayland
+      wayland
+      rofi
       rofi-bluetooth
       rofi-power-menu
       rofimoji

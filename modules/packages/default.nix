@@ -9,6 +9,7 @@
     ./gui.nix
     ./hyprland.nix
     ./minecraft.nix
+    ./niri.nix
     # ./neovim.nix
     ./nvim.nix
     ./packages.nix

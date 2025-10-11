@@ -29,6 +29,7 @@
     };
     niri = {
       url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     polymc.url = "github:PolyMC/PolyMC";
   };
@@ -55,6 +56,7 @@
       self,
       nixpkgs,
       copyparty,
+      niri,
       ...
     }@inputs:
     let
@@ -89,9 +91,13 @@
               { pkgs, ... }:
               {
                 # add the copyparty overlay to expose the package to the module
-                nixpkgs.overlays = [ copyparty.overlays.default ];
+                nixpkgs.overlays = [
+                  copyparty.overlays.default
+                ];
                 # (optional) install the package globally
-                environment.systemPackages = [ pkgs.copyparty ];
+                environment.systemPackages = [
+                  pkgs.copyparty
+                ];
               }
             )
           ];

@@ -243,10 +243,12 @@
         };
       };
 
-      gestures = {
-        workspace_swipe = true;
-      };
+      # gestures = {
+      #   workspace_swipe = true;
+      #   # special = 2, pinchin,
+      # };
 
+      gesture = "3, horizontal, workspace";
       device = {
         name = "epic-mouse-v1";
         sensitivity = -0.5;
