@@ -21,6 +21,7 @@
   environment.systemPackages = with pkgs; [
     whipper # CD ripper
     esphome
+    forge-mtg
   ];
 
   services.hardware.openrgb = {
