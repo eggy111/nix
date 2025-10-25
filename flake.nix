@@ -109,7 +109,7 @@
         framework = mkNixosConfiguration "framework";
         kdedede = mkNixosConfiguration "kdedede";
         blade = mkNixosConfiguration "blade";
-        lean = mkNixosConfiguration "susie";
+        susie = mkNixosConfiguration "susie";
       };
     };
 }
