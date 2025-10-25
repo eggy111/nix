@@ -24,6 +24,7 @@
 
   # programs.niri.enable = true;
   networking.hostName = "susie"; # Define your hostname.
+  networking.hostId = "c9305e0e";
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
