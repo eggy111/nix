@@ -15,7 +15,7 @@
   fonts.packages = (lib.filter lib.isDerivation (lib.attrValues pkgs.nerd-fonts)) ++ [
     pkgs.liberation_ttf_v1
     pkgs.noto-fonts
-    pkgs.noto-fonts-cuneiform
+    # pkgs.noto-fonts-cuneiform
   ];
 
 }
