@@ -21,9 +21,8 @@
   };
   wayland.windowManager.hyprland = {
     plugins = [
-      inputs.hyprgras.packages.${pkgs.system}.default
-      inputs.hyprgrass.packages.${pkgs.system}.hyprgrass-pulse
-      inputs.Hyprspace.packages.${pkgs.system}.Hyprspace
+      pkgs.hyprlandPlugins.hyprgrass
+      pkgs.hyprlandPlugins.hyprspace
     ];
   };
 }
