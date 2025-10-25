@@ -13,6 +13,14 @@
 
     nix-colors.url = "github:misterio77/nix-colors";
     # hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    hyprgrass = {
+      url = "github:horriblename/hyprgrass";
+      inputs.hyprland.follows = "hyprland"; # IMPORTANT
+    };
+    Hyprspace = {
+      url = "github:KZDKM/Hyprspace";
+      inputs.hyprland.follows = "hyprland";
+    };
     rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
     nixos-hardware.url = "github:NixOS/nixos-hardware";
     copyparty.url = "github:9001/copyparty";
@@ -109,6 +117,7 @@
         framework = mkNixosConfiguration "framework";
         kdedede = mkNixosConfiguration "kdedede";
         blade = mkNixosConfiguration "blade";
+        lean = mkNixosConfiguration "susie";
       };
     };
 }
