@@ -20,7 +20,7 @@ zfs-dedede.enable = true;
   nix.settings.warn-dirty = false;
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
+  #boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   # programs.niri.enable = true;
