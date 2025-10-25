@@ -189,7 +189,7 @@ repo="${repo:-github:eggy111/nix}"
 
 # only relevant for EggOS
 if [[ $repo == "github:eggy111/nix" ]]; then
-        hosts=("desktop" "framework" "kdedede" "blade" "susie")
+        hosts=("desktop" "framework" "kdedede" "blade" "chuchu")
 
         echo "Available hosts:"
         for i in "${!hosts[@]}"; do

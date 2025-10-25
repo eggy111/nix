@@ -109,7 +109,7 @@
         framework = mkNixosConfiguration "framework";
         kdedede = mkNixosConfiguration "kdedede";
         blade = mkNixosConfiguration "blade";
-        susie = mkNixosConfiguration "susie";
+        chuchu = mkNixosConfiguration "chuchu";
       };
     };
 }

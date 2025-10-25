@@ -19,10 +19,10 @@
       };
     };
   };
-  wayland.windowManager.hyprland = {
-    plugins = [
-      pkgs.hyprlandPlugins.hyprgrass
-      pkgs.hyprlandPlugins.hyprspace
-    ];
-  };
+  # wayland.windowManager.hyprland = {
+  #   plugins = [
+  #     pkgs.hyprlandPlugins.hyprgrass
+  #     pkgs.hyprlandPlugins.hyprspace
+  #   ];
+  # };
 }
