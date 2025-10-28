@@ -12,8 +12,20 @@
     };
 
     nix-colors.url = "github:misterio77/nix-colors";
-    # hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
     rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
+    hyprgrass = {
+      url = "github:horriblename/hyprgrass";
+      inputs.hyprland.follows = "hyprland";
+    };
+    Hyprspace = {
+      url = "github:KZDKM/Hyprspace";
+      inputs.hyprland.follows = "hyprland";
+    };
     nixos-hardware.url = "github:NixOS/nixos-hardware";
     copyparty.url = "github:9001/copyparty";
 

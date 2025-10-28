@@ -19,10 +19,18 @@
       };
     };
   };
-  # wayland.windowManager.hyprland = {
-  #   plugins = [
-  #     pkgs.hyprlandPlugins.hyprgrass
-  #     pkgs.hyprlandPlugins.hyprspace
-  #   ];
-  # };
+  wayland.windowManager.hyprland = {
+    # extraConfig = ''
+    # plugin = hyprgrass
+    # gestures {
+    # workspace_swipe = true
+    # workspace_swipe_fingers = 3
+    # workspace_swipe_distance = 300
+    # }
+    # '';
+
+    plugins = [
+      inputs.hyprgrass.packages.${pkgs.system}.hyprgrass
+    ];
+  };
 }

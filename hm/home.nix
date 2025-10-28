@@ -111,8 +111,8 @@
 
   home = {
     shellAliases = {
-      # rs = "sudo nixos-rebuild switch --flake ~/Documents/nix/";
-      rs = "nh os switch ~/Documents/nix";
+      rs = "sudo nixos-rebuild switch --flake ~/Documents/nix/";
+      # rs = "nh os switch ~/Documents/nix";
       fu = "sudo nix flake update --flake ~/Documents/nix/";
       cat = "bat";
       lock = "hyprlock";
