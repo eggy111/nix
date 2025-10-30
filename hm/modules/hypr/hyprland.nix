@@ -27,7 +27,7 @@
         "$mainMod, e, exec, kitty yazi ~"
         "$mainMod, D, exec, discord"
         "$mainMod SHIFT, D, exec, [float] plexamp"
-        "$mainMod, l, exec, hyprlock"
+        "$mainMod, l, exec, hyprlock -grace 30"
         "$mainMod SHIFT, l, exec, hyprlock --immediate"
         "$mainMod, G, exec, steam"
         "$mainMod SHIFT, C, exec, [float] mpv av://v4l2:/dev/video1 --profile=low-latency --untimed"
