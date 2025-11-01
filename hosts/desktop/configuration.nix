@@ -9,7 +9,7 @@
 
 {
   imports = [
-    ./freshrss.nix
+    # ./freshrss.nix
   ];
   custom = {
     steam.enable = true;

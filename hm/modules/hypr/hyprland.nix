@@ -149,6 +149,7 @@
         "DP-3, preferred, 0x0, 1.5 #Dell U2515hx high res, good for big images lol"
         "DP-2, preferred, auto-right, auto #dell s3222dgm curved monitor"
         "DP-1, preferred, auto, 1.666667 # Samsung u28e590, also good for big images"
+        "HDMI-A-1, preferred, auto-right, auto #dell s322dgm on hdmi"
       ];
 
       env = [
@@ -248,7 +249,7 @@
       #   # special = 2, pinchin,
       # };
 
-      gesture = "3, horizontal, workspace";
+      # gesture = "3, horizontal, workspace";
       device = {
         name = "epic-mouse-v1";
         sensitivity = -0.5;
