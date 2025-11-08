@@ -1,4 +1,9 @@
-{ pkgs, inputs, ... }:
+{
+  lib,
+  pkgs,
+  inputs,
+  ...
+}:
 {
   # host specific home-manager configuration here
   # services.easyeffects = {
@@ -12,6 +17,16 @@
   #   rev = "27885fe00c97da7c441358c7ece7846722fd12fa";
   #   hash = "sha256-z2WmozMDMUkiAd+BEc/5+DHgFXDbw3FdsvBwgIj0JmI=";
   # };
+  programs.hyprlock = {
+    settings = {
+      background = [
+        {
+          path = lib.mkForce "/home/eggy/.config/wallpapers/23.png";
+        }
+      ];
+    };
+
+  };
   wayland.windowManager.hyprland = {
     settings = {
       misc = {
@@ -19,18 +34,10 @@
       };
     };
   };
-  wayland.windowManager.hyprland = {
-    # extraConfig = ''
-    # plugin = hyprgrass
-    # gestures {
-    # workspace_swipe = true
-    # workspace_swipe_fingers = 3
-    # workspace_swipe_distance = 300
-    # }
-    # '';
+  # wayland.windowManager.hyprland = {
 
-    plugins = [
-      inputs.hyprgrass.packages.${pkgs.system}.hyprgrass
-    ];
-  };
+  # plugins = [
+  # inputs.hyprgrass.packages.${pkgs.system}.hyprgrass
+  # ];
+  # };
 }
