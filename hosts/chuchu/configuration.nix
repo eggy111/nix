@@ -14,7 +14,7 @@
     steam.enable = true;
     # framework.enable = true;
     discord.enable = true;
-zfs-dedede.enable = true;
+    zfs-dedede.enable = true;
     # minecraft.enable = true;
   };
   nix.settings.warn-dirty = false;
@@ -40,10 +40,11 @@ zfs-dedede.enable = true;
   services.printing.enable = true;
 
   fonts.packages = with pkgs; [
-    liberation_ttf_v1
+    liberation_ttf
   ];
+  fonts.enableDefaultPackages = true;
   environment.systemPackages = with pkgs; [
-    liberation_ttf_v1
+    liberation_ttf
     tlrc
     frogmouth
     anki
