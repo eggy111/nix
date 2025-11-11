@@ -49,6 +49,9 @@
     frogmouth
     anki
     # forge-mtg
+    bagels
+    pinta
+    xournalpp
   ];
   # virtualisation.waydroid.enable = true;
 
