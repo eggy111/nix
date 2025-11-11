@@ -16,6 +16,8 @@
 
     #productivity related goods
     qalculate-qt # calculator
+    doxx
+    xleak
 
     #misc
     zint # qr code generator
