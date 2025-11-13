@@ -17,7 +17,7 @@
     #productivity related goods
     qalculate-qt # calculator
     doxx
-    xleak
+    # xleak # I think this needs a flake
 
     #misc
     zint # qr code generator
@@ -59,6 +59,7 @@
     zip # zipping tool
     yt-dlp # video download
     pandoc # document conversion (having troubles with it)
+    rmpc
 
     #file transfer things
     wireguard-tools # vpn manager

@@ -9,6 +9,7 @@
   imports = [
     # ./glance.nix
     # ./copyparty.nix
+    # ./mpd.nix
   ];
   custom = {
     steam.enable = true;

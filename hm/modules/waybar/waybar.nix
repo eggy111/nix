@@ -2,7 +2,7 @@
 # a home-manager module
 
 {
-  # pkgs,
+  pkgs,
   # lib,
   # config,
   ...
@@ -14,6 +14,8 @@
       source = ./plexbar;
     };
   };
+  home.packages = with pkgs; [ waybar-mpris ];
+
   programs.waybar = {
     enable = true;
     settings = {
@@ -49,7 +51,7 @@
           all-outputs = true;
           warp-on-scroll = false;
           format = "{name}";
-          # "format-icons": {
+          # "format-icons":  = {
 
           # };
         };
@@ -90,7 +92,7 @@
 
         #"custom/hyprland" = {
         #  "format" = " home ";
-        #  "tooltip = true;
+        #  "tooltip = true;<D-R>
         #  "tooltip-format" = "open hyprland config";
         #  "on-click" = "kitty vim ~/.config/hypr/hyprland.conf";
         #};
@@ -106,15 +108,22 @@
         #   exec-if = "pgrep plexamp";
         # };
 
-        "custom/waybar-mpris" = {
-          "return-type" = "json";
-          exec = "waybar-mpris --position --autofocus";
-          on-click = "waybar-mpris --send toggle";
-          "escape" = true;
-        };
+        # "custom/waybar-mpris" = {
+        #   "return-type" = "json";
+        #   "exec" = "waybar-mpris --position --autofocus";
+        #   on-click = "waybar-mpris --send toggle";
+        #   "on-scroll-up" = "waybar-mpris --send next";
+        #   "on-scroll-down" = "waybar-mpris --send previous";
+        #   "escape" = true;
+        #   # "format" = "{icon} {title}";
+        #   # "tooltip" = true;
+        # };
 
         clock = {
-          tooltip-format = ''<big>{:%Y %B}</big>"\n"<tt><small>{calendar}</small></tt>'';
+          tooltip-format = ''
+            <big>{:%Y %B}</big>
+            <tt><small>{calendar}</small></tt>
+          '';
           format-alt = "{:%Y-%m-%d}";
         };
 
@@ -173,7 +182,10 @@
 
         power-profiles-daemon = {
           format = "{icon}";
-          tooltip-format = ''Power profile: {profile}\nDriver: {driver}'';
+          tooltip-format = ''
+            Power profile: {profile}
+            Driver: {driver}
+          '';
           tooltip = true;
           format-icons = {
             #"default" = " ";
@@ -184,9 +196,13 @@
         };
 
         network = {
-          format-wifi = "{essid} ({signalStrength}%) ";
+          format-wifi = "{signalStrength}% ";
           format-ethernet = "{ipaddr}/{cidr} 󰈀";
-          tooltip-format = "{ifname} via {gwaddr}  ";
+          tooltip-format = ''
+            {essid}
+            {ipaddr}
+            {ifname} via {gwaddr}  
+          '';
           format-linked = "{ifname} (No IP) 󰛵 ";
           format-disconnected = "Disconnected ⚠";
           format-alt = "{ifname}: {ipaddr}/{cidr}";
@@ -221,6 +237,21 @@
             activated = "";
             deactivated = "";
           };
+        };
+        mpd = {
+          format = " {title}";
+          format-paused = " {title}";
+          format-stopped = " Stopped";
+          title-len = 20;
+          tooltip-format = ''
+            {artist}
+            {title}
+          '';
+          interval = 2;
+          "scroll" = true;
+          on-click = "playerctl play-pause";
+          on-scroll-up = "playercl next";
+          on-scroll-down = "playerctl previous";
         };
 
         bluetooth = {

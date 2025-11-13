@@ -17,6 +17,21 @@
   #   rev = "27885fe00c97da7c441358c7ece7846722fd12fa";
   #   hash = "sha256-z2WmozMDMUkiAd+BEc/5+DHgFXDbw3FdsvBwgIj0JmI=";
   # };
+  services.mpd = {
+    enable = true;
+    musicDirectory = "~/Music";
+    extraConfig = ''
+      auto_update "yes"
+      restore_paused "yes"
+      audio_output {
+      type "pulse"
+      name "pulse"
+      }
+    '';
+  };
+  services.mpd-mpris = {
+    enable = true;
+  };
   programs.hyprlock = {
     settings = {
       background = [
