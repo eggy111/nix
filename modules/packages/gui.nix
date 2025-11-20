@@ -34,7 +34,7 @@
       python312Packages.pip
 
       #productivity related goods
-      onlyoffice-bin # office suite
+      onlyoffice-desktopeditors # office suite
       # chromium # I have to disable this for now, it somehow becomes the default application for every file format i hate it
       sublime3
       thunderbird # mail client

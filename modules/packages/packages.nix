@@ -20,7 +20,7 @@
     # xleak # I think this needs a flake
 
     #misc
-    zint # qr code generator
+    zint-qt # qr code generator
     procps # Utilities that give information about processes using the /proc filesystem
     texliveTeTeX # for pandoc i think
     gnumake # make tool
