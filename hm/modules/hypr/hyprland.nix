@@ -249,7 +249,7 @@
       #   # special = 2, pinchin,
       # };
 
-      # gesture = "3, horizontal, workspace";
+      gesture = "3, horizontal, workspace";
       device = {
         name = "epic-mouse-v1";
         sensitivity = -0.5;
