@@ -53,7 +53,7 @@
     xournalpp
     squeekboard
     wvkbd
-    inputs.iio-hyprland.packages.${pkgs.system}.default
+    inputs.iio-hyprland.packages.${pkgs.stdenv.hostPlatform.system}.default
     iio-sensor-proxy
   ];
   # virtualisation.waydroid.enable = true;
