@@ -52,7 +52,7 @@
   wayland.windowManager.hyprland = {
 
     plugins = [
-      inputs.hyprgrass.packages.${pkgs.system}.hyprgrass
+      inputs.hyprgrass.packages.${pkgs.stdenv.hostPlatform.system}.hyprgrass
       # inputs.Hyprspace.packages.${pkgs.system}.Hyprspace
     ];
     settings = {

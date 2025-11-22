@@ -16,7 +16,7 @@
 
     programs.hyprland = {
       enable = true;
-      package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     };
 
     environment.systemPackages = with pkgs; [
@@ -40,7 +40,7 @@
       hyprsunset
       hypridle
       hyprlock
-      inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
+      inputs.rose-pine-hyprcursor.packages.${pkgs.stdenv.hostPlatform.system}.default
 
       #notifications
       libnotify
@@ -51,7 +51,7 @@
       grim
       slurp
       wf-recorder
-      inputs.focal.packages.${pkgs.system}.default
+      inputs.focal.packages.${pkgs.stdenv.hostPlatform.system}.default
 
       brightnessctl
       # eww
