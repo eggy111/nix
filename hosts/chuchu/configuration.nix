@@ -8,7 +8,7 @@
 
 {
   imports = [
-    # ./glance.nix
+    ./glance.nix
     # ./copyparty.nix
     # ./mpd.nix
   ];
