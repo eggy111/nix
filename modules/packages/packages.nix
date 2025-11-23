@@ -3,7 +3,7 @@
 {
   # config,
   pkgs,
-  # inputs,
+  inputs,
   ...
 }:
 {
@@ -17,7 +17,7 @@
     #productivity related goods
     qalculate-qt # calculator
     doxx
-    # xleak # I think this needs a flake
+    inputs.xleak.packages.${pkgs.stdenv.hostPlatform.system}.default # I think this needs a flake
 
     #misc
     zint-qt # qr code generator
