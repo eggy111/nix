@@ -14,7 +14,7 @@
 
     environment.systemPackages = [
       pkgs.nvtopPackages.nvidia
-    ]; 
+    ];
 
     boot = {
       # See: https://wiki.gentoo.org/wiki/NVIDIA/nvidia-drivers#Kernel_module_parameters
@@ -39,7 +39,7 @@
         nvidiaSettings = true;
         package = config.boot.kernelPackages.nvidiaPackages.beta;
       };
-      graphics.extraPackages = with pkgs; [ vaapiVdpau ];
+      graphics.extraPackages = with pkgs; [ libva-vdpau-driver ];
     };
 
     environment.sessionVariables = {
