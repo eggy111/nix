@@ -33,7 +33,7 @@
   services.openssh.enable = true;
   services.printing.enable = false;
 
-  system.activatedScripts.vaultPermissions = {
+  system.activationScripts.vaultPermissions = {
     text = ''
       chown -R eggy:users /vault
       chmos -R 775 /vault
