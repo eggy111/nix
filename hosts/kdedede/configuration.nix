@@ -17,6 +17,7 @@
     hyprland.enable = false;
     gui.enable = false;
     zfs-dedede.enable = true;
+    immich.enable = false;
   };
 
   # Bootloader.

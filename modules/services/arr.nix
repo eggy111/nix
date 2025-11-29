@@ -1,25 +1,30 @@
 # modules/services/arr.nix
 
-{ ... }:
+{ lib, config, ... }:
 
 {
-  services = {
-    radarr = {
-      enable = true;
-      dataDir = /radarr;
-    };
-    sonarr = {
-      enable = true;
-      dataDir = /sonarr;
-    };
-    prowlarr = {
-      enable = true;
-    };
-    tautulli = {
-      enable = true;
-      dataDir = /tautulli;
-      port = 8181;
-      configFile = /tautulli/config;
+  options = {
+    custom.arr.enable = lib.mkEnableOption "arr stack";
+  };
+  config = lib.mkIf config.custom.arr.enable {
+    services = {
+      radarr = {
+        enable = true;
+        dataDir = /vault/radarr;
+      };
+      sonarr = {
+        enable = true;
+        dataDir = /vault/sonarr;
+      };
+      prowlarr = {
+        enable = true;
+      };
+      tautulli = {
+        enable = true;
+        dataDir = /vault/tautulli;
+        port = 8181;
+        configFile = /vault/tautulli/config;
+      };
     };
   };
 }
