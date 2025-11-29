@@ -10,6 +10,7 @@
 {
   imports = [
     ./freshrss.nix
+    ./copyparty.nix
   ];
   custom = {
     steam.enable = false;
