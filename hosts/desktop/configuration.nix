@@ -16,6 +16,7 @@
     nvidia.enable = true;
     discord.enable = true;
     minecraft.enable = true;
+    sunshine.enable = true;
   };
 
   environment.systemPackages = with pkgs; [
