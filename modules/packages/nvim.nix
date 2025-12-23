@@ -49,9 +49,9 @@
           markdown.enable = true;
           nix = {
             enable = true;
-            format.type = "nixfmt";
+            format.type = [ "nixfmt" ];
             lsp.enable = true;
-            lsp.server = "nil";
+            lsp.servers = [ "nil" ];
           };
         };
         lsp.formatOnSave = true;
