@@ -1,9 +1,14 @@
 { inputs, pkgs, ... }:
 {
+  networking.firewall.allowedTCPPorts = [
+    3210
+    3211
+  ];
+
   services.copyparty = {
     enable = true;
     settings = {
-      # i = "0.0.0.0";
+      i = "0.0.0.0";
       p = [
         3210
         3211
@@ -18,7 +23,7 @@
       "/" = {
         path = "/vault/copyparty"; # copyparty must be the owner of the folder
         access = {
-          rw = [ "eggy" ];
+          A = [ "eggy" ];
         };
         flags = {
           # enables filekeys
