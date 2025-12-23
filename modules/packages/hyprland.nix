@@ -40,6 +40,7 @@
       hyprsunset
       hypridle
       hyprlock
+      hyprpolkitagent
       inputs.rose-pine-hyprcursor.packages.${pkgs.stdenv.hostPlatform.system}.default
 
       #notifications
