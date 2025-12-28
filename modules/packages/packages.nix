@@ -26,6 +26,7 @@
     gnumake # make tool
     libgcc # make tool (I think)
     whois # tool for whois lookup
+    compose2nix # make compose files into nix files
 
     #shell related packages
     fish # shell
