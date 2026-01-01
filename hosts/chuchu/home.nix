@@ -51,34 +51,34 @@
   };
   wayland.windowManager.hyprland = {
 
-    plugins = [
-      inputs.hyprgrass.packages.${pkgs.stdenv.hostPlatform.system}.hyprgrass
-      # inputs.Hyprspace.packages.${pkgs.system}.Hyprspace
-    ];
-    settings = {
-      exec-once = [
-        "squeekboard"
-      ];
+    # plugins = [
+    #   inputs.hyprgrass.packages.${pkgs.stdenv.hostPlatform.system}.hyprgrass
+    #   # inputs.Hyprspace.packages.${pkgs.system}.Hyprspace
+    # ];
+    # settings = {
+    #   exec-once = [
+    #     "squeekboard"
+    #   ];
+    #
+    #   monitor = [ "DP-1, preferred, auto, auto" ];
+    #
+    #   plugin = {
+    #     hyprgrass-bind = [
+    #       " , tap:4, exec, kill -34 $(ps -C wvkbd-mobintl)"
+    #       " , edge:u:d, exec, wvkbd-mobintl"
+    # ];
+    # touch_gesture = {
+    #   sensitivity = 1.0;
+    #   workspace_swipe_finger = 3;
+    #   workspace_swipe_edge = "d";
+    #   long_press_delay = 400;
+    #   resize_on_border_long_press = true;
+    #   edge_margin = 10;
+    #   emulate_touch_swipe = false;
+    # };
 
-      monitor = [ "DP-1, preferred, auto, auto" ];
-
-      plugin = {
-        hyprgrass-bind = [
-          " , tap:4, exec, kill -34 $(ps -C wvkbd-mobintl)"
-          " , edge:u:d, exec, wvkbd-mobintl"
-        ];
-        touch_gesture = {
-          sensitivity = 1.0;
-          workspace_swipe_finger = 3;
-          workspace_swipe_edge = "d";
-          long_press_delay = 400;
-          resize_on_border_long_press = true;
-          edge_margin = 10;
-          emulate_touch_swipe = false;
-        };
-
-      };
-    };
+    # };
+    # };
 
   };
 }
