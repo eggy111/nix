@@ -27,6 +27,7 @@
     environment.systemPackages = with pkgs; [
       mangohud
       protonup-ng
+      r2modman # mod manager for risk of rain 2
     ];
 
     programs.gamemode.enable = true;

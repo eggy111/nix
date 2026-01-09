@@ -49,7 +49,7 @@
       #shell related packages
 
       #file manager and related
-      xfce.thunar # gui file manager
+      thunar # gui file manager
       qdirstat # gui filesize viewer
 
       #screen capture and video stuff
@@ -76,10 +76,10 @@
       plexamp # music player
       dualsensectl
       trigger-control
-      itch # game client
+      # itch # game client
       shortwave # ipradio
       freetube # youtube client
-      r2modman # mod manager for risk of rain 2, i should move it into steam
+      # r2modman # mod manager for risk of rain 2, i should move it into steam # moved to steam.nix
       sunvox # synth software
       #kdePackages.kdeconnect-kde
     ];
