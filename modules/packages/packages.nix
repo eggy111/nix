@@ -46,7 +46,7 @@
     lazygit
     fzf # fuzzy finder
     # frogmouth # i think this is a markdown viewer
-    nixfmt-rfc-style # nix formatter or smthn
+    nixfmt # nix formatter or smthn
     nixd # i think nix lsp
     unar # archiver
     unzip # zipper
