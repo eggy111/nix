@@ -7,7 +7,7 @@
 
   environment.systemPackages = with pkgs; [
     liberation_ttf_v1
-    akkadian
+    # akkadian
     # nerdfonts
 
   ];
