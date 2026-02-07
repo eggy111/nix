@@ -7,7 +7,7 @@
     services.immich = {
       enable = true;
       host = "photos.eggy.lol";
-      port = 2283;
+      port = 2284;
       openFirewall = true;
 
     };

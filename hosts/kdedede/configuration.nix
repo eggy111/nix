@@ -10,8 +10,11 @@
 {
   imports = [
     ./freshrss.nix
-    ./copyparty.nix
+    # ./copyparty.nix
     ./containers.nix
+    # ./nodecast.nix
+    # ./netv.nix
+    ./immich.nix
   ];
   custom = {
     steam.enable = false;
@@ -39,7 +42,7 @@
   system.activationScripts.vaultPermissions = {
     text = ''
       chown -R eggy:users /vault
-      chmos -R 775 /vault
+      chmod -R 775 /vault
     '';
   };
   system.stateVersion = "24.05"; # Did you read the comment?
