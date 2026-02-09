@@ -83,6 +83,8 @@
       sunvox # synth software
       rimsort # rimworld mod manager
       #kdePackages.kdeconnect-kde
+      feishin # music player
+      picard # music tagger
     ];
     hardware.keyboard.qmk.enable = true;
     services.udev.packages = [ pkgs.via ];

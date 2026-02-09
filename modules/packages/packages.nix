@@ -59,6 +59,7 @@
     neovim # text editor but better
     zip # zipping tool
     yt-dlp # video download
+    deno # javascript runtime for yt-dlp
     pandoc # document conversion (having troubles with it)
     rmpc
 

@@ -143,7 +143,7 @@
       #   "pin, kando"
       # ];
 
-      windowrulev2 = "suppressevent maximize, class:.*";
+      windowrule = "suppress_event maximize, match:class .*";
 
       monitor = [
         "DP-3, preferred, 0x0, 1.5 #Dell U2515hx high res, good for big images lol"
