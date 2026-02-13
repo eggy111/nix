@@ -81,6 +81,7 @@
       freetube # youtube client
       # r2modman # mod manager for risk of rain 2, i should move it into steam # moved to steam.nix
       sunvox # synth software
+      rimsort # rimworld mod manager
       #kdePackages.kdeconnect-kde
     ];
     hardware.keyboard.qmk.enable = true;
