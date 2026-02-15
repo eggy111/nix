@@ -16,6 +16,12 @@
         enable = true;
         dataDir = "/vault/sonarr";
         openFirewall = true;
+        settings = {
+          server = {
+            bindaddress = "*";
+            port = 8989;
+          };
+        };
       };
       prowlarr = {
         enable = true;
