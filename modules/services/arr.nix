@@ -10,11 +10,11 @@
     services = {
       radarr = {
         enable = true;
-        dataDir = /vault/radarr;
+        dataDir = "/vault/radarr";
       };
       sonarr = {
         enable = true;
-        dataDir = /vault/sonarr;
+        dataDir = "/vault/sonarr";
       };
       prowlarr = {
         enable = true;
@@ -25,9 +25,9 @@
       };
       tautulli = {
         enable = true;
-        dataDir = /vault/tautulli;
+        dataDir = "/vault/tautulli";
         port = 8181;
-        configFile = /vault/tautulli/config;
+        configFile = "/vault/tautulli/config";
       };
     };
     networking.firewall.allowedTCPPorts = [
