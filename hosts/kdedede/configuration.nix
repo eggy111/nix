@@ -23,6 +23,7 @@
     gui.enable = false;
     zfs-dedede.enable = true;
     immich.enable = false;
+    arr.enable = true;
   };
 
   # Bootloader.

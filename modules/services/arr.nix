@@ -19,6 +19,10 @@
       prowlarr = {
         enable = true;
       };
+      overseerr = {
+        enable = true;
+        port = 5055;
+      };
       tautulli = {
         enable = true;
         dataDir = /vault/tautulli;
@@ -26,5 +30,12 @@
         configFile = /vault/tautulli/config;
       };
     };
+    networking.firewall.allowedTCPPorts = [
+      8989 # sonarr
+      7878 # radarr
+      9696 # prowlarr
+      5055 # overseerr
+      8181 # tautulli
+    ];
   };
 }
