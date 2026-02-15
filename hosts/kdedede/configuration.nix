@@ -15,6 +15,7 @@
     # ./nodecast.nix
     # ./netv.nix
     ./immich.nix
+    ./navidrome.nix
   ];
   custom = {
     steam.enable = false;
