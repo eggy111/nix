@@ -1,6 +1,12 @@
 # modules/services/arr.nix
+# after doing some research, the datadirs and configdirs are probably better suited living where they belong, managed by nixos
 
-{ lib, config, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 
 {
   options = {
@@ -10,11 +16,11 @@
     services = {
       radarr = {
         enable = true;
-        dataDir = "/vault/radarr";
+        # dataDir = "/vault/radarr";
       };
       sonarr = {
         enable = true;
-        dataDir = "/vault/sonarr";
+        # dataDir = "/vault/sonarr";
         openFirewall = true;
         settings = {
           server = {
@@ -32,9 +38,13 @@
       };
       tautulli = {
         enable = true;
-        dataDir = "/vault/tautulli";
+        # dataDir = "/vault/tautulli";
         port = 8181;
-        configFile = "/vault/tautulli/config";
+        # configFile = "/vault/tautulli/config";
+      };
+      bazarr = {
+        enable = true;
+        openFirewall = true;
       };
     };
     networking.firewall.allowedTCPPorts = [
@@ -44,5 +54,28 @@
       5055 # overseerr
       8181 # tautulli
     ];
+    systemd.services.rclone-seedbox-move = {
+      description = "Move downloads from seebox";
+      serviceConfig = {
+        Type = "oneshot";
+        User = "eggy";
+        ExecStart = ''
+          ${pkgs.rclone}/bin/rclone move \
+          seedbox:/downloads \
+          /mnt/media/downloads \
+          --delete-empty-src-dirs \
+          --min-age 2m \
+          --log-file=/var/log/rclone.log \
+          --log-level=INFO
+        '';
+      };
+    };
+    systemd.timers.rclone-seedbox-move = {
+      wantedBy = [ "timers.target" ];
+      timerConfig = {
+        OnBootSec = "2m";
+        OnUnitActiveSec = "5m";
+      };
+    };
   };
 }

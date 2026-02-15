@@ -9,13 +9,13 @@
 
 {
   imports = [
-    ./freshrss.nix
+    # ./freshrss.nix
     # ./copyparty.nix
-    ./containers.nix
+    # ./containers.nix
     # ./nodecast.nix
     # ./netv.nix
-    ./immich.nix
-    ./navidrome.nix
+    # ./immich.nix
+    # ./navidrome.nix
   ];
   custom = {
     steam.enable = false;
@@ -29,6 +29,7 @@
 
   # Bootloader.
   boot.loader.efi.canTouchEfiVariables = true;
+  services.smartd.enable = true;
 
   networking.hostName = "kdedede"; # Define your hostname.
   networking.hostId = "1585cc02";
