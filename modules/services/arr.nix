@@ -65,7 +65,7 @@
           /mnt/media/downloads \
           --delete-empty-src-dirs \
           --min-age 2m \
-          --log-file=/var/log/rclone.log \
+          --log-file=/home/eggy/.rclone/rclone.log \
           --log-level=INFO
         '';
       };
