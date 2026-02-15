@@ -15,6 +15,7 @@
       sonarr = {
         enable = true;
         dataDir = "/vault/sonarr";
+        openFirewall = true;
       };
       prowlarr = {
         enable = true;
