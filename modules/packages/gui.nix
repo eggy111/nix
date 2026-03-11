@@ -38,6 +38,7 @@
       # chromium # I have to disable this for now, it somehow becomes the default application for every file format i hate it
       sublime3
       thunderbird # mail client
+      inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
 
       #misc
       dos2unix # girl i dont even know what this is
@@ -74,6 +75,7 @@
 
       #game/music/misc-related
       plexamp # music player
+      plezy # plex client
       dualsensectl
       trigger-control
       # itch # game client

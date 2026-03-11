@@ -23,8 +23,8 @@
       inputs.hyprland.follows = "hyprland";
     };
     # Hyprspace = {
-    #   url = "github:KZDKM/Hyprspace";
-    #   inputs.hyprland.follows = "hyprland";
+    # url = "github:KZDKM/Hyprspace";
+    # inputs.hyprland.follows = "hyprland";
     # };
     nixos-hardware.url = "github:NixOS/nixos-hardware";
     copyparty.url = "github:9001/copyparty";
@@ -45,6 +45,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     polymc.url = "github:PolyMC/PolyMC";
+  };
+  zen-browser = {
+    url = "github:youwen5:zen-browser-flake";
+    inputs.nixpkgs.follows = "nixpkgs";
   };
 
   nixConfig = {
