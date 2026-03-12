@@ -51,14 +51,14 @@
   };
   wayland.windowManager.hyprland = {
 
-    plugins = [
-      inputs.hyprgrass.packages.${pkgs.stdenv.hostPlatform.system}.hyprgrass
-      # inputs.Hyprspace.packages.${pkgs.system}.Hyprspace
-    ];
+    # plugins = [
+    # inputs.hyprgrass.packages.${pkgs.stdenv.hostPlatform.system}.hyprgrass
+    # inputs.Hyprspace.packages.${pkgs.system}.Hyprspace
+    # ];
     settings = {
-      exec-once = [
-        "squeekboard"
-      ];
+      # exec-once = [
+      # "squeekboard"
+      # ];
 
       monitor = [ "DP-1, preferred, auto, auto" ];
 

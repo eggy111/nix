@@ -18,10 +18,10 @@
       inputs.hyprland.follows = "hyprland";
     };
     rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
-    hyprgrass = {
-      url = "github:horriblename/hyprgrass";
-      inputs.hyprland.follows = "hyprland";
-    };
+    # hyprgrass = {
+    # url = "github:horriblename/hyprgrass";
+    # inputs.hyprland.follows = "hyprland";
+    # };
     # Hyprspace = {
     # url = "github:KZDKM/Hyprspace";
     # inputs.hyprland.follows = "hyprland";

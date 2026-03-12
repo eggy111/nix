@@ -310,31 +310,6 @@
         "type": "github"
       }
     },
-    "hyprgrass": {
-      "inputs": {
-        "hyprland": [
-          "hyprland"
-        ],
-        "nixpkgs": [
-          "hyprgrass",
-          "hyprland",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1771769152,
-        "narHash": "sha256-fbJhR2Dtgjtf4BeeAyKSfJLz5w2G6vrxcXA8e2Y5ULs=",
-        "owner": "horriblename",
-        "repo": "hyprgrass",
-        "rev": "0d93424f044292d6154f0c7388c6b272824e1707",
-        "type": "github"
-      },
-      "original": {
-        "owner": "horriblename",
-        "repo": "hyprgrass",
-        "type": "github"
-      }
-    },
     "hyprland": {
       "inputs": {
         "aquamarine": "aquamarine",
@@ -1059,7 +1034,6 @@
         "copyparty": "copyparty",
         "focal": "focal",
         "home-manager": "home-manager",
-        "hyprgrass": "hyprgrass",
         "hyprland": "hyprland",
         "hyprland-plugins": "hyprland-plugins",
         "iio-hyprland": "iio-hyprland",
@@ -1071,7 +1045,8 @@
         "polymc": "polymc",
         "rose-pine-hyprcursor": "rose-pine-hyprcursor",
         "sops-nix": "sops-nix",
-        "xleak": "xleak"
+        "xleak": "xleak",
+        "zen-browser": "zen-browser"
       }
     },
     "rose-pine-hyprcursor": {
@@ -1363,6 +1338,26 @@
       "original": {
         "owner": "Supreeeme",
         "repo": "xwayland-satellite",
+        "type": "github"
+      }
+    },
+    "zen-browser": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1772685307,
+        "narHash": "sha256-5xthZHeqwBeXNhnRIlxnCuaZLky0SZ6vQsxtd+eqhTU=",
+        "owner": "youwen5",
+        "repo": "zen-browser-flake",
+        "rev": "dc92d88524ee83308795bc90f6a9f1d965265aaa",
+        "type": "github"
+      },
+      "original": {
+        "owner": "youwen5",
+        "repo": "zen-browser-flake",
         "type": "github"
       }
     }
