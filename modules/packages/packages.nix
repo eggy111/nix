@@ -40,6 +40,7 @@
     wiper # Disk analyser and cleanup tool
     tree # nice way to view directory structure
     smartmontools
+    trash-cli
 
     #terminal applications
     git # version control
