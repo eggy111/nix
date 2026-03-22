@@ -46,6 +46,7 @@
     frogmouth
     anki
     forge-mtg
+    # quickshell
   ];
   virtualisation.waydroid.enable = true;
 
