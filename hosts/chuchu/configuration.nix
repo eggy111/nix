@@ -82,6 +82,8 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
+  networking.firewall.allowedTCPPorts = [ 46899 ]; # for fcast?
+
   system.stateVersion = "24.05"; # Did you read the comment?
 
 }
