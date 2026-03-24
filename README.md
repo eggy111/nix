@@ -35,21 +35,23 @@ publicly accessible. But if you want to contribute I won't say no hehe
 ### In Progress
 
 - move things around for server introduction!!!
-- configure notifications
 - messing with mpd
+- finish server config
+- Try out niri
 
 ### To Do
 
+- Configure quickshell
+- Set up Copyparty service
 - configure waybar
-- Try out niri
+- configure notifications
 - configure rofi
-- finish server config
-- setup zfs on server (install nixos??)
 - fonts.nix needs mkDefault support somehow, others do too, but it also needs
   mkOption
 
 ### Completed
 
+- ~~setup zfs on server (install nixos??)~~
 - ~~set up zds~~
 - ~~configure neovim~~
 - ~~configure yazi~~
