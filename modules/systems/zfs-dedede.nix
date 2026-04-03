@@ -14,7 +14,10 @@
       supportedFilesystems.zfs = true;
       zfs = {
         devNodes = "/dev/disk/by-id";
-        extraPools = [ "zroot" ];
+        extraPools = [
+          "zroot"
+          "zstore"
+        ];
         requestEncryptionCredentials = true;
       };
       loader.grub = {
@@ -57,6 +60,33 @@
         device = "zroot/cache";
         fsType = "zfs";
         neededForBoot = true;
+      };
+
+      # zstore datasets
+
+      "/mnt/media" = {
+        device = "zstore/media";
+        fsType = "zfs";
+      };
+      "/mnt/media/downloads" = {
+        device = "zstore/media/downloads";
+        fsType = "zfs";
+      };
+      "/mnt/media/movies" = {
+        device = "zstore/media/movies";
+        fsType = "zfs";
+      };
+      "/mnt/media/tv" = {
+        device = "zstore/media/tv";
+        fsType = "zfs";
+      };
+      "/mnt/apps" = {
+        device = "zstore/apps";
+        fsType = "zfs";
+      };
+      "/mnt/storage" = {
+        device = "zstore/storage";
+        fsType = "zfs";
       };
     };
   };

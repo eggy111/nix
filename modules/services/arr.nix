@@ -61,10 +61,10 @@
         User = "eggy";
         ExecStart = ''
           ${pkgs.rclone}/bin/rclone move \
-          seedbox:/downloads \
+          seedbox:downloads \
           /mnt/media/downloads \
           --delete-empty-src-dirs \
-          --min-age 2m \
+          # --min-age 2m \
           --log-file=/home/eggy/.rclone/rclone.log \
           --log-level=INFO
         '';
