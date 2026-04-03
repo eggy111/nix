@@ -52,7 +52,6 @@
     unar # archiver
     unzip # zipper
     bat # cat but better (cat is aliased to bat)
-    neofetch # system info, but deprecated
     fastfetch # newer neofetch
     wget # download
     vim # text editor

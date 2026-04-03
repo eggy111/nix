@@ -11,6 +11,7 @@
     ./glance.nix
     # ./copyparty.nix
     # ./mpd.nix
+    ./i2p.nix
   ];
   custom = {
     steam.enable = true;

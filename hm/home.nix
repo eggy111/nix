@@ -90,6 +90,7 @@
     # add transient prompt for fish via transient.fish plugin in fish.nix
     # the starship transience module doesn't handle empty commands properly
     interactiveShellInit = lib.mkAfter ''
+                        set fish_greeting
       function transient_prompt_func
         starship module character
       end
@@ -119,7 +120,7 @@
       packages = "vim /home/eggy/Documents/nix/modules/packages/packages.nix";
       cn = "cd /home/eggy/Documents/nix";
       rt = "sudo nixos-rebuild test --flake ~/Documents/nix/";
-      hyprland = "Hyprland";
+      hyprland = "start-hyprland";
       picotron = ''nix-shell -p steam-run --run "steam-run ~/Downloads/picotron/picotron"'';
       q = "exit";
     };
