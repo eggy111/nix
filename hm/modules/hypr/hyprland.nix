@@ -33,7 +33,7 @@
         "$mainMod SHIFT, C, exec, [float] mpv av://v4l2:/dev/video1 --profile=low-latency --untimed"
         ''$mainMod SHIFT, e, exec, rofi -modi "emoji:rofimoji" -show emoji''
         "$mainMod, X, exec, word-lookup"
-        ''$mainMod, Space, global, kando:example-menu''
+        "$mainMod, Space, global, kando:example-menu"
         "$mainMod, M, exec, polymc"
 
         # Pyprland Shortcuts
@@ -122,8 +122,8 @@
       exec-once = [
         #"bash ~/.config/hypr/start.sh &"
         "hypridle &"
-        "swww-daemon &"
-        "swww img ~/.config/wallpapers/1.png"
+        "awww-daemon &"
+        "awww img ~/.config/wallpapers/1.png"
         "hyprctl set cursor rose-pine-hyprcursor 28 &"
         "waybar &"
         "nm-applet --indicator &"

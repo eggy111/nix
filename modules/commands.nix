@@ -5,7 +5,8 @@
   ...
 }:
 {
-  environment.systemPackages = with pkgs; [ # the blocks below create my own shell applications, thus they are listed within systemPackages
+  environment.systemPackages = with pkgs; [
+    # the blocks below create my own shell applications, thus they are listed within systemPackages
 
     (writeShellApplication {
       name = "wallpaper_setup";
@@ -20,8 +21,8 @@
                #    exit 1
                # fi
 
-               export SWWW_TRANSITION_FPS=60
-               export SWWW_TRANSITION_STEP=2
+               export AWWW_TRANSITION_FPS=60
+               export AWWW_TRANSITION_STEP=2
 
                INTERVAL=300
 
@@ -32,7 +33,7 @@
                 done \
                 | sort -n | cut -d':' -f2- \
                 | while read -r img; do
-                    swww img "$img" --transition-type random
+                    awww img "$img" --transition-type random
                 sleep $INTERVAL
             done
         done 

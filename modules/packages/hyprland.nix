@@ -28,7 +28,7 @@
       rofi-power-menu
       rofimoji
       waybar
-      swww
+      awww
       wl-clipboard
       pyprland
 

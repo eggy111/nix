@@ -63,7 +63,7 @@ publicly accessible. But if you want to contribute I won't say no hehe
 - ~~set up wireguard client~~
 - ~~configure wl-clipboard (just figure it out how it works and what it can do
   first)~~
-- ~~configure swww~~
+- ~~configure awww~~
 - ~~setup screen recording~~
 - ~~configure kitty~~ (both kitty, fish, and starship (which ironically isn't
   named) can and will need more configuration, but I am happy with it for now)
