@@ -54,23 +54,43 @@
       5055 # overseerr
       8181 # tautulli
     ];
-    systemd.services.rclone-seedbox-move = {
-      description = "Move downloads from seebox";
+    systemd.services.rclone-seedbox-movies = {
+      description = "Move movies from seebox";
       serviceConfig = {
         Type = "oneshot";
         User = "eggy";
         ExecStart = ''
           ${pkgs.rclone}/bin/rclone move \
-          seedbox:downloads \
+          seedbox:/home/eggy/.config/sabnzbd/Downloads/complete/movie \
           /mnt/media/downloads \
           --delete-empty-src-dirs \
-          # --min-age 2m \
           --log-file=/home/eggy/.rclone/rclone.log \
           --log-level=INFO
         '';
       };
     };
-    systemd.timers.rclone-seedbox-move = {
+    systemd.services.rclone-seeedbox-tv = {
+      description = "Move tv from seedbox";
+      serviceConfig = {
+        Type = "oneshot";
+        User = "eggy";
+        ExecStart = ''
+          ${pkgs.rclone}/bin/rclone \
+          seedbox:/home/eggy/.config/sabnzbd/Downloads/complete/tv \
+          --delete-empty-src-dirs \
+          --log-file=/home/eggy/.rclone/rclone.log \
+          --log-level=INFO
+        '';
+      };
+    };
+    systemd.timers.rclone-seedbox-movies = {
+      wantedBy = [ "timers.target" ];
+      timerConfig = {
+        OnBootSec = "2m";
+        OnUnitActiveSec = "5m";
+      };
+    };
+    systemd.timers.rclone-seebox-tv = {
       wantedBy = [ "timers.target" ];
       timerConfig = {
         OnBootSec = "2m";
