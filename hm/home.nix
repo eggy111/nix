@@ -30,7 +30,7 @@
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
     # ".screenrc".source = dotfiles/screenrc;
-    ".config/hypr/pyprland.toml".source = ./modules/pyprland.toml;
+    ".config/pypr/config.toml".source = ./modules/pyprland.toml;
     ".config/waybar/style.css".source = ./modules/waybar/style.css;
     ".config/rofimoji.rc".source = ./rofimoji.rc;
     ".config/rofi/rofi-power-menu".source = ./modules/rofi-power-menu;
