@@ -21,7 +21,7 @@
           sha256 = "sha256:003qcrsq5g5lggfrpq31gcvj82lb065xvr7bpfa8ddsw8x4dnysk";
         })
         {
-          inherit (pkgs) system;
+          inherit (pkgs.stdenv.hostPlatform) system;
         }
       ).fwupd;
   };
