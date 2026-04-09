@@ -17,6 +17,7 @@
     discord.enable = true;
     minecraft.enable = true;
     sunshine.enable = true;
+    sops.enable = true;
   };
 
   environment.systemPackages = with pkgs; [

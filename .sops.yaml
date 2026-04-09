@@ -1,7 +1,15 @@
 keys:
    - &primary age1numduar3672av94pkcxtrjsuk8vexq9l0ks3uvqnwarta2678gusfplqfu
+   - &desktop age1wynn99e0vekthvf6c8fxumdwt0hkjkg0ah8nvu5a6sc0v0aq5vgst6fg7g
+   - &chuchu age1jnugwez9yp9d2p7nhwc9pve6lyje0punezuzw9tun953lgy3nvxs7gswcs
+   - &framework age1xc7jvp6lm463ajnu5ad6qk6x2qdlfmhvc8t69rc2qvuh2p4wsd6s5amr0q
+   - &kdedede age142qedyjp8ejs2dd2wufanw7m6v52kurdkk7exm8ew9kry59s6y7s0utayk
 creation_rules:
   - path_regex: secrets/secrets.yaml$
     key_groups:
       - age:
         - *primary
+        - *desktop
+        - *chuchu
+        - *framework
+        - *kdedede

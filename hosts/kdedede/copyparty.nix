@@ -1,5 +1,11 @@
-{ inputs, pkgs, ... }:
 {
+  inputs,
+  pkgs,
+  config,
+  ...
+}:
+{
+  imports = [ inputs.sops-nix.nixosModules.sops ];
   networking.firewall.allowedTCPPorts = [
     3210
     3211
@@ -17,7 +23,7 @@
       ignored-flag = false;
     };
     accounts = {
-      eggy.passwordFile = "/run/keys/copyparty/eggy_password";
+      eggy.passwordFile = config.sops.secrets.copyparty_password.path;
     };
     volumes = {
       "/" = {
