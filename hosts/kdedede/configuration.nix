@@ -25,6 +25,7 @@
     zfs-dedede.enable = true;
     immich.enable = false;
     arr.enable = true;
+    plex.enable = true;
   };
 
   # Bootloader.
@@ -33,6 +34,9 @@
 
   networking.hostName = "kdedede"; # Define your hostname.
   networking.hostId = "1585cc02";
+  environment.systemPackages = with pkgs; [
+    tmux
+  ];
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -42,12 +46,6 @@
   services.openssh.enable = true;
   services.printing.enable = false;
 
-  system.activationScripts.vaultPermissions = {
-    text = ''
-      chown -R eggy:users /vault
-      chmod -R 775 /vault
-    '';
-  };
   system.stateVersion = "24.05"; # Did you read the comment?
 
 }

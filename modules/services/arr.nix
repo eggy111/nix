@@ -54,6 +54,12 @@
       5055 # overseerr
       8181 # tautulli
     ];
+    users.groups.media = { };
+    users.users = {
+      radarr.extraGroups = [ "media" ];
+      sonarr.extraGroups = [ "media" ];
+      eggy.extraGroups = [ "media" ]; # this should probably go in the users directory, but my users are a little funky right now so im not touching them for the time being
+    };
     systemd.services.rclone-seedbox-movies = {
       description = "Move movies from seebox";
       serviceConfig = {
@@ -62,25 +68,44 @@
         ExecStart = ''
           ${pkgs.rclone}/bin/rclone move \
           seedbox:/home/eggy/.config/sabnzbd/Downloads/complete/movie \
-          /mnt/media/downloads \
+          /mnt/media/downloads/movie \
           --delete-empty-src-dirs \
           --log-file=/home/eggy/.rclone/rclone.log \
           --log-level=INFO
         '';
       };
+      onSuccess = [ "fix-movie-perms.service" ];
     };
-    systemd.services.rclone-seeedbox-tv = {
+    systemd.services.fix-movie-perms = {
+      description = "Fix permissions on movie folder";
+      serviceConfig = {
+        Type = "oneshot";
+        User = "root";
+        ExecStart = "${pkgs.bash}/bin/bash -c '${pkgs.coreutils}/bin/chown -R radarr:media /mnt/media/downloads/movie && ${pkgs.coreutils}/bin/chmod -R 775 /mnt/media/downloads/movie'";
+      };
+    };
+    systemd.services.rclone-seedbox-tv = {
       description = "Move tv from seedbox";
       serviceConfig = {
         Type = "oneshot";
         User = "eggy";
         ExecStart = ''
-          ${pkgs.rclone}/bin/rclone \
+          ${pkgs.rclone}/bin/rclone move \
           seedbox:/home/eggy/.config/sabnzbd/Downloads/complete/tv \
+          /mnt/media/downloads/tv \
           --delete-empty-src-dirs \
           --log-file=/home/eggy/.rclone/rclone.log \
           --log-level=INFO
         '';
+      };
+      onSuccess = [ "fix-tv-perms.service" ];
+    };
+    systemd.services.fix-tv-perms = {
+      description = "Fix permissions on tv folder";
+      serviceConfig = {
+        Type = "oneshot";
+        User = "root";
+        ExecStart = "${pkgs.bash}/bin/bash -c '${pkgs.coreutils}/bin/chown -R sonarr:media /mnt/media/downloads/tv && ${pkgs.coreutils}/bin/chmod -R 775 /mnt/media/downloads/tv'";
       };
     };
     systemd.timers.rclone-seedbox-movies = {
@@ -90,12 +115,19 @@
         OnUnitActiveSec = "5m";
       };
     };
-    systemd.timers.rclone-seebox-tv = {
+    systemd.timers.rclone-seedbox-tv = {
       wantedBy = [ "timers.target" ];
       timerConfig = {
         OnBootSec = "2m";
         OnUnitActiveSec = "5m";
       };
     };
+    systemd.tmpfiles.rules = [
+      "d /mnt/media/downloads 0775 eggy media -"
+      "d /mnt/media/downloads/movie 0775 radarr media -"
+      "d /mnt/media/downloads/tv 0775 sonarr media -"
+      "d /mnt/media/movies 0775 radarr media -"
+      "d /mnt/media/tv 0775 sonarr media -"
+    ];
   };
 }
