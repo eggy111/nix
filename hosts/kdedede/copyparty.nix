@@ -10,6 +10,9 @@
     3210
     3211
   ];
+  systemd.tmpfiles.rules = [
+    "d /mnt/storage 0775 copyparty copyparty -"
+  ];
 
   services.copyparty = {
     enable = true;
@@ -27,7 +30,7 @@
     };
     volumes = {
       "/" = {
-        path = "/vault/copyparty"; # copyparty must be the owner of the folder
+        path = "/mnt/storage"; # copyparty must be the owner of the folder
         access = {
           A = [ "eggy" ];
         };

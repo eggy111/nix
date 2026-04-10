@@ -10,12 +10,12 @@
 {
   imports = [
     # ./freshrss.nix
-    # ./copyparty.nix
+    ./copyparty.nix
     # ./containers.nix
     # ./nodecast.nix
     # ./netv.nix
     # ./immich.nix
-    # ./navidrome.nix
+    ./navidrome.nix
   ];
   custom = {
     steam.enable = false;
@@ -26,6 +26,7 @@
     immich.enable = false;
     arr.enable = true;
     plex.enable = true;
+    sops.enable = true;
   };
 
   # Bootloader.
