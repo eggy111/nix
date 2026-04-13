@@ -1,6 +1,7 @@
 { lib, ... }:
 {
   imports = [
+    ./copyparty.nix
     ./homepage.nix
     ./immich.nix
     ./arr.nix
@@ -9,6 +10,7 @@
     ./navidrome.nix
   ];
 
+  custom.copyparty.enable = lib.mkDefault false;
   custom.homepage.enable = lib.mkDefault false;
   custom.immich.enable = lib.mkDefault false;
   custom.arr.enable = lib.mkDefault false;

@@ -10,7 +10,6 @@
 {
   imports = [
     # ./freshrss.nix
-    ./copyparty.nix
     # ./containers.nix
     # ./nodecast.nix
     # ./netv.nix
@@ -28,6 +27,7 @@
     plex.enable = true;
     sops.enable = true;
     navidrome.enable = true;
+    copyparty.enable = true;
   };
 
   # Bootloader.

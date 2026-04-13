@@ -1,0 +1,61 @@
+{
+  inputs,
+  lib,
+  pkgs,
+  config,
+  ...
+}:
+{
+  imports = [ inputs.sops-nix.nixosModules.sops ];
+  options = {
+    custom.copyparty.enable = lib.mkEnableOption "copyparty";
+  };
+
+  config = lib.mkIf config.custom.copyparty.enable {
+    networking.firewall.allowedTCPPorts = [
+      3210
+      3211
+    ];
+    systemd.tmpfiles.rules = [
+      "d /mnt/storage 0775 copyparty copyparty -"
+    ];
+
+    services.copyparty = {
+      enable = true;
+      settings = {
+        i = "0.0.0.0";
+        p = [
+          3210
+          3211
+        ];
+        no-reload = true;
+        ignored-flag = false;
+      };
+      accounts = {
+        eggy.passwordFile = config.sops.secrets.copyparty_password.path;
+      };
+      volumes = {
+        "/" = {
+          path = "/mnt/storage"; # copyparty must be the owner of the folder
+          access = {
+            A = [ "eggy" ];
+          };
+          flags = {
+            # enables filekeys
+            fk = 4;
+            # scan for new files every 60s
+            scan = 60;
+            # enables the uploads database
+            e2d = true;
+            # disables multimedia parsers
+            d2t = true;
+            # skips hashing the file if it ends in .iso
+            nohash = "\.iso$";
+          };
+        };
+      };
+      openFilesLimit = 8192;
+    };
+  };
+
+}
