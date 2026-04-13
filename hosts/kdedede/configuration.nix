@@ -15,7 +15,7 @@
     # ./nodecast.nix
     # ./netv.nix
     # ./immich.nix
-    ./navidrome.nix
+    ./caddy.nix
   ];
   custom = {
     steam.enable = false;
@@ -27,6 +27,7 @@
     arr.enable = true;
     plex.enable = true;
     sops.enable = true;
+    navidrome.enable = true;
   };
 
   # Bootloader.
