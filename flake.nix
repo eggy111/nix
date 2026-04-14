@@ -28,6 +28,7 @@
     # };
     nixos-hardware.url = "github:NixOS/nixos-hardware";
     copyparty.url = "github:9001/copyparty";
+    # Meowdo.url = "github.com/Sycorlax/Meowdo";
 
     sops-nix.url = "github:Mic92/sops-nix";
 

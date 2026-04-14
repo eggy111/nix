@@ -19,4 +19,16 @@
       };
     };
   };
+  services.mpd = {
+    enable = true;
+    musicDirectory = "~/Music";
+    extraConfig = ''
+      auto_update "yes"
+      restore_paused "yes"
+      audio_output {
+      type "pulse"
+      name "pulse"
+      }
+    '';
+  };
 }

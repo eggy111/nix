@@ -2,6 +2,7 @@
 
 {
   pkgs,
+  inputs,
   ...
 }:
 
@@ -47,6 +48,7 @@
     anki
     forge-mtg
     # quickshell
+    # inputs.meowdo.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
   virtualisation.waydroid.enable = true;
 
