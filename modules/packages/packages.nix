@@ -11,7 +11,6 @@
   programs.localsend.enable = true;
 
   environment.systemPackages = with pkgs; [
-    qt6Packages.qwlroots # what is this package bruh
     #mpv
 
     #productivity related goods
