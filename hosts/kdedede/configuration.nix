@@ -20,6 +20,7 @@
     steam.enable = false;
     discord.enable = false;
     hyprland.enable = false;
+    # kavita.enable = true;
     gui.enable = false;
     zfs-dedede.enable = true;
     immich.enable = false;
