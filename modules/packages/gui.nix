@@ -58,6 +58,7 @@
       ffmpeg # tool for interacting with video
       swappy # quick picture editor
       gthumb # slower but in depth picture editor i think
+      kdePackages.kdenlive # video editor
 
       #terminal applications #i know you dont need a gui for these, but they are applications i dont need on my servers :P
       lavat # lava lamp, just for funsies

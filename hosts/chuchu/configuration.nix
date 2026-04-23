@@ -17,7 +17,7 @@
     steam.enable = true;
     # framework.enable = true;
     discord.enable = true;
-    zfs-dedede.enable = true;
+    zfs-chuchu.enable = true;
     # minecraft.enable = true;
   };
   nix.settings.warn-dirty = false;
