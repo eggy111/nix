@@ -82,12 +82,10 @@
         };
         languages = {
           enableFormat = true;
-          enableLSP = true;
-          enableTreesitter = true;
           bash = {
             enable = true;
             lsp.enable = true;
-            lsp.server = [ "bash-language-server" ];
+            lsp.servers = [ "bash-language-server" ];
           };
           css = {
             enable = true;
