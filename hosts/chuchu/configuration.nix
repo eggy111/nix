@@ -11,13 +11,13 @@
     ./glance.nix
     # ./copyparty.nix
     # ./mpd.nix
-    ./i2p.nix
   ];
   custom = {
     steam.enable = true;
     # framework.enable = true;
     discord.enable = true;
     zfs-chuchu.enable = true;
+    i2p.enable = true;
     # minecraft.enable = true;
   };
   nix.settings.warn-dirty = false;

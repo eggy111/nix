@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, pkgs, ... }:
 {
   imports = [ inputs.nvf.nixosModules.default ];
 
@@ -8,9 +8,50 @@
       vim = {
         viAlias = true;
         vimAlias = true;
+        globals.mapleader = " ";
         lsp = {
           enable = true;
+          formatOnSave = true;
         };
+        extraPlugins = {
+          zen-mode = {
+            package = pkgs.vimPlugins.zen-mode-nvim;
+            setup = ''
+              require ('zen-mode').setup({
+                window = {
+                width = 80,
+                options = { 
+                        number = false,
+                        relativenumber = false,
+                        signcolumn = "no",
+                        },
+                },
+                })
+            '';
+          };
+        };
+        # spellcheck = {
+        #   enable = true;
+        #   languages = [ "en" ];
+        # };
+        # autoGroups = {
+        #   markdown_spell = { };
+        # };
+        #
+        # autocmds = [
+        #   {
+        #     event = [ "Filetype" ];
+        #     pattern = [ "markdown" ];
+        #     group = "markdown_spell";
+        #     command = "setlocal spell spelllang=en_us";
+        #   }
+        #   {
+        #     event = [ "Filetype" ];
+        #     pattern = [ "!markdown" ];
+        #     group = "markdown_spell";
+        #     command = "setlocal nospell";
+        #   }
+        # ];
 
         autocomplete.nvim-cmp = {
           enable = true;
@@ -30,6 +71,7 @@
         };
         binds = {
           cheatsheet.enable = true;
+          whichKey.enable = true;
         };
         comments.comment-nvim = {
           enable = true;
@@ -40,11 +82,17 @@
         };
         languages = {
           enableFormat = true;
-          # enableLSP = true;
+          enableLSP = true;
           enableTreesitter = true;
-          bash.enable = true;
-          css.enable = true;
-          # html.enable = true;
+          bash = {
+            enable = true;
+            lsp.enable = true;
+            lsp.server = [ "bash-language-server" ];
+          };
+          css = {
+            enable = true;
+            lsp.enable = true;
+          };
           lua.enable = true;
           markdown.enable = true;
           nix = {
@@ -54,7 +102,19 @@
             lsp.servers = [ "nil" ];
           };
         };
-        lsp.formatOnSave = true;
+
+        filetree.neo-tree = {
+          enable = true;
+          setupOpts = {
+            filesystem.filtered_items = {
+              visible = true;
+              hide_dotfiles = false;
+              hide_gitignored = false;
+            };
+          };
+        };
+        telescope.enable = true;
+
         theme = {
           enable = true;
           name = "catppuccin";
@@ -72,6 +132,30 @@
                 downloadRemoteImages = true;
               };
             };
+          };
+        };
+        maps.normal = {
+          # neo-tree toggle
+          "<leader>e" = {
+            action = "<cmd>Neotree toggle<CR>";
+            desc = "Toggle file tree";
+          };
+          # Telescope
+          "<leader>ff" = {
+            action = "<cmd>Telescope find_fires<CR>";
+            desc = "Find files";
+          };
+          "<leader>fg" = {
+            action = "<cmd>Telescope live_grep<CR>";
+            desc = "Live grep";
+          };
+          "<leader>fb" = {
+            action = "<cmd>Telescope buffers<CR>";
+            desc = "Find buffers";
+          };
+          "<leader>z" = {
+            action = "<cmd>ZenMode<CR>";
+            desc = "Toggle zen mode";
           };
         };
       };

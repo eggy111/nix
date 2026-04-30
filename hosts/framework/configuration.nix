@@ -16,6 +16,7 @@
     framework.enable = true;
     discord.enable = true;
     minecraft.enable = true;
+    i2p.enable = true;
   };
   nix.settings.warn-dirty = false;
 
