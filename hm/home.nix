@@ -123,6 +123,7 @@
       hyprland = "start-hyprland";
       picotron = ''nix-shell -p steam-run --run "steam-run ~/Downloads/picotron/picotron"'';
       q = "exit";
+      sf = "find ~/Documents/plans/ -type f | fzf"; # This should be made to just recieve any input i think, to be *truly* super lol
     };
     pointerCursor = {
       package = pkgs.simp1e-cursors;
