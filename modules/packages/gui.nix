@@ -46,6 +46,7 @@
       kando
       xmlstarlet # used for a plex terminal app
       filezilla
+      calibre # ebook management
 
       #shell related packages
 

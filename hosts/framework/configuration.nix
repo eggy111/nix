@@ -15,8 +15,9 @@
     steam.enable = true;
     framework.enable = true;
     discord.enable = true;
-    minecraft.enable = true;
+    minecraft.enable = false;
     i2p.enable = true;
+    bluetooth.enable = true;
   };
   nix.settings.warn-dirty = false;
 

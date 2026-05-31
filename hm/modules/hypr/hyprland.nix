@@ -22,7 +22,7 @@
         "$mainMod, V, togglefloating,"
         "$mainMod, R, exec, $menu"
         "$mainMod, P, pseudo # dwindle"
-        "$mainMod, J, togglesplit # dwindle"
+        # "$mainMod, J, togglesplit # dwindle"
         "$mainMod, F, exec, firefox"
         "$mainMod, e, exec, kitty yazi ~"
         "$mainMod, D, exec, discord"
@@ -225,7 +225,7 @@
       };
 
       dwindle = {
-        pseudotile = true; # Master switch for pseudotiling. Enabling is bound in keybinds
+        #  pseudotile = true; # Master switch for pseudotiling. Enabling is bound in keybinds
         preserve_split = true;
       };
 
