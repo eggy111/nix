@@ -60,6 +60,10 @@
       sonarr.extraGroups = [ "media" ];
       eggy.extraGroups = [ "media" ]; # this should probably go in the users directory, but my users are a little funky right now so im not touching them for the time being
     };
+
+    systemd.services.sonarr.serviceConfig.PrivateUsers = lib.mkForce false;
+    systemd.services.radarr.serviceConfig.PrivateUsers = lib.mkForce false;
+    systemd.services.bazarr.serviceConfig.PrivateUsers = lib.mkForce false;
     systemd.services.rclone-seedbox-movies = {
       description = "Move movies from seebox";
       serviceConfig = {
