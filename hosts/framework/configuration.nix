@@ -10,6 +10,7 @@
   imports = [
     ./glance.nix
     # ./copyparty.nix
+    ./kiki.nix
   ];
   custom = {
     steam.enable = true;
