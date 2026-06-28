@@ -39,6 +39,7 @@
       sublime3
       thunderbird # mail client
       inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
+      zotero # citation manager
 
       #misc
       dos2unix # girl i dont even know what this is
@@ -99,7 +100,19 @@
       #config.common.default = "*";
       extraPortals = [
         pkgs.xdg-desktop-portal-gtk
+        #pkgs.xdg-desktop-portal-hyprland
+        # pkgs.xdg-desktop-portal-termfilechooser
       ];
+      #config = {
+      #  hyprland = {
+      #    default = [ "hyprland" ];
+      #    "org.freedesktop.impl.portal.FileChooser" = [ "termfilechooser" ];
+      #  };
+      #};
+    };
+
+    environment.sessionVariables = {
+      GTK_USE_PORTAL = "1";
     };
 
     hardware.graphics = {
