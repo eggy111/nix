@@ -60,7 +60,7 @@
       # "squeekboard"
       # ];
 
-      monitor = [ "DP-1, preferred, auto, auto" ];
+      #      monitor = [ "DP-1, preferred, auto, auto" ];
 
       # plugin = {
       # hyprgrass-bind = [

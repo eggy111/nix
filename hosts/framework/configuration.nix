@@ -50,6 +50,7 @@
     frogmouth
     anki
     forge-mtg
+    pinta
     # quickshell
     # inputs.meowdo.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];

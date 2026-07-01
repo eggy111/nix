@@ -146,10 +146,11 @@
       windowrule = "suppress_event maximize, match:class .*";
 
       monitor = [
-        "DP-3, preferred, 0x0, 1.5 #Dell U2515hx high res, good for big images lol"
-        "DP-2, preferred, auto-right, auto #dell s3222dgm curved monitor"
-        "DP-1, preferred, 0x0, 1.666667 # Samsung u28e590, also good for big images"
-        "HDMI-A-1, preferred, auto-right, auto #dell s322dgm on hdmi"
+        # "DP-3, preferred, 0x0, 1.5" # Dell U2515hx high res, good for big images lol
+        #"DP-2, preferred, auto-right, auto" # dell s3222dgm curved monitor
+        # "DP-1, preferred, 0x0, 1.666667" # Samsung u28e590, also good for big images
+        #"HDMI-A-1, preferred, auto-right, auto" # dell s322dgm on hdmi
+        "DP-1, 3840x2160@30, auto-right, 2.0"
       ];
 
       env = [
