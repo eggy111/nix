@@ -14,6 +14,7 @@
   };
   wayland.windowManager.hyprland = {
     settings = {
+      monitor = [ "DP-4, preferred, auto-right, 2.0" ];
       misc = {
         "force_default_wallpaper" = 0;
       };
