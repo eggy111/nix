@@ -1,134 +1,146 @@
 #gui.nix
 {
-  config,
-  pkgs,
-  lib,
-  inputs,
-  ...
+        config,
+        pkgs,
+        lib,
+        inputs,
+        ...
 }:
 {
-  options = {
-    custom.gui.enable = lib.mkEnableOption "programs that you would use on a desktop";
-  };
+        options = {
+                custom.gui.enable = lib.mkEnableOption "programs that you would use on a desktop";
+        };
 
-  config = lib.mkIf config.custom.gui.enable {
+        config = lib.mkIf config.custom.gui.enable {
 
-    nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
+                nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 
-    services.resolved = {
-      enable = true;
-    };
+                services.resolved = {
+                        enable = true;
+                };
 
-    networking.firewall = rec {
-      allowedTCPPortRanges = [
-        {
-          from = 1714;
-          to = 1764;
-        }
-      ];
-      allowedUDPPortRanges = allowedTCPPortRanges;
-    };
-    environment.systemPackages = with pkgs; [
-      mpv # camera tool
-      nodejs
-      python312Packages.pip
+                networking.firewall = rec {
+                        allowedTCPPortRanges = [
+                                {
+                                        from = 1714;
+                                        to = 1764;
+                                }
+                        ];
+                        allowedUDPPortRanges = allowedTCPPortRanges;
+                };
+                environment.systemPackages = with pkgs; [
+                        mpv # camera tool
+                        nodejs
+                        python312Packages.pip
 
-      #productivity related goods
-      onlyoffice-desktopeditors # office suite
-      # chromium # I have to disable this for now, it somehow becomes the default application for every file format i hate it
-      sublime3
-      thunderbird # mail client
-      inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
-      zotero # citation manager
+                        #productivity related goods
+                        onlyoffice-desktopeditors # office suite
+                        # chromium # I have to disable this for now, it somehow becomes the default application for every file format i hate it
+                        sublime3
+                        thunderbird # mail client
+                        inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
+                        zotero # citation manager
+                        drawy # whiteboard
 
-      #misc
-      dos2unix # girl i dont even know what this is
-      via # supposed to manage keyboards but doesn't work v well
-      kando
-      xmlstarlet # used for a plex terminal app
-      filezilla
-      calibre # ebook management
+                        #misc
+                        dos2unix # girl i dont even know what this is
+                        via # supposed to manage keyboards but doesn't work v well
+                        kando
+                        xmlstarlet # used for a plex terminal app
+                        filezilla
+                        calibre # ebook management
+                        lagrange # gemini net? or gopher but i think gemini
 
-      #shell related packages
+                        #shell related packages
 
-      #file manager and related
-      thunar # gui file manager
-      qdirstat # gui filesize viewer
+                        #file manager and related
+                        thunar # gui file manager
+                        qdirstat # gui filesize viewer
 
-      #screen capture and video stuff
-      vlc # video player
-      ffmpeg # tool for interacting with video
-      swappy # quick picture editor
-      gthumb # slower but in depth picture editor i think
-      kdePackages.kdenlive # video editor
+                        #screen capture and video stuff
+                        vlc # video player
+                        ffmpeg # tool for interacting with video
+                        swappy # quick picture editor
+                        gthumb # slower but in depth picture editor i think
+                        kdePackages.kdenlive # video editor
 
-      #terminal applications #i know you dont need a gui for these, but they are applications i dont need on my servers :P
-      lavat # lava lamp, just for funsies
-      pipes # pipes, just for funsies, like the screensaver
-      pamixer # i think this is for volume?
-      pokeget-rs # generates pixel pokemon in terminal
-      # claws-mail # mail client I want to setup
-      playerctl # tbh idk
+                        #terminal applications #i know you dont need a gui for these, but they are applications i dont need on my servers :P
+                        lavat # lava lamp, just for funsies
+                        pipes # pipes, just for funsies, like the screensaver
+                        pamixer # i think this is for volume?
+                        pokeget-rs # generates pixel pokemon in terminal
+                        # claws-mail # mail client I want to setup
+                        playerctl # tbh idk
 
-      #interfaces/menus
-      overskride # bluetooth manager
-      pavucontrol # more audio thing
-      networkmanagerapplet # manage network in tray
-      # rpiboot
+                        #interfaces/menus
+                        overskride # bluetooth manager
+                        # pavucontrol # more audio thing
+                        ncpamixer # pavucontrol looks super zooomed in so this is a terminal alternative :3
+                        networkmanagerapplet # manage network in tray
+                        # rpiboot
 
-      #game/music/misc-related
-      plexamp # music player
-      plezy # plex client
-      dualsensectl
-      trigger-control
-      # itch # game client
-      shortwave # ipradio
-      freetube # youtube client
-      # r2modman # mod manager for risk of rain 2, i should move it into steam # moved to steam.nix
-      sunvox # synth software
-      rimsort # rimworld mod manager
-      #kdePackages.kdeconnect-kde
-      feishin # music player
-      picard # music tagger
-    ];
-    hardware.keyboard.qmk.enable = true;
-    services.udev.packages = [ pkgs.via ];
+                        #game/music/misc-related
+                        plexamp # music player
+                        plezy # plex client
+                        dualsensectl
+                        trigger-control
+                        # itch # game client
+                        shortwave # ipradio
+                        freetube # youtube client
+                        # r2modman # mod manager for risk of rain 2, i should move it into steam # moved to steam.nix
+                        sunvox # synth software
+                        rimsort # rimworld mod manager
+                        #kdePackages.kdeconnect-kde
+                        feishin # music player
+                        picard # music tagger
+                ];
+                hardware.keyboard.qmk.enable = true;
+                services.udev.packages = [ pkgs.via ];
 
-    xdg.portal = {
-      enable = true;
-      #wlr.enable = true;
-      #config.common.default = "*";
-      extraPortals = [
-        pkgs.xdg-desktop-portal-gtk
-        #pkgs.xdg-desktop-portal-hyprland
-        # pkgs.xdg-desktop-portal-termfilechooser
-      ];
-      #config = {
-      #  hyprland = {
-      #    default = [ "hyprland" ];
-      #    "org.freedesktop.impl.portal.FileChooser" = [ "termfilechooser" ];
-      #  };
-      #};
-    };
+                xdg.portal = {
+                        enable = true;
+                        #wlr.enable = true;
+                        #config.common.default = "*";
+                        extraPortals = [
+                                pkgs.xdg-desktop-portal-gtk
+                                #pkgs.xdg-desktop-portal-hyprland
+                                # pkgs.xdg-desktop-portal-termfilechooser
+                        ];
+                        #config = {
+                        #  hyprland = {
+                        #    default = [ "hyprland" ];
+                        #    "org.freedesktop.impl.portal.FileChooser" = [ "termfilechooser" ];
+                        #  };
+                        #};
+                };
 
-    environment.sessionVariables = {
-      GTK_USE_PORTAL = "1";
-    };
+                environment.sessionVariables = {
+                        GTK_USE_PORTAL = "1";
+                };
 
-    hardware.graphics = {
-      enable = true;
-      enable32Bit = true;
-    };
+                hardware.graphics = {
+                        enable = true;
+                        enable32Bit = true;
+                };
 
-    programs.droidcam.enable = true; # use phone as camera
+                programs.droidcam.enable = true; # use phone as camera
 
-    programs.kdeconnect.enable = true; # interact with phone from computer
+                programs.kdeconnect.enable = true; # interact with phone from computer
 
-    #Enable the X11 windowing system
-    #services.xserver.enable - true;
+                services.suwayomi-server = {
+                        enable = true;
+                        settings = {
+                                server.port = 4567;
+                                server.enableSystemTray = true;
+                        };
 
-    #Enable GNOME Desktop Environment
-    #services.xserver.displayManager.gdm.enable = true;
-    #services.xserver.desktopManager.gnome.enable = true;
-  };
+                };
+
+                #Enable the X11 windowing system
+                #services.xserver.enable - true;
+
+                #Enable GNOME Desktop Environment
+                #services.xserver.displayManager.gdm.enable = true;
+                #services.xserver.desktopManager.gnome.enable = true;
+        };
 }
