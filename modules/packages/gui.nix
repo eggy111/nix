@@ -127,14 +127,14 @@
 
                 programs.kdeconnect.enable = true; # interact with phone from computer
 
-                services.suwayomi-server = {
-                        enable = true;
-                        settings = {
-                                server.port = 4567;
-                                server.enableSystemTray = true;
-                        };
+                #services.suwayomi-server = {
+                #        enable = true;
+                #        settings = {
+                #                server.port = 4567;
+                #                server.enableSystemTray = true;
+                #        };
 
-                };
+                # };
 
                 #Enable the X11 windowing system
                 #services.xserver.enable - true;
