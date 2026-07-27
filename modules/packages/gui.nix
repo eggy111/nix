@@ -42,6 +42,7 @@
                         zotero # citation manager
                         drawy # whiteboard
 
+                        wayscriber # on screen annotations
                         #misc
                         dos2unix # girl i dont even know what this is
                         via # supposed to manage keyboards but doesn't work v well
