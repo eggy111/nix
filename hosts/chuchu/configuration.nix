@@ -1,90 +1,96 @@
 # /hosts/framework/configuration.nix
 
 {
-  pkgs,
-  inputs,
-  ...
+        pkgs,
+        inputs,
+        ...
 }:
 
 {
-  imports = [
-    ./glance.nix
-    # ./copyparty.nix
-    # ./mpd.nix
-  ];
-  custom = {
-    steam.enable = true;
-    # framework.enable = true;
-    discord.enable = true;
-    zfs-chuchu.enable = true;
-    i2p.enable = true;
-    # minecraft.enable = true;
-  };
-  nix.settings.warn-dirty = false;
-  hardware.sensor.iio.enable = true;
+        imports = [
+                ./glance.nix
+                # ./copyparty.nix
+                # ./mpd.nix
+        ];
+        custom = {
+                steam.enable = true;
+                # framework.enable = true;
+                discord.enable = true;
+                zfs-chuchu.enable = true;
+                i2p.enable = true;
+                # minecraft.enable = true;
+        };
+        nix.settings.warn-dirty = false;
+        hardware.sensor.iio.enable = true;
 
-  # Bootloader.
-  #boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+        # Bootloader.
+        #boot.loader.systemd-boot.enable = true;
+        boot.loader.efi.canTouchEfiVariables = true;
+        boot.loader.grub = {
+                theme = "${pkgs.fetchzip {
+                        url = "https://codeberg.org/evamade-online/evangelion-grub-theme/archive/master.tar.gz";
+                        hash = "sha256-oFM7MSVkYxPepVe0NNL73NCK+wbkKop+SmMNXrqyFT4=";
+                }}";
+        };
 
-  # programs.niri.enable = true;
-  networking.hostName = "chuchu"; # Define your hostname.
-  networking.hostId = "c9305e0e";
+        # programs.niri.enable = true;
+        networking.hostName = "chuchu"; # Define your hostname.
+        networking.hostId = "c9305e0e";
 
-  # Enable networking
-  networking.networkmanager.enable = true;
+        # Enable networking
+        networking.networkmanager.enable = true;
 
-  #security.pam.services.hyprlock = { };
+        #security.pam.services.hyprlock = { };
 
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
+        # Enable CUPS to print documents.
+        services.printing.enable = true;
 
-  fonts.packages = with pkgs; [
-    liberation_ttf
-  ];
-  fonts.enableDefaultPackages = true;
-  environment.systemPackages = with pkgs; [
-    liberation_ttf
-    tlrc
-    frogmouth
-    anki
-    # forge-mtg
-    bagels
-    pinta
-    xournalpp
-    squeekboard
-    wvkbd
-    inputs.iio-hyprland.packages.${pkgs.stdenv.hostPlatform.system}.default
-    iio-sensor-proxy
-  ];
-  # virtualisation.waydroid.enable = true;
+        fonts.packages = with pkgs; [
+                liberation_ttf
+        ];
+        fonts.enableDefaultPackages = true;
+        environment.systemPackages = with pkgs; [
+                liberation_ttf
+                tlrc
+                frogmouth
+                anki
+                # forge-mtg
+                bagels
+                pinta
+                xournalpp
+                squeekboard
+                wvkbd
+                inputs.iio-hyprland.packages.${pkgs.stdenv.hostPlatform.system}.default
+                iio-sensor-proxy
+        ];
+        # virtualisation.waydroid.enable = true;
 
-  # programs.zsh.enable = true; # enables zsh shell
-  programs.fish.enable = true; # enables the fish shell
+        # programs.zsh.enable = true; # enables zsh shell
+        programs.fish.enable = true; # enables the fish shell
 
-  programs.ladybird.enable = true;
+        programs.ladybird.enable = true;
 
-  programs.firefox.enable = true; # Install Firefox
+        programs.firefox.enable = true; # Install Firefox
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
+        # Some programs need SUID wrappers, can be configured further or are
+        # started in user sessions.
+        # programs.mtr.enable = true;
+        # programs.gnupg.agent = {
+        #   enable = true;
+        #   enableSSHSupport = true;
+        # };
 
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
+        # Enable the OpenSSH daemon.
+        services.openssh.enable = true;
 
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+        # Open ports in the firewall.
+        # networking.firewall.allowedTCPPorts = [ ... ];
+        # networking.firewall.allowedUDPPorts = [ ... ];
+        # Or disable the firewall altogether.
+        # networking.firewall.enable = false;
 
-  networking.firewall.allowedTCPPorts = [ 46899 ]; # for fcast?
+        networking.firewall.allowedTCPPorts = [ 46899 ]; # for fcast?
 
-  system.stateVersion = "24.05"; # Did you read the comment?
+        system.stateVersion = "24.05"; # Did you read the comment?
 
 }
