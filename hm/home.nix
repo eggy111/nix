@@ -9,8 +9,8 @@
         imports = [
                 ./modules
         ];
-        #  home.username = "eggy";
-        #  home.homeDirectory = "/home/eggy";
+        home.username = "eggy";
+        home.homeDirectory = "/home/eggy";
 
         home.stateVersion = "24.05"; # Please read the comment before changing.
 
@@ -23,13 +23,7 @@
                 nix-output-monitor # provides the command nom that function like nix, btu makes it nicer
         ];
 
-        # Home Manager is pretty good at managing dotfiles. The primary way to manage
-        # plain files is through 'home.file'.
         home.file = {
-                # # Building this configuration will create a copy of 'dotfiles/screenrc' in
-                # # the Nix store. Activating the configuration will then make '~/.screenrc' a
-                # # symlink to the Nix store copy.
-                # ".screenrc".source = dotfiles/screenrc;
                 ".config/pypr/config.toml".source = ./modules/pyprland.toml;
                 ".config/waybar/style.css".source = ./modules/waybar/style.css;
                 ".config/rofimoji.rc".source = ./rofimoji.rc;
@@ -43,22 +37,6 @@
 
         };
 
-        # Home Manager can also manage your environment variables through
-        # 'home.sessionVariables'. These will be explicitly sourced when using a
-        # shell provided by Home Manager. If you don't want to manage your shell
-        # through Home Manager then you have to manually source 'hm-session-vars.sh'
-        # located at either
-        #
-        #  ~/.nix-profile/etc/profile.d/hm-session-vars.sh
-        #
-        # or
-        #
-        #  ~/.local/state/nix/profiles/profile/etc/profile.d/hm-session-vars.sh
-        #
-        # or
-        #
-        #  /etc/profiles/per-user/eggy/etc/profile.d/hm-session-vars.sh
-        #
         home.sessionVariables = {
                 EDITOR = "nvim";
                 XCURSOR_SIZE = config.home.pointerCursor.size;
@@ -125,8 +103,10 @@
                         q = "exit";
                         sf = "find ~/Documents/plans/ -type f | fzf"; # This should be made to just recieve any input i think, to be *truly* super lol
                         kiki = "sudo -u nginx php index.php page=generate";
+                        settings = "vim /home/eggy/Documents/nix/hosts/$HOST/configuration.nix";
                 };
                 pointerCursor = {
+                        enable = true;
                         package = pkgs.simp1e-cursors;
                         name = "Simp1e-Catppuccin-Frappe";
                         size = 28;

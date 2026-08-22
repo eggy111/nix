@@ -2,38 +2,39 @@
 #opengl, and maybe also proton stuff
 
 {
-  pkgs,
-  lib,
-  config,
-  ...
+        pkgs,
+        lib,
+        config,
+        ...
 }:
 
 {
-  options = {
-    custom.steam.enable = lib.mkEnableOption "enables steam";
-  };
+        options = {
+                custom.steam.enable = lib.mkEnableOption "enables steam";
+        };
 
-  config = lib.mkIf config.custom.steam.enable {
+        config = lib.mkIf config.custom.steam.enable {
 
-    hardware.graphics = {
-      enable = true;
-      #    driSupport = true;
-      enable32Bit = true;
-    };
+                hardware.graphics = {
+                        enable = true;
+                        #    driSupport = true;
+                        enable32Bit = true;
+                };
 
-    programs.steam.enable = true;
-    programs.steam.gamescopeSession.enable = true;
+                programs.steam.enable = true;
+                programs.steam.gamescopeSession.enable = true;
 
-    environment.systemPackages = with pkgs; [
-      mangohud
-      protonup-ng
-      r2modman # mod manager for risk of rain 2
-    ];
+                environment.systemPackages = with pkgs; [
+                        mangohud
+                        protonup-ng
+                        r2modman # mod manager for risk of rain 2
+                        # rimsort # mod manager for rimworld
+                ];
 
-    programs.gamemode.enable = true;
+                programs.gamemode.enable = true;
 
-    environment.sessionVariables = {
-      STEAM_EXTRA_COMPAT_TOOLS_PATH = "/home/eggy/.stean/root/compatibilitytools.d";
-    };
-  };
+                environment.sessionVariables = {
+                        STEAM_EXTRA_COMPAT_TOOLS_PATH = "/home/eggy/.stean/root/compatibilitytools.d";
+                };
+        };
 }
