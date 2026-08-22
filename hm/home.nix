@@ -9,8 +9,8 @@
         imports = [
                 ./modules
         ];
-        home.username = "eggy";
-        home.homeDirectory = "/home/eggy";
+        #        home.username = "eggy";
+        #        home.homeDirectory = "/home/eggy";
 
         home.stateVersion = "24.05"; # Please read the comment before changing.
 
@@ -103,7 +103,7 @@
                         q = "exit";
                         sf = "find ~/Documents/plans/ -type f | fzf"; # This should be made to just recieve any input i think, to be *truly* super lol
                         kiki = "sudo -u nginx php index.php page=generate";
-                        settings = "vim /home/eggy/Documents/nix/hosts/$HOST/configuration.nix";
+                        settings = "vim /home/eggy/Documents/nix/hosts/(hostname)/configuration.nix";
                 };
                 pointerCursor = {
                         enable = true;
