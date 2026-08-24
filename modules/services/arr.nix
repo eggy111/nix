@@ -32,7 +32,7 @@
       prowlarr = {
         enable = true;
       };
-      overseerr = {
+      seerr = {
         enable = true;
         port = 5055;
       };
