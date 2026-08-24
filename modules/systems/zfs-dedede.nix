@@ -13,6 +13,7 @@
     boot = {
       supportedFilesystems.zfs = true;
       zfs = {
+        forceImportRoot = false;
         devNodes = "/dev/disk/by-id";
         extraPools = [
           "zroot"
