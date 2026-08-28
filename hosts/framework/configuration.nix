@@ -2,6 +2,7 @@
 
 {
         pkgs,
+        lib,
         inputs,
         ...
 }:
@@ -9,7 +10,7 @@
 {
         imports = [
                 ./glance.nix
-                # ./copyparty.nix
+                #                ./copyparty.nix
                 ./kiki.nix
         ];
         custom = {
@@ -36,6 +37,8 @@
 
         # Enable CUPS to print documents.
         services.printing.enable = true;
+
+        security.wrappers.Hyprland.enable = lib.mkForce false; # temp fix bc hyprland is being annoying and only office wont launch
 
         fonts.packages = with pkgs; [
                 liberation_ttf_v1
