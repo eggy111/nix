@@ -29,6 +29,8 @@
                         protonup-ng
                         r2modman # mod manager for risk of rain 2
                         # rimsort # mod manager for rimworld
+                        nodejs
+                        nwjs
                 ];
 
                 programs.gamemode.enable = true;

@@ -79,6 +79,10 @@
                         ncpamixer # pavucontrol looks super zooomed in so this is a terminal alternative :3
                         networkmanagerapplet # manage network in tray
                         # rpiboot
+                        (catppuccin-sddm.override {
+                                flavor = "mocha";
+                                accent = "mauve";
+                        })
 
                         #game/music/misc-related
                         plexamp # music player
@@ -138,6 +142,12 @@
 
                 #Enable the X11 windowing system
                 #services.xserver.enable - true;
+
+                #                services.displayManager.sddm = {
+                #                        enable = true;
+                #                        wayland.enable = true;
+                #                        theme = "catppuccin-mocha-mauve";
+                #                };
 
                 #Enable GNOME Desktop Environment
                 #services.xserver.displayManager.gdm.enable = true;
