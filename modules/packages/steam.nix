@@ -36,7 +36,7 @@
                 programs.gamemode.enable = true;
 
                 environment.sessionVariables = {
-                        STEAM_EXTRA_COMPAT_TOOLS_PATH = "/home/eggy/.stean/root/compatibilitytools.d";
+                        STEAM_EXTRA_COMPAT_TOOLS_PATH = "/home/eggy/.steam/root/compatibilitytools.d";
                 };
         };
 }
