@@ -65,6 +65,9 @@
         # Enable the OpenSSH daemon.
         services.openssh.enable = true;
 
+        powerManagement.enable = true;
+        powerManagement.powertop.enable = true;
+
         system.stateVersion = "24.05"; # Did you read the comment?
 
 }
