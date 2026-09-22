@@ -1,74 +1,75 @@
 # packages.nix
 # install system packages here
 {
-  # config,
-  pkgs,
-  inputs,
-  ...
+        # config,
+        pkgs,
+        inputs,
+        ...
 }:
 {
 
-  programs.localsend.enable = true;
+        programs.localsend.enable = true;
 
-  environment.systemPackages = with pkgs; [
-    #mpv
+        environment.systemPackages = with pkgs; [
+                #mpv
 
-    #productivity related goods
-    qalculate-qt # calculator
-    doxx
-    inputs.xleak.packages.${pkgs.stdenv.hostPlatform.system}.default # I think this needs a flake
+                #productivity related goods
+                qalculate-qt # calculator
+                doxx
+                inputs.xleak.packages.${pkgs.stdenv.hostPlatform.system}.default # I think this needs a flake
 
-    #misc
-    zint-qt # qr code generator
-    procps # Utilities that give information about processes using the /proc filesystem
-    texliveTeTeX # for pandoc i think
-    gnumake # make tool
-    libgcc # make tool (I think)
-    whois # tool for whois lookup
-    compose2nix # make compose files into nix files
+                #misc
+                zint-qt # qr code generator
+                procps # Utilities that give information about processes using the /proc filesystem
+                texliveTeTeX # for pandoc i think
+                gnumake # make tool
+                libgcc # make tool (I think)
+                whois # tool for whois lookup
+                compose2nix # make compose files into nix files
 
-    #shell related packages
-    fish # shell
-    starship # a sort of theme manager similiar to powerlevel10k
-    kitty
+                #shell related packages
+                fish # shell
+                starship # a sort of theme manager similiar to powerlevel10k
+                kitty
 
-    #file manager and related
-    yazi # file manager
-    # lf # file manager but i dont want it anymore, lf is aliased to yazi
-    ncdu # tui tool for viewing and interacting with disk space
-    wiper # Disk analyser and cleanup tool
-    tree # nice way to view directory structure
-    smartmontools
-    trash-cli
+                #file manager and related
+                yazi # file manager
+                # lf # file manager but i dont want it anymore, lf is aliased to yazi
+                ncdu # tui tool for viewing and interacting with disk space
+                wiper # Disk analyser and cleanup tool
+                tree # nice way to view directory structure
+                smartmontools
+                trash-cli
 
-    #terminal applications
-    git # version control
-    lazygit
-    fzf # fuzzy finder
-    # frogmouth # i think this is a markdown viewer
-    nixfmt # nix formatter or smthn
-    nixd # i think nix lsp
-    unar # archiver
-    unzip # zipper
-    bat # cat but better (cat is aliased to bat)
-    fastfetch # newer neofetch
-    wget # download
-    vim # text editor
-    eza # nicer ls but I don't use it enough
-    neovim # text editor but better
-    zip # zipping tool
-    yt-dlp # video download
-    deno # javascript runtime for yt-dlp
-    pandoc # document conversion (having troubles with it)
-    rmpc
+                #terminal applications
+                git # version control
+                lazygit
+                fzf # fuzzy finder
+                # frogmouth # i think this is a markdown viewer
+                nixfmt # nix formatter or smthn
+                nixd # i think nix lsp
+                unar # archiver
+                unzip # zipper
+                bat # cat but better (cat is aliased to bat)
+                fastfetch # newer neofetch
+                wget # download
+                vim # text editor
+                eza # nicer ls but I don't use it enough
+                neovim # text editor but better
+                zip # zipping tool
+                yt-dlp # video download
+                deno # javascript runtime for yt-dlp
+                pandoc # document conversion (having troubles with it)
+                rmpc
 
-    #file transfer things
-    wireguard-tools # vpn manager
-    #localsend # a tool to send files locally similiar to airdrop
-    rclone # file transfer
-    # termscp # transfer manager
-    sshfs # mounts file directory using ssh
-    croc # file transfers
+                #file transfer things
+                wireguard-tools # vpn manager
+                #localsend # a tool to send files locally similiar to airdrop
+                rclone # file transfer
+                # termscp # transfer manager
+                sshfs # mounts file directory using ssh
+                croc # file transfers
+                aria2 # download
 
-  ];
+        ];
 }
