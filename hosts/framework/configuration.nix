@@ -10,7 +10,7 @@
 {
         imports = [
                 ./glance.nix
-                #                ./copyparty.nix
+                ./copyparty.nix
                 ./kiki.nix
         ];
         custom = {
@@ -20,6 +20,8 @@
                 minecraft.enable = false;
                 #                i2p.enable = false;
                 bluetooth.enable = true;
+                gui-stable.enable = true;
+                sops.enable = true;
         };
         nix.settings.warn-dirty = false;
 

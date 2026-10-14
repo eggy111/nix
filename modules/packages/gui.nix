@@ -39,7 +39,6 @@
                         sublime3
                         thunderbird # mail client
                         inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
-                        zotero # citation manager
                         drawy # whiteboard
 
                         wayscriber # on screen annotations

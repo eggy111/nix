@@ -5,6 +5,7 @@
                 nixpkgs = {
                         url = "github:nixos/nixpkgs/nixos-unstable";
                 };
+                nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-26.05";
 
                 home-manager = {
                         url = "github:nix-community/home-manager";
@@ -80,6 +81,7 @@
                 {
                         self,
                         nixpkgs,
+                        nixpkgs-stable,
                         copyparty,
                         niri,
                         ...
@@ -98,6 +100,10 @@
                                         inherit pkgs;
                                         specialArgs = {
                                                 inherit host inputs;
+                                                pkgs-stable = import nixpkgs-stable {
+                                                        system = "x86_64-linux";
+                                                        config.allowUnfree = true;
+                                                };
                                         };
                                         modules = [
                                                 ./hosts/${host}/configuration.nix
